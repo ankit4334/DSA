@@ -1,0 +1,2166 @@
+Hello CodeQuotient
+Write a program to print “Hello CodeQuotient”.
+
+// Do NOT change the class name, for this course always name the class containing main function as Main
+class Main
+{
+    public static void main(String[] args)
+    {
+        System.out.println("Hello CodeQuotient");
+    }
+}
+-------------------------------------------------------------------
+
+
+
+Gross salary of an employee
+Write a program to calculate the gross salary of an employee. Basic salary will be provided as input and HRA is 10% of basic salary and DA is 20% of the basic salary.
+
+The formula for calculating the gross salary will be:
+
+Gross Salary = Basic Salary + HRA + DA
+
+Where HRA = 10% of basic salary and DA = 20% of Basic Salary
+
+Input
+
+Each test case will contains a single value n (basic salary) where n >=100.
+Output
+
+For each input case, calculate and print the gross salary.
+Sample Input
+
+5000
+Sample Output
+
+6500
+
+
+import java.util.Scanner;
+class Main
+{
+  public static void main(String[] args)
+  {
+    Scanner sc=new Scanner(System.in);
+    int n=sc.nextInt();
+    int a=n*10/100;
+    int b=n*20/100;
+    System.out.println(n+a+b);
+  }
+}
+
+---------------------------------------------------------------
+
+Aggregate and Percentage Marks of a student
+Write a program to calculate the aggregate and percentage marks obtained by a student.
+
+If the percentage has decimals, print the floor value of the percentage. For example 9.89 will be floored to 9.
+
+Input
+
+Each test case contains marks obtained by the student in five different subjects 0 and 100, separated by a space.
+Output
+
+Print the aggregate and percentage marks separated by a space.
+Sample Input
+
+10 20 30 40 50
+Sample Output
+
+150 30
+
+
+import java.util.Scanner;
+class Main
+{
+  public static void main(String[] args)
+  {
+    Scanner sc=new Scanner(System.in);
+    int n=5;
+    int a[]=new int[n];
+    for(int i=0;i<5;i++){
+      a[i]=sc.nextInt();
+    }
+    int s=0;
+    for(int i=0;i<5;i++){
+      s+=a[i];
+    }
+    System.out.print(s+" "+s/5);
+  }
+}
+
+---------------------------------------------------------------
+
+Swap two variables without using a third variable
+Write a program to swap the value of two variables without using a third variable.
+
+Input Format:
+
+Each test case will have 2 elements in two different lines between 0 - 9999.
+Output Format:
+
+For each input case, swap the input values of the variables.
+Sample Input
+
+10
+20
+Sample Output
+
+20
+10
+
+import java.util.Scanner;
+// Other imports go here// Do NOT change the class name
+class Main
+{
+  public static void main(String[] args)
+  {
+    Scanner sc=new Scanner(System.in);
+    int a=sc.nextInt();
+    int b=sc.nextInt();
+    int t=a;
+    a=b;
+    b=t;
+    System.out.println(a+"\n"+b);
+  }
+}
+
+
+-------------------------------------------------------------
+
+Add one to each digit of a 4 digit
+Write a program to add one to each digit of a 4 digit number. Ignore the carry digit.
+
+Input
+
+Each test case will contain a number n where 1000<=n<=9999.
+Output
+
+For each input case, add one to each digit of n, ignore the carry and print the new number.
+Sample Input
+
+1239
+Sample Output
+
+2340
+
+
+import java.util.Scanner;
+class Main
+{
+  public static void main(String[] args)
+  {
+    Scanner sc=new Scanner(System.in);
+    int n=sc.nextInt();
+    int s=0;
+    int i=1;
+    while(n!=0){
+      int k=n%10;
+      if(k==9){
+        k=0;
+      }
+      else{
+        k=k+1;
+      }
+      s=s+k*i;
+      i=i*10;
+      n=n/10;
+    }
+    System.out.println(s);
+  }
+}
+
+-----------------------------------------------------------------
+
+Largest of 3 numbers
+Write a program to find the largest of the three numbers.
+
+Input
+
+Each test case contains 3 numbers a ,b and c , separated by a space where a , b and c are not equal and a, b and c are greater than equal to 0. 
+Output
+
+Print the largest number.
+Sample Input 1
+
+10 20 30
+Sample Output 1
+
+30
+Sample Input 2
+
+80 10 70
+Sample Output 2
+
+80 
+
+import java.util.Scanner;
+// Other imports go here// Do NOT change the class name
+class Main
+{
+    public static void main(String[] args)
+    {
+      Scanner sc=new Scanner(System.in);
+      int a=sc.nextInt();
+      int b=sc.nextInt();
+      int c=sc.nextInt();
+      if(a>b && a>c){
+        System.out.println(a);
+      }
+      else if(a<b && b>c){
+        System.out.println(b);
+      }
+      else{
+        System.out.println(c);
+      }
+    }
+}
+
+----------------------------------------------------
+Even and odd
+Write a program to find whether a number given as input is even or odd.
+
+Input
+
+Each test case will contain a number n where 1<=n<=9999.
+Output
+
+Print "Even" if number is even and "Odd" if number is odd.
+Sample Input
+
+11
+Sample Output
+
+Odd
+
+import java.util.Scanner;
+// Other imports go here// Do NOT change the class name
+class Main
+{
+    public static void main(String[] args)
+    {
+       Scanner sc=new Scanner(System.in);
+       int n=sc.nextInt();
+       if(n%2==0){
+         System.out.println("Even");
+       }else{
+         System.out.println("Odd");
+       }
+    }
+}
+------------------------------------------------------------
+
+Compare reverse and original number
+Given an integer n, the task is to print 'Equal' if the integer is palidrome integer, else print 'Not Equal'
+
+An integer is a palindrome when it reads the same backward as forward. For example, 121 is palindrome while 123 is not.
+
+Input Format:
+
+First line of input will contain a number N = number of test cases.
+Next N lines will contain number n as test case where 0<=n<=9999.
+Output Format:
+
+For each input case, compare reverse and original number and print “Equal” if they are equal and “ Not Equal” otherwise.
+Sample Input
+
+6
+1234
+456
+12
+1
+0045
+0
+Sample Output
+
+Not Equal
+Not Equal
+Not Equal
+Equal
+Not Equal
+Equal
+
+
+import java.util.Scanner;
+// Other imports go here// Do NOT change the class name
+class Main
+{
+    public static void main(String[] args)
+    {
+       Scanner sc=new Scanner(System.in);
+       int t=sc.nextInt();
+       while(t!=0){
+         int n=sc.nextInt();
+         int o=n;
+         int s=0;
+         while(n!=0){
+           int k=n%10;
+           s=s*10+k;
+           n/=10;
+         }
+         if(s==o){
+           System.out.println("Equal");
+         }
+         else{
+           System.out.println("Not Equal");
+         }
+         t--;
+       }
+    }
+}
+
+---------------------------------------------------------------
+
+Leap Year
+Write a program to find whether the year is leap or not?
+
+A year is considered a leap year if it is perfectly divisible by 4. Years that are perfectly divisible by 100 (for example, 2000, 2100, 2200) are exceptions. Such a year is a leap year only if it is also perfectly divisible by 400.
+
+Input Format
+
+Each test case will contain a year greater than 1000 AD and less than 10000 AD.
+Output Format
+
+Print "Leap Year" if the given year is a leap year and "Not a Leap Year" otherwise
+Sample Input
+
+2017
+Sample Output
+
+Not a Leap Year
+
+import java.util.Scanner;
+// Other imports go here// Do NOT change the class name
+class Main
+{
+    public static void main(String[] args)
+    {
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        if((n%4==0 && n%100!=0) || n%400==0){
+          System.out.println("Leap Year");
+        }
+        else{
+           System.out.println("Not a Leap Year");
+        }
+    }
+}
+
+-----------------------------------------------------------------
+
+Sum of first n terms (using for loop)
+Write a program to calculate the sum of the first n terms of the below series using for loop
+
+s = 1 + 2  + 3  + 4 + 5 + ………..
+
+Input Format
+
+Each test case will contains a single integer N where n >= 1.
+Output Format
+
+For each input case, calculate and print the sum of the first n terms of the series.
+Sample Input
+
+4
+Sample Output
+
+10
+
+
+import java.util.Scanner;
+// Other imports go here
+// Do NOT change the class name
+class Main
+{
+    public static void main(String[] args)
+    {
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        int s=0;
+        for(int i=0;i<=n;i++){
+          s+=i;
+        }
+       System.out.println(s);
+    }
+}
+
+
+-------------------------------------------------------
+
+Multiplication table ( using for loop)
+Write a program to calculate the multiplication table of a number n up to m.
+
+Input
+
+Each test case will contains two integers ( n and m) where n is the number whose table is to calculate and m is the limit. n >=1 and m >=1
+Output
+
+Print the multiplication table of the number. One value per line.
+Sample Input
+
+2  5
+Sample Output
+
+2
+4
+6
+8
+10
+
+import java.util.Scanner;
+// Other imports go here
+// Do NOT change the class name
+class Main
+{
+  public static void main(String[] args)
+  {
+    Scanner sc=new Scanner(System.in);
+        int a=sc.nextInt();
+        int n=sc.nextInt();
+        int s=1;
+        for(int i=1;i<=n;i++){
+		  s=a*i;
+          System.out.println(s);
+        }
+  }
+}
+
+
+-------------------------------------------------------------
+
+Factorial of a number
+Given a number n, compute n factorial (written as n!) where n >=0.
+
+A factorial of a number n is the product of all natural numbers from 1 to n.
+
+For Example , factorial of 4 (4!) = 1*2*3*4 = 24
+
+Input Format:
+
+Each test case will contains an integer n where n >=1.
+Constraints
+
+0 <= n <= 15
+Output Format:
+
+For each input case, calculate and print the factorial of n.
+Sample Input
+
+4
+Sample Output
+
+24
+
+static long fact(int n) {
+    if(n==1 || n==0){
+      return 1;
+    }
+    return n*fact(n-1);
+  }
+
+
+------------------------------------------------------------
+
+
+Generate first n Prime numbers
+Write a program to generate and print first m prime numbers in the first n positive integers. 
+
+Input
+
+Each test case will contains two integer n (limit till where prime numbers to be generated) and m (number of prime to generate) where n >=2 and m >=1. 
+If there are not enough prime numbers upto n, then print all prime numbers up to n.
+Output
+
+For each input case, generate and print first m primes in the first n positive integers.
+Sample Input
+
+10 2
+Sample Output
+
+2
+3
+Explanation:
+
+With n = 10 and m
+
+import java.util.Scanner;
+// Other imports go here
+// Do NOT change the class name
+class Main
+{
+    public static void main(String[] args)
+    {
+        Scanner sc=new Scanner(System.in);
+        int a=sc.nextInt();
+        int b=sc.nextInt();
+        int c=0;
+        for(int i=2;i<=a;i++){
+          int f=0;
+          for(int j=2;j<i;j++){
+            if(i%j==0){
+              f=1;
+              break;
+            }
+          }
+          if(c!=b){
+            if(f==0){
+              System.out.println(i);
+              c++;
+            }
+          }
+        }
+    }
+}
+
+
+------------------------------------------------------------
+
+The Number is Kaprekar or not
+Write a program to find the given number is kaprekar or not. A number if kaprekar if the representation of its square can be split into two parts that add up to the original number. For instance, 45 is a Kaprekar number, because 45^2 = 2025 and 20 + 25 = 45. Whereas 13 is not as 13^2 = 169 which can be split in two ways (1+69) and (16+9), but any of them is not 13. The number 1 is Kaprekar, because 1^2 = 01, and  0 + 1 = 1.
+
+Input
+
+First line of input will contain a number N = number of test cases. Next N lines will contain number n as test case where 0<=n<=9999.
+Output
+
+For each input case, print 1 if number is kaprekar and print 0 otherwise.
+Sample Input
+
+4
+45
+13
+1
+9
+Sample Output
+
+1
+0
+1
+1
+
+import java.util.Scanner;
+// Other imports go here// Do NOT change the class name
+class Main
+{
+    public static void main(String[] args)
+    {
+        Scanner  sc=new Scanner(System.in);
+        int t=sc.nextInt();
+        while(t!=0){
+          int n=sc.nextInt();
+          int sq=n*n;
+          int i=1;
+          int s=0;
+          int f=0;
+          while(sq!=0){
+            int k=sq%10;
+            s=s+k*i;
+            i=i*10;
+            sq/=10;
+            if(s+sq==n){
+              f=1;
+            }
+          }
+          if(f==1){
+              System.out.println("1");
+            }
+            else{
+              System.out.println("0");
+            }
+          t--;
+        }
+    }
+}
+
+----------------------------------------------------------------
+
+Sum of all the elements of an Array
+Write a program to find the sum of all the elements of an array.
+
+Input
+
+Assume the size of array as 10. 
+Each test case will have 10 elements in ten different lines.
+Output
+
+For each test case, print the sum of all the elements of the array.
+Sample Input
+
+3
+10 
+20 
+4
+7
+1
+2
+3
+4
+5
+Sample Output
+
+59
+
+
+import java.util.Scanner;
+// Other imports go here
+class Main
+{
+  public static void main(String[] args)
+  {
+   Scanner sc=new Scanner(System.in);
+   int n=10;
+   int a[]=new int[n];
+   for(int i=0;i<n;i++){
+     a[i]=sc.nextInt();
+   }
+   int s=0;
+   for(int i=0;i<n;i++){
+     s+=a[i];
+   }
+    System.out.println(s);
+  }
+}
+
+-----------------------------------------------------------
+
+Maximum element in an Array
+Write a program to find the maximum element in an array.
+
+Input Format:
+
+The first line of input contains an integer N, denoting the size of array.
+The second line contains N space separated integers, denoting the array elements.
+Output Format:
+
+For each test case, print the maximum element in the array.
+Constraints
+
+  1 <= N <= 10^5
+ -1000 <= arr[i] <= 1000
+Sample Input 1
+
+7
+20 30 93 71 18 82 66
+Sample Output 1
+
+93
+Sample Input 2
+
+5
+33 45 67 33 67
+Sample Output 2
+
+67
+
+
+
+class Result {
+    static int maxElement(int[] arr, int N) {
+      int ma=Integer.MIN_VALUE;
+      for(int i=0;i<N;i++){
+        if(ma<arr[i]){
+          ma=arr[i];
+        }
+      }
+      return ma;
+    }
+  }
+
+
+-------------------------------------------------------------
+
+
+Copy elements of an Array
+Write a program to copy the elements of an array a to the another array b in reverse order.
+
+Input
+
+Assume the size of array as 10. Each test case will have 10 elements in ten different lines.
+Output
+
+For each test case print the elements of the new array.
+Sample Input
+
+3
+10 
+20 
+4
+7
+1
+2
+3
+4
+5
+Sample Output
+
+5
+4
+3
+2
+1
+7
+4
+20
+10
+3
+
+
+
+import java.util.Scanner;
+// Other imports go here
+class Main
+{
+  public static void main(String[] args)
+  {
+    Scanner sc=new Scanner(System.in);
+    int n=10;
+    int a[]=new int[n];
+    for(int i=0;i<n;i++){
+      a[i]=sc.nextInt();
+    }
+    for(int i=n-1;i>=0;i--){
+      System.out.println(a[i]);
+    }
+  }
+}
+
+
+------------------------------------------------------------
+
+Matrix Multiplication
+Given two matrices A and B in the form of two dimensional arrays, find the dot product of these two matrices.
+
+
+
+Input Format:
+
+First line of input will contain an integer T = no. of test cases.
+Each test case will follow in multiple lines. First line of each test case will contain two integers R1 = no. of rows in matrix A and C1 = no. of columns in matrix A. Next R1 lines will each contain C1 space separated integers. Next line again contain two integers R2 = no. of rows in B and C2 = no. columns in B. C1 will be equal to R2.
+Output Format:
+
+For each test case print matrix of size R1*C2 in R1 lines with each line containing C2 space separated integers of corresponding row.
+Constraints
+
+1 <= T <= 1000
+1 <= R1, C1, R2, C2 <= 50
+C1 will be equals to R2
+Sample Input
+
+2  // Test Cases
+2 3    // R1 C1 (testcase 1)
+1 2 3  // matrix A
+4 5 6
+3 2    // R2 C2
+2 3    // matrix B
+1 2
+2 1
+2 2    // R1 C1 (testcase 2)
+12 4   // matrix A
+7 6
+2 3    // R2 C2
+2 4 6  // matrix B
+3 5 7
+Sample Output
+
+10 10  // A * B (testcase 1)
+25 28
+36 68 100  // A * B (testcase 2)
+32 58 84
+
+
+class Result {
+    // Print the resultant matrix after (A * B)
+    static void multiplyMatrix(int A[][],int B[][], int R1, int C1, int R2, int C2) {
+      int C[][]=new int[R1][C2];
+      for(int i=0;i<R1;i++){
+        for(int j=0;j<C2;j++){
+          int s=0;
+          for(int k=0;k<C1;k++){
+            s+=A[i][k]*B[k][j];
+            C[i][j]=s;
+          }
+        }
+      }
+      for(int i=0;i<R1;i++){
+        for(int j=0;j<C2;j++){
+          System.out.print(C[i][j]+" ");
+        }
+        System.out.println();
+      }
+    }
+  }
+
+
+--------------------------------------------------------
+
+Spirally traversing a matrix
+Traversing an array is an elementary operation on an array, in which each element will be processed for some operation. Printing elements is one example operation.
+
+Complete the function printSpiral() given in the editor, which accepts a two dimensional array and prints the array in spiral form rotating clockwise.
+
+Input Format
+
+Each test-case will begin with two number m and n where m = no. of rows and n = no. of columns.
+m rows will follow with n integers in each row separated by a space. 
+Constraints
+
+1<=m<=50 and 1<=n<=50.
+Output Format
+
+For each test case, print the elements of 2-d array in spiral form starting from index (0,0) or upper-left corner in clockwise direction.
+Sample Input 1
+
+3 3
+4 5 6
+7 8 9
+10 11 12
+
+Sample Output 1
+
+4
+5
+6
+9
+12
+11
+10
+7
+8
+Sample Input 2
+
+3 4
+4 3 2 1
+5 7 8 11
+2 4 6 8
+Sample Output 2
+
+4
+3
+2
+1
+11
+8
+6
+4
+2
+5
+7
+8
+
+class Result {
+    static void printSpiral(int a[][], int r, int c) {
+      int rs=0;
+      int re=r-1;
+      int cs=0;
+      int ce=c-1;
+      int ele=r*c;
+      int count=0;
+      while(count<ele){
+        for(int i=cs;count<ele && i<=ce;i++){
+          System.out.println(a[rs][i]);
+          count++;
+        }
+        rs++;
+        for(int i=rs;count<ele && i<=re;i++){
+          System.out.println(a[i][ce]);
+          count++;
+        }
+        ce--;
+        for(int i=ce;count<ele && i>=cs;i--){
+          System.out.println(a[re][i]);
+          count++;
+        }
+        re--;
+        for(int i=re;count<ele && i>=rs;i--){
+          System.out.println(a[i][cs]);
+          count++;
+        }
+        cs++;
+      }
+    }
+  }
+
+----------------------------------------------------------------
+
+Rotate a 2-D array by 90 degrees
+Given a two dimensional N*N array, print the output if the array is rotated by 90 degrees in clockwise direction.
+
+﻿Input Format
+
+First line of input will contain a number T = no. of test cases. 
+Each test case will contain one line with number N (N*N is the size of the array). Next N lines will each contain N integers separated by space.
+Output Format
+
+For each test-case, print the array rotated clockwise by 90 degrees. Each row of an array should be printed as m elements separated by exactly one space. 
+There should be no space after last element in each row. Print an extra line after output for each test case.
+Constraints
+
+1 <= T <= 10
+1 <= N <= 50
+0 <= arr[i][j] <= 100
+Sample Input
+
+3  // Test Cases
+3    // N (testcase 1)
+1 2 3
+4 5 6
+7 8 9
+2    // N (testcase 2)
+2 4
+1 3
+1    // N (testcase 3)
+14
+Sample Output
+
+7 4 1
+8 5 2
+9 6 3
+
+1 2
+3 4
+
+14
+
+
+
+import java.util.Scanner;
+// Other imports go here, Do NOT change the class name
+class Main
+{
+  public static void main(String[] args)
+  {
+    Scanner sc=new Scanner(System.in);
+    int t=sc.nextInt();
+    while(t!=0){
+      int n=sc.nextInt();
+      int a[][]=new int[n][n];
+      for(int i=0;i<n;i++){
+        for(int j=0;j<n;j++){
+          a[i][j]=sc.nextInt();
+        }
+      }
+      for(int i=0;i<n;i++){
+        for(int j=n-1;j>=0;j--){
+          System.out.print(a[j][i]);
+          if(j!=0)
+          System.out.print(" ");
+        }
+        System.out.println();
+      }
+      System.out.println();
+      t--;
+    }
+  }
+}
+
+
+
+--------------------------------------------------------------
+
+Find occurrences of palindrome words in a string
+Write a function which given a string, count and return the palindrome words present in the string. A word in a string is separated with space(s).
+
+Sample Input 1
+
+Mom and Dad are my best friends
+Sample Output 1
+
+2
+Explanation 1
+
+﻿This string contains two palindrome words (i.e., Mom, Dad) so the count is 2.
+Sample Input 2
+
+mohit speaks english
+Sample Output 2
+
+0
+Explanation 2
+
+This string contains no palindrome words.
+
+
+static boolean palindrom(String str) {
+    int s=0;
+    int e=str.length()-1;
+    while(s<=e){
+      if(str.charAt(s)!=str.charAt(e)){
+        return false;
+      }
+      else{
+        s++;
+        e--;
+      }
+    }
+    return true;
+  }
+  static boolean pal(String str) {
+    char a[]=str.toCharArray();
+     int s=0;
+     int e=a.length-1;
+     for(int i=0;i<a.length;i++){
+       if(a[i]!=a[e]){
+         return false;
+       }
+       else{
+         s++;
+         e--;
+       }
+     }
+    return true;
+  }
+  static int countPalindrome(String str) {
+    str=str.toUpperCase();
+    String s[]=str.split(" ");
+    int c=0;
+    for(String w:s){
+      if(palindrom(w)){
+        c++;
+      }
+    }
+     return c;
+  }
+
+---------------------------------------------------------
+
+Swap first and last character of each word in a string
+Write a program which given a string, swap first and last character of each word in it.
+
+Complete the function swapFirstLastChar() that accepts a multiword string and swaps the first and last character of every word in it.
+
+Note: Every two adjacent words in the given string will be separated by exactly one space character.
+
+Input Format
+
+The first line of input consists number of testcases, T
+The next T lines contains a string on which the said operation is to be performed
+Output Format
+
+For each testcase, print the string after doing the given operatio
+Sample Input
+
+2
+Code Quotient
+Get better at coding
+Sample Output
+
+eodC tuotienQ
+teG retteb ta g
+
+class Result{
+    static String solve(String str) {
+      char a[]=str.toCharArray();
+      int n=a.length-1;
+      char t=a[0];
+      a[0]=a[n];
+      a[n]=t;
+      return String.valueOf(a);
+      }
+    /*
+    static String solve(String str) {
+      StringBuilder sb=new StringBuilder(str);
+      int n=sb.length()-1;
+      char s=sb.charAt(0);
+      char e=sb.charAt(n);
+      sb.setCharAt(0,e);
+      sb.setCharAt(n,s);
+      return sb.toString();
+      }
+    */
+    static String swapFirstLastChar(String str) {
+      StringBuilder sb=new StringBuilder();
+      String s[]=str.split(" ");
+      for(String w:s){
+        sb.append(solve(w));
+        sb.append(" ");
+      }
+      return sb.toString().trim();
+    }
+  }
+-------------------------------------------------------------
+
+Capitalize the first letter of each word
+Write a program which given a string, Capitalize first letter of each word in it.
+
+Sample Input
+
+code quotient
+Sample Output
+
+Code Quotient
+Sample Input
+
+get better at coding
+Sample Output
+
+Get Better At Cod
+
+
+
+static String capitalizeFirstChar(String str)
+{
+  char a[]=str.toCharArray();
+  for(int i=0;i<a.length;i++){
+    if(i==0 || a[i-1]==' '){
+      a[i]=Character.toUpperCase(a[i]);
+    }
+  }
+  return String.valueOf(a);
+}
+
+----------------------------------------------------------------
+
+
+Reverse a string
+Given a string, the task is to reverse it.
+
+For example, if the string is "Hello" , reversed string is "olleH".
+
+Complete the function reverseString() given in the editor that accepts a string & reverses it.
+
+Input Format:
+
+First line inputs number of Testcases t
+Then t strings follow in each line
+Output Format:
+
+For each test case output the reversed string
+Sample Input 1
+
+1
+codequotient
+Sample Output 1
+
+tneitouqedoc
+Sample Input 2
+
+1
+programming
+Sample Output 2
+
+gnimmargorp
+
+
+// Return the reversed string
+static String reverseString(String str) {
+    char a[]=str.toCharArray();
+    int s=0;
+    int e=a.length-1;
+    while(s<=e){
+      char t=a[s];
+      a[s]=a[e];
+      a[e]=t;
+      s++;
+      e--;
+    }
+    return String.valueOf(a);
+  }
+
+--------------------------------------------------------------
+
+Print message using class
+Write the function dispMsg() to display the message "Code Quotient - Get better at coding"
+
+// Write a method named dispMsg() here
+void dispMsg(){
+    System.out.println("Code Quotient - Get better at coding");
+  }
+
+
+------------------------------------------------------
+
+Class with get and set functions
+Write the get and set methods for the class Triangle as below
+
+class Triangle
+{
+ int base, height;
+ void setbaseheight(int b, int h);
+ float area();
+ int getBase();
+ int getHeight();﻿
+}
+
+
+
+
+void setbaseheight(int b, int h)
+ {
+   base=b;
+   height=h;
+ }
+ float area()
+ {
+   return (base*height)/2;
+ }
+ int getBase()
+ {
+   return base;
+ }
+ int getHeight()
+ {
+   return height;
+ }
+
+ -----------------------------------------------------
+
+ Count of all digits of a number
+ Write a function to count and print the number of digits in a positive integer. 
+ 
+ Complete the function countDigits() that accepts a number and returns the number of digits in it.
+ 
+ Input Format
+ 
+ The first line consists of number of testcases, T
+ Next T lines contains an integer whose numbers of digits is to be found
+ Output Format
+ 
+ For each test case print the number of digit in that number in a new line
+ Sample Input
+ 
+ 1
+ 12345
+ Sample Output
+ 
+ 5
+
+
+/*
+ * Complete the function countDigits
+ * @params
+ *   number -> integer , whose digits are to be calculated
+ * @returns
+ *   integer, number of digits in the number
+ */
+public int countDigits(int number){
+    int c=0;
+    while(number!=0){
+      c++;
+      number/=10;
+    }
+    return c;
+  }
+
+--------------------------------------------------------------
+
+
+Calculate amount using compound interest
+Write a program to calculate the amount using compound interest .
+
+Input Format
+
+Each test case contains three floating numbers denoting principle amount, rate and time.
+Output Format
+
+Print the amount upto 1(one) decimal point as shown below.
+Sample Input
+
+1000 5 2
+Sample output
+
+1102.5
+
+import java.util.Scanner;
+// Other imports go here
+// Do NOT change the class name
+class Main{
+    public static void main(String[] args)
+    {
+       Scanner sc=new Scanner(System.in);
+      double a=sc.nextDouble();
+      double b=sc.nextDouble();
+      double c=sc.nextDouble();
+      double ans=a*Math.pow((1+b/100),c);
+      System.out.printf("%.1f",ans);
+    }
+}
+
+
+-----------------------------------------------------------
+
+Convert given number of seconds to days, hours, minutes and second
+Given are number of seconds as an input , the task is to convert the given number of seconds to days, hours, minutes and seconds.
+
+Complete the given functions to convert the given number of seconds to days, hours, minutes and seconds.
+
+Input Format
+
+The first line contains an integer, T , denoting the number of testcases
+Then T lines follow, each consisting of an integer, the number of seconds
+Output Format
+
+For each testcase, print the number of days,hours,minutes,seconds.
+Sample Input
+
+1
+128
+Sample Output
+
+0,0,2,8
+
+int getDays(int sec)
+{
+  return sec/(60*60*24);
+}
+int getHours(int sec)
+{
+  return sec%(60*60*24)/(60*60);
+}
+int getMinutes(int sec)
+{
+  return sec%(60*60*24)%(60*60)/(60);
+}
+int getSeconds(int sec)
+{
+  return sec%60;
+}
+
+------------------------------------------------------------
+
+
+Class - Rectangle
+Write a class called Rectangle that represents a rectangular two-dimensional region. Your Rectangle objects should have the following methods:
+
+public Rectangle(int x, int y, int width, int height)
+Constructs a new rectangle whose top-left corner is specified by the given coordinates and with the given width and height.
+
+public int getHeight()
+Returns this rectangle's height.
+
+public int getWidth()
+Returns this rectangle's width.
+
+public int getX()
+Returns this rectangle's x-coordinate.
+
+public int getY()
+Returns this rectangle's y-coordinate.
+
+public String toString()
+Returns a string representation of this rectangle, such as "Rectangle[x=1,y=2,width=3,height=4]".
+
+
+
+import java.util.Scanner;
+// Other imports go here// Do NOT change the class name
+class Rectangle
+{
+  int x,y,width,height;
+  public Rectangle(int x, int y, int width, int height){
+    this.x=x;
+    this.y=y;
+    this.width=width;
+    this.height=height;
+  }
+  public int getHeight(){
+    return height;
+  }
+  public int getWidth(){
+    return width;
+  }
+  public int getX(){
+    return x;
+  }
+  public int getY(){
+    return y;
+  }
+  public String toString(){
+    return "Rectangle[x="+x+",y="+y+",width="+width+",height="+height+"]";
+  }
+}
+
+
+
+---------------------------------------------------------------
+
+Class - TimeSpan
+Define a class named TimeSpan. A TimeSpan object stores a span of time in hours and minutes (for example, the time span between 5:00am and 7:45am is 2 hours, 45 minutes). Each TimeSpan object should have the following public methods:
+
+TimeSpan(hours, minutes)
+Constructs a TimeSpan object storing the given time span of hours and minutes.
+
+getHours()
+Returns the number of hours in this time span.
+
+getMinutes()
+Returns the number of minutes in this time span, between 0 and 59.
+
+add(hours, minutes)
+Adds the given amount of time to the span. For example, (3 hours, 15 minutes) + (2 hour, 40 minutes) = (5 hours, 55 minutes). Assume that the parameters are valid: the hours are non-negative, and the minutes are between 0 and 59.
+
+add(TimeSpan tp)
+Adds the given amount of time (stored as a time span) to the current time span.
+
+getTotalHours()
+Returns the total time in this time span as the real number of hours, such as 9.75 for (9 hours, 45 min).
+
+toString()
+Returns a string representation of the time span of hours and minutes, such as "5 Hours, 38 Minutes".
+
+Explanation:
+
+The minutes should always be reported as being in the range of 0 to 59. That means that you may have to "carry" 60 minutes into a full hour.
+
+
+
+// Do NOT change the class name
+class TimeSpan
+{
+  int h,m;
+  TimeSpan(int hours,int minutes){
+    h=hours;
+    m=minutes;
+  }
+  int getHours(){
+    return h;
+  }
+  int getMinutes(){
+    return m;
+  }
+  void add(int hours,int minutes){
+    h=h+hours+(m+minutes)/60;
+    m=(m+minutes)%60;
+  }
+  void add(TimeSpan tp){
+    add(tp.getHours(),tp.getMinutes());
+  }
+  double getTotalHours(){
+    return h+(double)m/60;
+  }
+  public String toString(){
+    return ""+h+" Hours, "+m+" Minutes";
+  }
+}
+
+
+---------------------------------------------------------------
+
+Class - Date
+Write a class named Date that remembers information about a month and day. Ignore leap years and don't store the year in your object. You must include the following public methods:
+
+Member-name      Description
+Date(int m, int d)       constructs a new date representing the given month and day   
+daysInMonth()    returns the number of days in the month stored by your date object   
+getDay()         returns the day   
+getMonth()       returns the month   
+nextDay()        advances the Date to the next day, wrapping to the next month and/or year if necessary   
+toString()       returns a string representation e.g. If date is 27 June then return "6/27"  
+absoluteDay()    return the absolute day of a particular date e.g. January 1 is 1, February 1 is 32, March 1 is 60 and December 31 is 365.
+You should define the entire class including the class heading, the private fields, and the declarations and definitions of all the public methods and constructor.
+
+
+
+class Date
+{
+   int m,d;
+  Date(int m, int d){
+    this.m=m;
+    this.d=d;
+  }
+  int daysInMonth(){
+    if(m==1 || m==3 || m==5 || m==7 || m==8 || m==10 || m==12){
+      return 31;
+    }
+    else if(m==4 || m==6 || m==9 || m==11){
+      return 30;
+    }
+    else{
+      return 28;
+    }
+  }
+  int getDay(){
+    return d;
+  }
+  int getMonth(){
+    if(m<=12){
+      return m;
+    }
+    return 1;
+}
+  void nextDay(){
+    if((m==1 || m==3 || m==5 || m==7 || m==8 || m==10) && d==31){
+      m++;
+      d=1;
+    }
+    else if((m==4 || m==6 || m==9 || m==11) && d==30){
+      m++;
+      d=1;
+    }
+    else if(m==12 && d==31){
+      m=1;
+      d=1;
+    }
+    else if(m==2 && d==28){
+      m++;
+      d=1;
+    }
+    else{
+      d++;
+    }
+  }
+  public String toString(){
+    return ""+m+"/"+d+"";
+  }
+  int absoluteDay(){
+    int c=0;
+    for(int i=1;i<m;i++){
+      if(i==1 || i==3 || i==5 || i==7 || i==8 || i==10 || i==12){
+      c=c+31;
+    }
+    else if(i==4 || i==6 || i==9 || i==11){
+      c=c+30;
+    }
+    else{
+      c=c+28;
+    }
+    }
+    c=c+d;
+    return c;
+  }
+}
+
+
+
+---------------------------------------------------------------
+
+
+Sum of Range
+Given 2 numbers min & max, the task is to find the sum of the elements present in the range [min,max].
+
+Complete the function sumOfRange() that accepts two integer parameters min and max and returns the sum of the integers from min through max inclusive.
+
+For example, the call of sumOfRange(3, 7) returns 25 (3 + 4 + 5 + 6 + 7) . If min is greater than max, return 0.
+
+Input Format
+
+The first line of input contains the number of testcases, T
+Then T lines follow, each line contains 2 integers, min & max, separated by a space
+Output Format
+
+For each testcase, print the sum of elements present in the range [min,max]
+Sample Input
+
+2
+3 7
+0 5
+Sample Output
+
+25
+15
+﻿Explanation:
+
+For the first case , the sum of range [3,7] is (3+4+5+6+7) = 25
+For the second cas
+
+static int sumOfRange(int min, int max){
+    int s=0;
+    for(int i=min;i<=max;i++){
+      s+=i;
+    }
+    return s;
+  }
+
+
+------------------------------------------------------------------
+
+Verify Prime Number
+Given an integer n, the task is to check whether that the given integer is a prime number or not
+
+Complete the function verifyPrime() given in the editor, that accepts an integer parameter n and returns true/1 if number is prime and false/0 if number is not prime.
+
+Input Format:
+
+The first line of input contains the number of test cases , T
+Then T lines follow, each line contains an integer, n which is to be checked whether it is prime or not
+Constraints:
+
+1 ≤ T ≤ 100
+0 ≤ n ≤ 10^9
+Output Format:
+
+Print 'PRIME', if the number is a prime number else 'NOT PRIME' for each testcase in a new line.
+Sample Input
+
+2 // No. of testcases
+3
+4
+Sample Output
+
+PRIME
+NOT PRIME
+
+/*
+ * Complete the function 'verifyPrime'
+ * @params
+ *   n ->number which is to be checked from primality test
+ *
+ * @return
+ *   true if the number is a prime number else false
+ */
+static boolean verifyPrime(int n) {
+    if(n<2){
+      return false;
+    }
+    for(int i=2;i<=Math.sqrt(n);i++){
+      if(n%i==0){
+        return false;
+      }
+    }
+    return true;
+  }
+
+
+----------------------------------------------------------------
+
+
+
+Java : toString() method - 1
+A BankAccount class is defined as below: -
+
+class BankAccount {
+   private String name;
+   private double balance;
+
+   // your code goes here
+}
+add the following method to it:
+
+public String toString()
+Your method should return a string that contains the account's name and balance separated by a comma and space. For example, if an account object named acc1 has the name "Amit" and a balance of 120.4, the call of acc1.toString() should return:
+
+Amit, 120.4
+There are some special cases you should handle. If the balance is negative, put the message as below. Also, always display the paise as a one-digit number. For example, if the same object had a balance of -17.5, your method should return:
+
+Amit, -17.5 (NEGA
+
+public String toString()
+{
+  if(balance<0){
+    return name+", "+balance+" (NEGATIVE)";
+  }
+  return name+", "+balance;
+}
+
+
+-------------------------------------------------
+
+Java : class - BankFee
+A BankAccount class is defined as below: -
+
+class BankAccount {
+   private String name;
+   private double balance;
+   private int transactions;
+
+   // Constructs a BankAccount object with the given name, and 0 balance and transactions.
+   public BankAccount(String name)
+
+   // returns the field values
+   public double getBalance()
+   public String getName()
+   public String getTransactions()
+
+   // Adds the amount to the balance if it is between 0-500 also counts as 1 transaction.
+   public void deposit(double amount)
+
+   // Subtracts the amount from the balance if the user has enough money also counts as 1 transaction.
+   public void withdraw(double amount)
+}
+add the following method to it:
+
+public boolean bankFees(double fee)
+The bankFees method accepts a fee amount (a double) as a parameter, and applies that fee to the user's past transactions. The fee is applied once for the first transaction, twice for the second transaction, three times for the third, and so on. These fees are subtracted out from the user's overall balance. If the user's balance is large enough to afford all of the fees with greater than 0.00 remaining, the method returns true. If the balance cannot afford all of the fees or has no money left, the balance is left as 0.0 and the method returns false. For example, given the following BankAccount object:
+
+BankAccount o1 = new BankAccount("Amit");
+o1.deposit(10.00);
+o1.deposit(30.00);
+o1.deposit(20.00);
+o1.deposit(80.00);
+The account at that point has a balance of 140.00.
+
+If the following call was made:
+
+o1.bankFees(5.00);
+Then the account would be deducted 5 + 10 + 15 + 20 for the four transactions, leaving a final balance of 90.00. The method would return true.
+
+However, If the call was made as below,
+
+o1.bankFees(20.00);
+Then the account would be deducted 20 + 40 + 60 + 80 for the four transactions, leaving a final balance of -60.00. The method would return false.
+
+﻿Sample Input
+
+Arun // Name of account holder
+10 // deposit-1
+30 // deposit-2
+20 // deposit-3
+80 // deposit-4
+5  // bank fee
+Sample Output
+
+true
+
+
+
+public boolean bankFees(double fees)
+{
+  int s=0;
+  for(int i=1;i<=4;i++){
+    s+=s+fees*i;
+  }
+  if(s<=balance){
+    return true;
+  }
+  return false;
+}
+
+-----------------------------------------------------------
+
+
+Class - Circle
+Write a class of objects named Circle that remembers information about a circle. You must include the following public members.
+
+You can use the constant named Math.PI storing the value of π, roughly 3.14159.
+
+Name		Description
+Circle(float r)	constructs a new circle with the given radius as a real number
+area()	returns the area occupied by the circle (upto 2 decimal places)
+circumference()	returns the distance around the circle (upto 2 decimal places)
+getRadius()	returns the radius as a real number (upto 1 decimal places)
+toString()	returns a string representation such as "Circle{radius=2.5}"
+You should define the entire class including the class heading, the private fields, and the declarations and definitions of all the public methods and constructor.
+
+
+
+class Circle
+{
+  double r;
+  Circle(double r){
+    this.r=r;
+  }
+   double area(){
+     double re=r*r*3.14159;
+     return Math.round(re*100)/100.0;
+   }
+   double circumference(){
+     double re=2*r*3.14159;
+     return Math.round(re*100)/100.0;
+   }
+   double getRadius(){
+     return r;
+   }
+   public String toString(){
+     return "Circle{radius="+r+"}";
+   }
+}
+
+
+--------------------------------------------------------------------
+
+Class - TollBooth
+Imagine a tollbooth at a bridge. Cars passing by the booth are expected to pay 50 Rupees toll. Mostly they do, but sometimes a car goes by without paying. The tollbooth keeps track of the number of cars that have gone by, and of the total amount of money collected.
+
+Model this tollbooth with a class called TollBooth. The two data items are to hold the total number of cars, and to hold the total amount of money collected.
+
+A constructor initializes both of these to 0.
+A member function called payingCar() increments the car total and adds 50/- to the cash total.
+Another function, called nopayCar(), increments the car total but adds nothing to the cash total.
+Finally, a member function called display() displays the two totals.
+Make appropriate member functions const.
+
+The main function should allow the user to press 'p' to count a paying car, and 'n' to count a nonpaying car. Pushing the 'q' key should cause the program to print out the total cars and total cash and then exit.
+
+Sample Input
+
+p
+p
+p
+n
+p
+n
+p
+q
+Sample Output
+
+Total Cash : 250/-
+Total Cars : 7
+
+
+import java.util.Scanner;
+// Other imports go here
+// Do NOT change the class name
+class TollBooth{
+         int c;
+         int a;
+      TollBooth(){
+        c=0;
+        a=0;
+      }
+      void payingCar(){
+        a=a+50;
+        c++;
+      }
+      void nopayCar(){
+        c++;
+      }
+      void display(){
+        System.out.println("Total Cash : "+a+"/-");
+       System.out.println("Total Cars : "+c);
+      }
+}
+class Main{
+    public static void main(String[] args)
+    {
+       Scanner sc=new Scanner(System.in);
+       TollBooth o=new TollBooth();
+      while(true){
+        String n=sc.nextLine();
+        if(n.equals("p")){
+          o.payingCar();
+        }
+        else if(n.equals("n")){
+          o.nopayCar();
+        }
+        else if(n.equals("q")){
+          o.display();
+          break;
+        }
+      }
+    }
+   }
+
+   ---------------------------------------------------------------------
+
+
+   Functions : Addition of numbers
+   Write the overloaded sum() functions for addition of 2, 3 or 4 numbers passed to it.
+   
+   Sample Input1
+   
+   2
+   4 5
+   Sample Output1
+   
+   9
+   Sample Input2
+   
+   3
+   4 5 8
+   Sample Output2
+   
+   17
+
+   // Write the sum() function here.
+   int sum(int a,int b){
+     return a+b;
+   }
+   int sum(int a,int b,int c){
+     return a+b+c;
+   }
+   int sum(int a,int b,int c,int d){
+     return a+b+c+d;
+   }
+
+
+-------------------------------------------------------------
+Functions : Display of Strings
+Write the overloaded display function to display either 1 string in one line or 2 strings in one line with a hyphen '-' in between.
+
+Sample Input1
+
+1
+CodeQuotient
+Sample Output1
+
+CodeQuotient
+Sample Input2
+
+2
+CodeQuotient
+coding
+Sample Output2
+
+CodeQuotient-cod
+
+// // Write overloaded static void display(String a) and static void display(String a, String b) functions
+static void display(String a){
+  System.out.println(a);
+}
+static void display(String a, String b){
+  System.out.println(a+"-"+b);
+}
+
+--------------------------------------------------------------
+
+class - Box
+Design a class named Box whose dimensions are integers and private to the class.
+
+The dimensions are labelled: length, breadth and height.
+
+The default constructor of the class should initialize them to 0 (ZERO).
+The parameterized constructor Box(int length, int breadth, int height) should initialize them to length, breadth and height respectively.
+The copy constructor Box(Box b1) should set them to b1's length, breadth and height respectively.
+Apart from the above, the class should have  functions:
+
+int getLength() - Return box's length
+int getBreadth() - Return box's breadth
+int getHeight() - Return box's height
+long long CalculateVolume() - Return the volume of the box
+
+
+
+class Box
+{
+  int l,b,h;
+Box(){
+  l=0;
+  b=0;
+  h=0;
+}
+ Box(int length, int breadth, int height){
+     l=length;
+     b=breadth;
+     h=height;
+   }
+Box(Box b1){
+     l=l+b1.l;
+     b=b+b1.b;
+     h=h+b1.h;
+   }
+int getLength(){
+    return l;
+  }
+int getBreadth(){
+   return b;
+ } 
+int getHeight(){
+  return h;
+}
+long CalculateVolume(){
+  return l*b*h;
+} 
+}
+
+
+------------------------------------------------------------
+
+Java: Inheritance - MinMaxAccount
+A class called BankAccount with two integer members as number, balance and many methods has been defined:
+
+Method/Constructor                    Description   
+public BankAccount(int number, int bal)     constructs a BankAccount object with number and opening balance provided. 
+public void withdraw(int amt)         records the given withdrawl
+public void deposit(int amt)          records the given deposit
+public int getBalance()               returns current balance in INR
+Design a new class MinMaxAccount whose instances can be used in place of a BankAccount object but include new behavior of remembering the minimum and maximum balances ever recorded for the account.
+
+You should provide the same methods as the superclass, as well as the following new behavior:
+
+Method/Constructor                  Description   
+public MinMaxAccount(int number, int bal)    constructs a MinMaxAccount object using information in the Startup object s   
+public int getMin()                 returns minimum balance in INR
+public int getMax()                 returns maximum balance in INR
+Assume that only the debit and credit methods change an account's balance.
+
+Sample Input
+
+1234	// account number
+500		// opening balance
+1500	// deposit
+500		// deposit
+1800	// withdrawl
+4500	// deposit
+4600	// withdraw
+Sample Output
+
+500		// Opening balance
+2000	// balance after deposit 1500
+2500	// balance after deposit 500
+700		// balance after withdraw 1800
+5200	// balance after deposit 4500
+600		// balance after withdraw 4600
+500		// Minimum Balance
+5200	// Maximum Balance
+
+
+class MinMaxAccount extends BankAccount 
+{
+    int min,max;
+    public MinMaxAccount(int number, int bal){
+    super(number,bal);
+    this.min=bal;
+    this.max=bal;  
+    }
+    public void withdraw(int amt){
+         this.balance-=amt;
+         if(balance<min){
+         min=balance;
+         }
+    }
+    public void deposit(int amt){
+          this.balance += amt;
+          if(balance>max){
+          max=balance;
+          }
+   }    
+    public int getBalance() {
+        return this.balance;
+    }
+    public int getMin(){
+    return min;
+    }
+    public int getMax(){
+     return max;
+    }
+}
+
+--------------------------------------------------------------
+
+Java : Inheritance - Marketer
+Given the below class Employee, you have to write a new class Marketers.
+
+class Employee {
+   private int baseHours;
+   private int baseSalary;
+   private int baseVacationDays;
+   private String baseVacationForm;
+
+   public int getHours();
+   public int getSalary();
+   public int getVacationDays()
+   public String getVacationForm()
+
+   public final void setBaseHours(int hours);
+   public final void setBaseSalary(int salary);
+   public final void setBaseVacationDays(int days);
+   public final void setBaseVacationForm(String form);
+}
+
+
+Marketers make INR 5,000 as salary, and have an additional method called "message" that prints "CodeQuotient - Get better at coding". Make sure to interact with the Employee superclass as appropriate.
+
+// Create a class Marketers to support above class.
+class Marketers extends Employee{
+  private int baseSalary=5000;
+  public int getSalary(){
+    return baseSalary;
+  }
+  void message(){
+    System.out.println("CodeQuotient - Get better at coding");
+  }
+}
+
+--------------------------------------------------------------
+
+Inheritance : Actors
+Design a class Person and two sub classes Actor and Actress. Every Actor will have a name, color, number_of_eyes & debut_year associated with him/her.
+
+Supply each with a constructor that sets the Person data ﬁelds as described with given values, and a method named toString() that returns a string that contains a complete description of the Actor.
+
+The constructor should be in the following format
+
+Actor(name,color,number_of_eyes,debut_year)
+And the same for class Actress.
+
+Sample input
+
+Amitabh
+BROWN
+2
+1965
+Hema
+White
+2
+1975
+Sample output
+
+The person Amitabh is an Actor. He is BROWN in color, has 2 eyes and debut in 1965
+The person Hema i
+
+class Person
+{
+  String name;
+  String color;
+  int eyes;
+  int year;
+}
+class Actor extends Person
+{
+	Actor(String name,String color,int eyes,int year){
+       this.name=name;
+       this.color=color;
+       this.eyes=eyes;
+       this.year=year;
+    }
+    public String toString(){
+      return "The person "+name+" is an Actor. He is "+color+" in color, has "+eyes+" eyes and debut in "+year+"";
+    }
+}
+class Actress extends Person
+{
+	Actress(String name,String color,int eyes,int year){
+       this.name=name;
+       this.color=color;
+       this.eyes=eyes;
+       this.year=year;
+    }
+    public String toString(){
+		return "The person "+name+" is an Actress. She is "+color+" in color, has "+eyes+" eyes and debut in "+year+"";
+    }
+}
+
+
+-------------------------------------------------------------
+
+Java : Inheritance - 3
+Suppose that the following two classes have been declared:
+
+class A {
+    public void m1() {
+        System.out.println("Coding");
+    }
+    public void m2() {
+        System.out.println("Quotient");
+    }
+​    public String toString() {
+        return "cq";
+    }
+}
+
+
+class B extends A {
+    public void m1() {
+        System.out.println("Code");
+    }
+    public String toString() {
+        return (super.toString() + super.toString());
+    }
+}
+
+
+Write a class C which extends class B above & whose methods have the behavior below. Don't just print/return the output; whenever possible, use inheritance to reuse behavior from the superclass.
+
+Method    Output/Return    
+m1        Code
+m2        Code
+          Quotient
+toString  newcq
+
+
+
+// Write class C here.
+class C extends B {
+    public void m1() {
+        System.out.println("Code");
+    }
+    public void m2() {
+        System.out.println("Code\nQuotient");
+    }
+    public String toString() {
+        return "newcqcq";
+    }
+}
+
+---------------------------------------------------------------
+
+INHERITANCE ME BAKI HAI...................

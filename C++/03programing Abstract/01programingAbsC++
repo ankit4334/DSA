@@ -1,0 +1,4585 @@
+Reverse and Original number are equal or not?
+Write a program to reverse a 4 digit number and compare it to the original number.
+
+Input Format
+
+Each test case will contain a number n where 1000<=n<=9999.
+Output Format
+
+For each input case, compare reverse and original number and print “Equal” if they are equal and “ Not Equal” otherwise.
+Sample Input
+
+1234
+Sample Output
+
+Not Equal
+
+
+
+
+
+#include<iostream>
+#include<cstdio>
+#include<cmath>
+using namespace std;
+int main()
+{
+  int n;
+  cin>>n;
+  int t=n;
+  int sum=0;
+ while(n!=0){
+  int k=n%10;
+   sum=sum*10+k;
+    n=n/10;
+ }
+  if(t==sum){
+    cout<<"Equal"<<endl;
+  }
+  else{
+    cout<<"Not Equal"<<endl;
+  }
+   return 0;
+}
+
+
+
+
+
+
+
+---------------------------------------------------------------
+Given character is vowel, consonants
+Write a program to input a character from user and check whether the given character is vowel or consonant.
+
+Input Format
+
+Each test case contains 1 character.
+Output Format
+
+Print vowel or consonant as per input.
+Sample Input
+
+a
+Sample Output
+
+vowel
+
+
+
+
+
+
+
+#include<iostream>
+#include<cstdio>
+#include<cmath>
+using namespace std;
+int main()
+{
+  char ch;
+  cin>>ch;
+  if(ch=='a' || ch=='u' || ch=='i' || ch=='o' || ch=='e' || ch=='A' || ch=='U' || ch=='I' || ch=='O' || ch=='E'){
+    cout<<"vowel"<<endl;
+  }
+  else{
+    cout<<"consonant"<<endl;
+  }
+   return 0;
+}
+
+
+
+
+
+
+
+
+--------------------------------------------------------
+Create Simple calculator of four operations using switch case
+Write a program to create menu driven calculator that performs basic arithmetic operations (add, subtract, multiply and divide) using switch case. The calculator should input two numbers and an operator from user. It should perform operation according to the operator entered and must take input in given format.
+
+Input Format:
+
+<number 1> <operator> <number 2>
+Output Format
+
+Print the output of the expression given up to 2 decimal points.
+Sample Input
+
+10 + 20
+Sample Output
+
+30.00
+
+
+#include<iostream>
+#include<cstdio>
+#include<cmath>
+using namespace std;
+#include<bits/stdc++.h>
+int main()
+{
+   double a,b;
+  char ch;
+  cin>>a;
+  cin>>ch;
+  cin>>b;
+  switch(ch){
+     case '+':
+      cout<<fixed<<setprecision(2)<<a+b<<endl;
+      break;
+      case '-':
+      cout<<fixed<<setprecision(2)<<a-b<<endl;
+      break;
+      case '*':
+      cout<<fixed<<setprecision(2)<<a*b<<endl;
+      break;
+      case '/':
+      cout<<fixed<<setprecision(2)<<a/b<<endl;
+      break;
+  }
+   return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+-----------------------------------------------------------------
+
+Sum of first n terms (using for loop)
+Write a program to calculate the sum of the first n terms of the below series using for loop
+
+s = 1 + 2  + 3  + 4 + 5 + ………..
+
+Input Format
+
+Each test case will contains a single integer N where n >= 1.
+Output Format
+
+For each input case, calculate and print the sum of the first n terms of the series.
+Sample Input
+
+4
+Sample Output
+
+10
+
+
+
+
+#include<iostream>
+#include<cstdio>
+#include<cmath>
+using namespace std;
+int main()
+{
+  int n;
+  cin>>n;
+  int sum=0;
+  for(int i=0;i<=n;i++){
+    sum+=i;
+  }
+  cout<<sum;
+   return 0;
+}
+
+---------------------------------------------------------------
+
+
+
+
+Multiplication table ( using for loop)
+Write a program to calculate the multiplication table of a number n up to m.
+
+Input
+
+Each test case will contains two integers ( n and m) where n is the number whose table is to calculate and m is the limit. n >=1 and m >=1
+Output
+
+Print the multiplication table of the number. One value per line.
+Sample Input
+
+2  5
+Sample Output
+
+2
+4
+6
+8
+10
+
+
+
+
+#include<iostream>
+#include<cstdio>
+#include<cmath>
+using namespace std;
+int main()
+{
+  int a,b;
+  cin>>a>>b;
+  for(int i=1;i<=b;i++){
+    cout<<i*a<<endl;
+  }
+   return 0;
+}
+--------------------------------------------------------------
+
+
+
+
+Factorial of a number
+Given a number n, compute n factorial (written as n!) where n >=0.
+
+A factorial of a number n is the product of all natural numbers from 1 to n.
+
+For Example , factorial of 4 (4!) = 1*2*3*4 = 24
+
+Input Format:
+
+Each test case will contains an integer n where n >=1.
+Constraints
+
+0 <= n <= 15
+Output Format:
+
+For each input case, calculate and print the factorial of n.
+Sample Input
+
+4
+Sample Output
+
+24
+
+
+long fact(int n) {
+  // Write your code here
+  if(n==0){
+    return 1;
+  }
+  return n*fact(n-1);
+}
+--------------------------------------------------
+
+Sum of a set of numbers
+Given a set of n numbers , write a program to add these numbers and return the resultant sum.
+
+Input Format:
+
+First line of input of each test case will contain a number N = number of elements in the set. Next N lines will contain number n where n>=0.
+Output Format:
+
+For each input case, sum and print the all the numbers. 
+Sample Input
+
+5
+1
+2
+3
+4
+5
+Sample Output
+
+15
+
+#include<iostream>
+#include<cstdio>
+#include<cmath>
+// Include headers as needed
+using namespace std;
+int main()
+{
+  int t;
+  cin>>t;
+  int sum=0;
+  while(t--){
+    int n;
+    cin>>n;
+    sum+=n;
+  }
+  cout<<sum<<endl;
+    return 0;
+}
+
+-----------------------------------------------------
+
+Rotate a list
+Given an array of integers and a positive integer R, rotate the array by shifting each element by R positions towards the left in a circular manner.
+
+Input
+
+First line will contain the number of test cases. Each test case will contain 3 lines. First line of the test case will contain a number N = number of elements in the array (1 <= N <= 50). Next line will contain N space separated integers. The third line will contain an integer R = number of shifts in rotation. It is possible that R is greater than N.
+
+Output
+
+Print one line of output for each test case with the integers in the rotated array printed as space separated list.
+
+There should be no space after the last element.
+
+Sample Input:
+
+3
+7
+1 2 3 4 5 6 7
+3
+9
+3 5 2 1 7 5 9 15 11
+10
+1
+5
+13
+Sample Output
+
+4 5 6 7 1 2 3
+5 2 1 7 5 9 15 11 3
+5
+
+
+
+
+#include<iostream>
+#include<cstdio>
+#include<cmath>
+using namespace std;
+int main(){
+  int t;
+  cin>>t;
+  while(t--){
+    int n;
+    cin>>n;
+    int a[n];
+    for(int i=0;i<n;i++){
+      cin>>a[i];
+    }
+    int j;
+    cin>>j;
+    for(int i=0;i<j;i++){
+      int temp=a[0];
+      for(int k=0;k<n;k++){
+        a[k]=a[k+1];
+      }
+      a[n-1]=temp;
+    }
+    for(int i=0;i<n;i++){
+      if(i==n-1){
+        cout<<a[i];
+      }
+      else{
+        cout<<a[i]<<" ";
+      }
+    }
+    cout<<endl;
+  }
+    return 0;
+}
+
+------------------------------------------------------
+Maximum element in an Array
+Write a program to find the maximum element in an array.
+
+Input Format:
+
+The first line of input contains an integer N, denoting the size of array.
+The second line contains N space separated integers, denoting the array elements.
+Output Format:
+
+For each test case, print the maximum element in the array.
+Constraints
+
+  1 <= N <= 10^5
+ -1000 <= arr[i] <= 1000
+Sample Input 1
+
+7
+20 30 93 71 18 82 66
+Sample Output 1
+
+93
+Sample Input 2
+
+5
+33 45 67 33 67
+Sample Output 2
+
+67
+
+
+int maxElement(int arr[], int N) {
+ int ma=INT_MIN;
+  for(int i=0;i<N;i++){
+    if(arr[i]>ma){
+      ma=arr[i];
+    }
+  }
+  return ma;
+}
+
+
+-----------------------------------------------------
+
+
+
+Kth largest number
+Given a method called kthLargest that accepts an integer k and an array arr as its parameters and returns the element such that k elements have greater or equal value. If k = 0, return the largest element; if k = 1, return the second largest element, and so on.
+
+For example, if the array passed contains the values {74, 85, 102, 99, 101, 56, 84} and the integer k passed is 2, your method should return 99 because there are two values at least as large as 99 (101 and 102).
+
+Expected Time Complexity: O(N)
+
+Assume that 0 <= k < length of array.
+Input Format
+
+First line contains the number of test cases i.e. T
+Each test case T contains the integer K (In first line), the number of elements in array N (In 2nd line) and N array integers in the next line.
+Output Format
+
+Print the kth largest number from array.
+Constraints
+
+  0 <= K < N
+  1 <= N <= 10^5
+ -(10^9) <= arr[i] <= 10^9
+Sample Input
+
+1  // Test cases
+1        // K
+4        // Size of Array
+8 5 6 3  // Elements of Array
+Sample Output
+
+6
+
+
+//method 1
+#include<bits//stdc++.h>
+int kthLargest(int arr[], int size, int k) {
+  // Write your code here
+  sort(arr,arr+size);
+  return arr[size-k-1];
+}
+
+
+//method 2
+int kthLargest(int arr[], int size, int k) {
+  // Write your code here
+  for(int i=0;i<k+1;i++){
+    int m=i;
+    for(int j=i+1;j<size;j++){
+      if(arr[j]>arr[m])
+        m=j;
+    }
+      swap(arr[m],arr[i]);
+    }
+    return arr[k];
+  }
+
+
+
+---------------------------------------------------
+
+
+
+Capitalize the first letter of each word
+Write a program which given a string, Capitalize first letter of each word in it.
+
+Sample Input
+
+code quotient
+Sample Output
+
+Code Quotient
+Sample Input
+
+get better at coding
+Sample Output
+
+Get Better At Coding
+
+
+
+
+// Alter the string according to specifications above
+void capitalizeFirstChar(string &str)
+{
+int n=0;
+  for(int i=0;i<str.length();i++){
+    if(n==0){
+      str[i]=str[i]-32;
+      n=1;
+    }
+    else if(i==0 || str[i]==' '){
+      n=0;
+    }
+  }
+}
+
+
+
+
+------------------------------------------------
+Reverse a string
+Given a string, the task is to reverse it.
+
+For example, if the string is "Hello" , reversed string is "olleH".
+
+Complete the function reverseString() given in the editor that accepts a string & reverses it.
+
+Input Format:
+
+First line inputs number of Testcases t
+Then t strings follow in each line
+Output Format:
+
+For each test case output the reversed string
+Sample Input 1
+
+1
+codequotient
+Sample Output 1
+
+tneitouqedoc
+Sample Input 2
+
+1
+programming
+Sample Output 2
+
+gnimmargorp
+
+
+
+// Do not print anything, just reverse the given string
+void reverseString (string &str) {
+ int s=0;
+  int e=str.size()-1;
+  while(s<e){
+    swap(str[s++],str[e--]);
+  }
+}
+
+
+
+
+--------------------------------------------------------
+
+
+String is pangram or not
+A pangram is a word or a sentence that contains every letter of the alphabet.  For example: "the quick brown fox jumps over the lazy dog".
+
+Gopal wants to improve his typing speed for programming contests, and he thinks that if he type pangrams, that is best for it. 
+
+Your task is to help Gopal, and given a list of strings made of lowercase letters in the range ascii[a-z], determine whether or not they are pangrams.
+
+Complete the function isPangram() in the editor. The function receives a string to test as parameter and must return true or false based on the fact that, whether the given string is a pangram or not.
+
+Input Format:
+
+The first line contains an integer T, denoting the number of test cases.
+Each test cases contains one line, which contains a string.
+Output Format:
+
+For each test case, print YES if the string is a pangram, else print NO.
+Sample Input
+
+4
+pack my box with five dozen liquor jugs
+pack the box with five dozen liquor jugs
+the quick brown fox jumps over the lazy dog
+the quick brown fox jump over the lazy dog
+Sample Output
+
+YES
+NO
+YES
+NO
+Explanation:
+
+Only first and thi
+
+/*     
+ * Complete the 'isPangrams' function below.
+ * @params
+ *   str -> a string that is to be tested for pangram
+ *
+ * @return
+ *   boolean value, based on the fact, whether 
+ *   the given string is a pangram or not.
+ */
+bool isPangram(string str) {
+  int h[123]={};
+  for(int i=0;i<str.length();i++){
+    h[str[i]]++;
+  }
+  for(int i=97;i<123;i++){
+    if(h[i]==0){
+      return 0;
+    }
+  }
+  return 1;
+}
+
+----------------------------------------------------
+Minimum indexed character in strings
+Given a string s1 and another string s2. Find the character in s2 that is present at the minimum index in s1. If no character of s2 is present in s1 then return 0.
+
+Given s1 = codequotient and s2 = eat, two characters (e and t) appears in s1, but you should return e as e appears at minimum index.
+
+﻿Input Format
+
+The first line of input contains an integer T denoting the no of test cases. Then T test cases follow. 
+Each test case contains two strings s1 and s2.
+Output Format
+
+For each test case, print the minimum indexed character or 0.
+Sample Input
+
+2
+codequotient
+eat
+codequotient
+app
+Sample Output
+
+e
+0
+
+char minIndexChar(string str1, string str2){
+  // Write your code here
+  for(int i=0;i<str1.length();i++){
+    for(int j=0;j<str2.length();j++){
+      if(str1[i]==str2[j]){
+        return str1[i];
+      }
+    }
+  }
+  return '0';
+}
+
+
+
+--------------------------------------------------------
+Form a palindrome string
+Given a string, find the minimum number of characters to be inserted to convert it to palindrome. For example, Given
+
+ab, number of insertions required is 1 i.e. b to convert the string to bab
+aa, number of insertions required is 0 i.e. to convert the string to aa
+abcda, number of insertions required is 2 i.e. dc to convert the string to adcbcda
+﻿
+
+Input Format
+
+The first line of input contains an integer T denoting the no of test cases. Then T test cases follow. 
+Each test case contains a string str1.
+Output Format
+
+For each test case, print the number of insertions required in new lines.
+Sample Input
+
+2
+ab
+abcda
+Sample Output
+
+1
+2
+
+
+int minInsertions(string str1)
+{
+int s=0;
+  int e=str1.length()-1;
+  int c=0;
+  while(s<e){
+    if(str1[s]!=str1[e]){
+      c++;
+      s++;
+    }
+    else{
+      s++;
+      e--;
+    }
+  }
+  return c;
+}
+
+
+------------------------------------------------------
+
+
+Matrix Multiplication
+Given two matrices A and B in the form of two dimensional arrays, find the dot product of these two matrices.
+
+
+
+Input Format:
+
+First line of input will contain an integer T = no. of test cases.
+Each test case will follow in multiple lines. First line of each test case will contain two integers R1 = no. of rows in matrix A and C1 = no. of columns in matrix A. Next R1 lines will each contain C1 space separated integers. Next line again contain two integers R2 = no. of rows in B and C2 = no. columns in B. C1 will be equal to R2.
+Output Format:
+
+For each test case print matrix of size R1*C2 in R1 lines with each line containing C2 space separated integers of corresponding row.
+Constraints
+
+1 <= T <= 1000
+1 <= R1, C1, R2, C2 <= 50
+C1 will be equals to R2
+Sample Input
+
+2  // Test Cases
+2 3    // R1 C1 (testcase 1)
+1 2 3  // matrix A
+4 5 6
+3 2    // R2 C2
+2 3    // matrix B
+1 2
+2 1
+2 2    // R1 C1 (testcase 2)
+12 4   // matrix A
+7 6
+2 3    // R2 C2
+2 4 6  // matrix B
+3 5 7
+Sample Output
+
+10 10  // A * B (testcase 1)
+25 28
+36 68 100  // A * B (testcase 2)
+32 58 84
+
+
+// Print the resultant matrix after (A * B)
+void multiplyMatrix(int A[SIZE][SIZE],int B[SIZE][SIZE],int R1,int C1,int R2,int C2)
+{
+   int a[R1][C2];
+  for(int i=0;i<R1;i++){
+    for(int j=0;j<C2;j++){
+      int sum=0;
+      for(int k=0;k<C1;k++){
+        sum+=A[i][k]*B[k][j];
+        a[i][j]=sum;
+      }
+    }
+  }
+  for(int i=0;i<R1;i++){
+    for(int j=0;j<C2;j++){
+      cout<<a[i][j]<<" ";
+    }
+    cout<<endl;
+  }
+}
+
+------------------------------------------------------
+Spirally traversing a matrix
+Traversing an array is an elementary operation on an array, in which each element will be processed for some operation. Printing elements is one example operation.
+
+Complete the function printSpiral() given in the editor, which accepts a two dimensional array and prints the array in spiral form rotating clockwise.
+
+Input Format
+
+Each test-case will begin with two number m and n where m = no. of rows and n = no. of columns.
+m rows will follow with n integers in each row separated by a space. 
+Constraints
+
+1<=m<=50 and 1<=n<=50.
+Output Format
+
+For each test case, print the elements of 2-d array in spiral form starting from index (0,0) or upper-left corner in clockwise direction.
+Sample Input 1
+
+3 3
+4 5 6
+7 8 9
+10 11 12
+
+Sample Output 1
+
+4
+5
+6
+9
+12
+11
+10
+7
+8
+Sample Input 2
+
+3 4
+4 3 2 1
+5 7 8 11
+2 4 6 8
+Sample Output 2
+
+4
+3
+2
+1
+11
+8
+6
+4
+2
+5
+7
+8
+
+
+void printSpiral(int a[ROWS][COLS], int r, int c) {
+  // Write your code here
+  int rs=0,re=r-1,cs=0,ce=c-1,x=0;
+  while (rs<=re && cs<=ce){
+    for (int i=cs;i<=ce;i++){
+      printf("%d\n",a[rs][i]);
+      x++;
+    }
+    rs++;
+    if(x==(r*c)){
+      break;
+    }
+    for (int i=rs;i<=re;i++){
+      printf("%d\n",a[i][ce]);
+      x++;
+    }
+    ce--;
+    if(x==(r*c)){
+      break;
+    }
+    for (int i=ce;i>=cs;i--){
+      printf("%d\n",a[re][i]);
+      x++;
+    }
+    re--;
+    if(x==(r*c)){
+      break;
+    }
+    for (int i=re;i>=rs;i--){
+      printf("%d\n",a[i][cs]);
+      x++;
+    }
+    cs++;
+  }
+}
+------------------------------------------------------
+
+
+Row or Column sum
+John likes to play with numbers. He is playing a game where he writes numbers starting 1 till N in multiple rows. Initially, he chooses a number W, and he writes W numbers in each row except probably in the last row where he is done writing till number N. Given the values of N and W along with a Query, your task is to solve that query to win the game. The query will contain a number i and a capital letter 'R' or 'C'. If the letter is 'R', then print the sum of numbers in the i'th row, else if the letter is 'C', then print the sum of numbers in the i'th column.
+
+Note: Rows and columns are numbered in a 1-based index ( as 1,2,3,..), and If the given row or column number does not exist, then return 0 as the sum.
+
+Examples:
+
+N = 5, W = 2
+
+Query = 2 C (i.e. print the sum of all the elements present in 2nd column)
+
+
+
+Answer: 6
+
+
+
+N = 10, W = 3
+
+Query = 4 R (i.e. print the sum of all the elements present in 4th row)
+
+
+
+Answer: 10
+
+Input Format:
+
+First line of input will contain a number T = number of test cases. 
+For each test case, the first line will contain two numbers N and W.
+Another line will contain a number i and letter 'R' or 'C' separated by space, which denotes the given query.
+Output Format:
+
+For each test case, print the sum of numbers in the row or column on a new line.
+Constraints:
+
+1 <= T <= 100
+1 <= N, W <= 10^8
+1 <= i <= 10^8
+Sample Input
+
+2     // Test Cases
+5 2   // N W (test case 1)
+2 C   // Query
+10 3  // N W (test case 2)
+4 R   // Query
+Sample Output
+
+6
+10
+
+/*     
+ * Complete the 'solveQuery' function below.
+ * @params
+ *   N -> Total numbers from 1 to N
+ *   W -> Maximum numbers in each row
+ *   i -> First part of the query, denoting row or column number
+ *   ch -> Second part of the query (i.e 'R' or 'C')
+ * 
+ * @return
+ *   The sum of numbers in the row or column, as per the query
+ */
+long solveQuery(int N, int W, int i, char ch) {
+  // Write your code here
+ int x;
+  if(N%W==0){
+    x=N/W;
+  }
+  else{
+    x=N/W+1;
+  }
+  if(ch=='C' && i<=W){
+    long sum=0;
+    int y=i;
+    int z=0;
+    while(y<=N && z<x){
+      sum+=y;
+      y+=W;
+      z++;
+    }
+    return sum;
+  }
+  else if(ch=='R' && i<=x){
+    long sum=0;
+    int y=(W*i)-(W-1);
+    int z=0;
+    while(y<=N && z<W){
+      sum+=y;
+      y++;
+      z++;
+    }
+    return sum;
+  }
+  return 0;
+}
+
+
+----------------------------------------------------------
+
+Given 2 numbers min & max, the task is to find the sum of the elements present in the range [min,max].
+
+Complete the function sumOfRange() that accepts two integer parameters min and max and returns the sum of the integers from min through max inclusive.
+
+For example, the call of sumOfRange(3, 7) returns 25 (3 + 4 + 5 + 6 + 7) . If min is greater than max, return 0.
+
+Input Format
+
+The first line of input contains the number of testcases, T
+Then T lines follow, each line contains 2 integers, min & max, separated by a space
+Output Format
+
+For each testcase, print the sum of elements present in the range [min,max]
+Sample Input
+
+2
+3 7
+0 5
+Sample Output
+
+25
+15
+﻿Explanation:
+
+For the first case , the sum of range [3,7] is (3+4+5+6+7) = 25
+For the second cas
+
+
+int sumOfRange(int min, int max){
+  // Write your code here
+  int sum=0;
+  for(int i=min;i<=max;i++){
+    sum+=i;
+  }
+  return sum;
+}
+
+-----------------------------------------------------
+Verify Prime Number
+Given an integer n, the task is to check whether that the given integer is a prime number or not
+
+Complete the function verifyPrime() given in the editor, that accepts an integer parameter n and returns true/1 if number is prime and false/0 if number is not prime.
+
+Input Format:
+
+The first line of input contains the number of test cases , T
+Then T lines follow, each line contains an integer, n which is to be checked whether it is prime or not
+Constraints:
+
+1 ≤ T ≤ 100
+0 ≤ n ≤ 10^9
+Output Format:
+
+Print 'PRIME', if the number is a prime number else 'NOT PRIME' for each testcase in a new line.
+Sample Input
+
+2 // No. of testcases
+3
+4
+Sample Output
+
+PRIME
+NOT PRIME
+
+/*
+ * Complete the function 'verifyPrime'
+ * @params
+ *   n ->number which is to be checked from primality test
+ *
+ * @return
+ *   true if the number is a prime number else false
+ */
+bool verifyPrime(int n) {
+  if(n<=1){
+    return false;
+  }
+  for(int i=2;i<=sqrt(n);i++){
+    if(n%i==0){
+      return false;
+    }
+  }
+  return true;
+}
+
+------------------------------------------------------
+
+Prime factors of a number
+Given an integer n, print all the prime factors of n.
+
+For example, n = 15, its prime factors are 3 and 5
+
+Complete the function primeFactors() given in the editor, that accepts an integer parameter n and prints all the prime factors of n.
+
+Input Format
+
+The input consists of an integer,n
+Constraints
+
+2<=n<=10^5
+Output Format
+
+Print all the prime factors of n, in new lines
+Sample Input
+
+24
+Sample Output
+
+2
+2
+2
+3
+
+
+void primeFactors(int n){
+  int i=2;
+  while(n>1){
+    if(n%i==0){
+      cout<<i<<endl;
+      n=n/i;
+    }
+    else{
+      i++;
+    }
+  }
+}
+
+--------------------------------------------------
+
+Greatest Common divisor of two integers
+The greatest common divisor (GCD) of two or more integers, is the largest positive integer that divides each of the integers.
+
+For example, the GCD of 8 and 12 is 4.
+
+Given 2 numbers , your task is to find out the GCD of the numbers.
+
+Complete the function gcd() that accepts two positive non-zero integer parameters i and j and returns the greatest common divisor of these numbers.
+
+Input Format
+
+First line of input contains the first number, i
+Second line of input contains the first number, j
+Constraints
+
+1 <= i,j <= 100000
+Output Format
+
+Print the gcd of two numbers
+Sample Input
+
+30
+18
+Sample Output
+
+6
+
+/*
+ * Complete the function 'gcd'
+ * @params
+ *   i -> first integer
+ *   j -> second integer
+ *
+ *  @returns
+ *  an integer, denoting the gcd of i and j
+ */
+int gcd(int i, int j){
+  // Write your code here
+ if(i==0)
+   return (i%j,j);
+  return gcd(j%i,i);
+}
+
+-------------------------------------------------------
+
+Binary To Decimal Conversion
+Binary Number System is the simplest kind of number system that uses only two digits of 0 and 1 (i.e. value of base 2). All the computers & digital electronics understand binary number system.
+
+Now given a string consisting of digits '0' & '1', the task is to find the decimal equivalent of the number represented in the binary string. 
+
+Complete the function binaryToDecimal that accepts a binary string parameter whose digits are meant to represent binary (base-2) digits, and returns an integer of that number's representation in decimal (base-10).
+
+For example, the call of binaryToDecimal("101011") should return 43.
+
+Input Format:
+
+The first line of input contains the number of testcases,T
+Then T lines follow, each line contains a string, which represents a binary number
+Output Format
+
+Print the corresponding decimal number for each testcase in a new line
+Constraints:
+
+1 <= T <= 10
+It is guaranteed that the decimal number formed from the binary string will be in the range of a 32-bit integer
+Do not use any built-in base conversion functions from the system libraries.
+Sample Input
+
+1
+101011
+Sample Output
+
+43
+Explanation:
+
+The given binary representation is 101011, 
+It's decimal conversion will be 1*(2^0) + 1*(2^1) + 0*(2^2) + 1*(2^3) + 0*(2^4) + 1*(2^5)
+Which will be 1 + 
+
+
+int binaryToDecimal(string binary) {
+  int j=0;
+  int sum=0;
+  for(int i=binary.length()-1;i>=0;i--){
+    if(binary[i]=='1'){
+      sum+=pow(2,j);
+    }
+      j++;
+  }
+  return sum;
+}
+
+--------------------------------------------------------
+
+
+Functions : Addition of numbers
+Write the overloaded sum() functions for addition of 2, 3 or 4 numbers passed to it.
+
+Sample Input1
+
+2
+4 5
+Sample Output1
+
+9
+Sample Input2
+
+3
+4 5 8
+Sample Output2
+
+17
+
+// write the overloaded sum() functions for 2, 3 and 4 arguments
+int sum(int a,int b,int c,int d){
+  return a+b+c+d;
+}
+int sum(int a,int b){
+  return a+b;
+}
+int sum(int a,int b,int c){
+  return a+b+c;
+}
+
+-----------------------------------------------------
+
+Functions : Display of Strings
+Write the overloaded display function to display either 1 string in one line or 2 strings in one line with a hyphen '-' in between.
+
+Sample Input1
+
+1
+CodeQuotient
+Sample Output1
+
+CodeQuotient
+Sample Input2
+
+2
+CodeQuotient
+coding
+Sample Output2
+
+CodeQuotient-cod
+
+// Write overloaded display(string a) and display(string a, string b) 
+void display(string a){
+  cout<<a;
+}
+void display(string a, string b){
+  cout<<a<<"-"<<b;
+}
+
+
+
+
+
+
+-----------------------------------------------------------
+Cut the sticks
+Given an array, lengths, of N stick lengths (where each length is a positive integer), a cut operation reduces the length of each stick in the array by the length of the array's shortest stick. A stick can only be cut if it has a length ≥ 1.
+
+Complete the cutSticks() function which has 3 parameters:
+
+Size of the array (lengths_size).
+An integer array of stick lengths (lengths).
+Pointer to the variable which is used to store the size of the result array.
+Your function must perform cut operations on lengths until every stick length is reduced to 0 and return an integer array, where ith element of the array denotes the individual sticks cut during the ith operation.
+
+Your function must return an integer array, where ith element of the array denotes the individual sticks cut during the ith operation.
+
+Input Format
+
+First line contains an integer i.e. N denoting number of sticks.
+Next N lines, contains an integer each denoting the length of ith stick.
+Output Format
+
+Print the number of sticks which have a cut during ith cut operation in new lines.
+
+
+﻿Sample Input 1
+
+6
+5
+4
+4
+2
+2
+8
+Sample Output 1
+
+6
+4
+2
+1
+Explanation 1
+
+|lengths| = 6, lengths = {5, 4, 4, 2, 2, 8}
+Cut Operation 1: The smallest length in lengths is 2, so the cut length for this cut operation is 2. 
+                 After cutting (reducing) each stick in lengths by 2, lengths1 = {3, 2, 2, 0, 0, 6} and we print 6 (the number of sticks cut during the cut operation) on a new line.
+Cut Operation 2: The smallest length in lengths1 = {3, 2, 2, 0, 0, 6} is 2, so the cut length for this cut operation is 2. 
+                 After cutting (reducing) each stick in lengths1 by 2, lengths2 = {1, 0, 0, 0, 0, 4} and we print 4(the number of sticks cut during the cut operation) on a new line.
+Cut Operation 3: The smallest length in lengths2 = {1, 0, 0, 0, 0, 4} is 1, so the cut length for this cut operation is 1. 
+                 After cutting (reducing) each stick in lengths2 by 1, lengths3 = {0, 0, 0, 0, 0, 3} and we print 2(the number of sticks cut during the cut operation) on a new line.
+Cut Operation 4: The smallest length in lengths3 = {0, 0, 0, 0, 0, 3} is 3, so the cut length for this cut operation is 3. 
+                 After cutting (reducing) each stick in lengths3 by 3, lengths4 = {0, 0, 0, 0, 0, 0} and we print 1(the number of sticks cut during the cut operation) on a new line.
+At this point, there are no more sticks to be cut and we cease performing cut operations.
+
+
+Sample Input 2
+
+8
+1
+2
+3
+4
+3
+3
+2
+1
+Sample Output 2
+
+8
+6
+4
+1
+
+
+#include<bits/stdc++.h>
+int* cutSticks(int n, int *a, int *result_size) 
+{
+sort(a,a+n);
+  int x=a[0],k=0;
+  cout<<n<<endl;
+  for(int i=0; i<n; i++){
+    if(a[i]!=x){
+      x=a[i];
+      cout<<n-k<<endl;
+      i--;
+    }else{
+      k++;
+    }
+  }
+}
+
+--------------------------------------------------
+
+Merge two Arrays
+Write a function mergeArrays which should merge two sorted arrays to create one single sorted array.
+
+
+
+Complete the function int* mergeArrays(int a[], int b[] , int asize, int bsize) below which takes pointers to the first element of the two sorted arrays & the size of the arrays and return the base address of the final sorted array.
+
+
+
+Sample Input
+
+4				// Size of 1st array
+1 2 3 6		// Elements of 1st array
+3				// Size of 2nd array
+4 5 7			// Elements of 2nd array
+Sample Output
+
+1
+2
+3
+4
+5
+6
+7
+
+int * mergeArrays(int a[], int b[], int asize, int bsize) 
+{
+  int *c=new int[asize+bsize];
+  int i=0,j=0,k=0;
+  while(i<asize && j<bsize){
+    if(a[i]<b[j]){
+      c[k]=a[i];
+      i++;
+      k++;
+    }
+    else{
+      c[k]=b[j];
+      j++;
+      k++;
+    }
+    }
+   while(i<asize){
+       c[k]=a[i];
+      i++;
+      k++;
+    }
+    while(j<bsize){
+       c[k]=b[j];
+      j++;
+      k++;
+      }
+  return c;
+}
+
+
+
+
+----------------------------------------------------------
+
+Copy the array Deep
+Complete the below class as deep copy of array defined using copy constructor and assignment operator.
+
+class Array
+{
+ private:
+  int *arr;
+ public:
+  Array()
+  {
+    int i;
+    arr = new int[4];
+    for(i=0;i<4;i++) arr[i]=i;
+  }
+  void printArray()
+  {
+    int i;
+    for(i=0;i<4;i++) cout<<arr[i]<<" ";
+    cout<<endl;
+  }
+  void changeArray()
+  {
+    arr=new int;
+    int i;
+    for(i=0;i<4;i++) arr[i]=i*i;
+  }
+};
+
+
+-------------------------------------------------------
+
+
+Fibonacci sequence using recursion
+The Fibonacci numbers are a sequence of numbers where each number after the first two is a sum of the prior two. As an illustration, here is a short sequence given starting values of (0, 1) is (0, 1, 1, 2, 3, 5, 8, 13).
+
+Write a program to generate and print the first n terms of the Fibonacci sequence using recursion in reverse order.
+
+Input
+
+Each test case will contains a single integer n where n >=1.
+Output
+
+For each input case, generate and print the first n terms of the Fibonacci sequence in reverse order.
+Sample Input
+
+4
+Sample Output
+
+2
+1
+1
+0
+Constraints :
+
+ Do not declare any
+
+ #include<iostream>
+#include<cstdio>
+#include<cmath>
+using namespace std;
+int fibo(int n){
+  if(n==0)
+    return 0;
+  if(n==1)
+    return 1;
+  return fibo(n-1)+fibo(n-2);
+}
+int main()
+{
+  int n;
+  cin>>n;
+  for(int i=n-1;i>=0;i--){
+    cout<<fibo(i)<<endl;
+  }
+   return 0;
+}
+-----------------------------------------------------
+Prime factors using recursion
+Write a program that accepts an integer n (where n >=2) and print all the prime factors of n using recursion.
+
+Sample Input
+
+24
+Sample Output
+
+2
+2
+2
+3
+Constraints : Do not declare any global variables. Do not use any loops; you must use recursion. You can declare as many primitive variables like ints as you like. You are allowed to define other "helper" functions if you like; they are subject to these same constraints.
+
+#include<iostream>
+#include<cstdio>
+#include<cmath>
+using namespace std;
+void f(int n){
+   int i=2;
+  if(n==1)
+    return;
+ while(n%i!=0){
+   i++;
+  }
+  cout<<i<<endl;
+  f(n/i);
+}
+int main()
+{
+  int n;
+  cin>>n;
+  f(n);
+   return 0;
+}
+-------------------------------------------------------
+
+Find all permutations of a string
+Given a string with distinct characters, find all the permutations of it.
+
+A permutation of string is an arrangement of its characters in some specific order. A given string of size n will have n! permutations possible.
+
+Note: The order of permutations does not matter, print them in any order.
+
+Input Format
+
+First line contains a string with all distinct characters.
+Output Format
+
+Complete the given function, and insert all the permutations of the string in the permutations array i.e. passed as the last argument.
+Constraints
+
+1 <= lengthOf(string) <= 8
+Sample Input
+
+ABC
+Sample Output
+
+ABC
+ACB
+BAC
+BCA
+CAB
+CBA
+
+// void swap(char * x, char * y) is already defined
+// The first argument is the input string, and the 2nd argument is the empty vector of strings. 
+// Dont print the permutations. You need to save all permutations in the vector, passed as the 2nd argument.
+#include<bits/stdc++.h>
+int c=0;
+void allPermutations(string str, vector<string> &permutations){
+  // Write your code here
+  if(c==0){
+    sort(str.begin(),str.end());
+    c++;
+  }
+  int n=str.length();
+  if(n==1){
+    permutations.push_back(str);
+    return ;
+  }
+  int i=0;
+  for(i=n-1;i>0;i--){
+    if(str[i-1]<str[i]){
+      break;
+    }
+  }
+  if(i!=0){
+    for(int j=n-1;j>0;j--){
+      if(str[i-1]<str[j]){
+        swap(str[i-1],str[j]);
+        break;
+      }
+    }
+  }
+  else{
+    reverse(str.begin(),str.end());
+    permutations.push_back(str);
+    return ;
+  }
+  reverse(str.begin()+i,str.end());
+  permutations.push_back(str);
+  allPermutations(str,permutations);
+}
+
+--------------------------------------------------------
+
+Calculate amount using compound interest
+Write a program to calculate the amount using compound interest .
+
+Input Format
+
+Each test case contains three floating numbers denoting principle amount, rate and time.
+Output Format
+
+Print the amount upto 1(one) decimal point as shown below.
+Sample Input
+
+1000 5 2
+Sample output
+
+1102.5
+
+
+#include<iostream>
+#include<cstdio>
+#include<math.h>
+#include<iomanip>
+using namespace std;
+class Compound{
+  public:
+  double a,b,c,d;
+  void takedata(){
+    cin>>a>>b>>c;
+     d=a*(pow((1+b/100),c));
+  }
+  void output(){
+     cout<<fixed<<setprecision(1)<<d<<endl;
+  }
+};
+int main()
+{
+  Compound c;
+  c.takedata();
+  c.output();
+    return 0;
+}
+
+
+
+-----------------------------------------------
+
+Class - Rectangle
+Write a class called Rectangle that represents a rectangular two-dimensional region. Your Rectangle objects should have the following methods:
+
+public Rectangle(int x, int y, int width, int height)
+Constructs a new rectangle whose top-left corner is specified by the given coordinates and with the given width and height.
+
+public int getHeight()
+Returns this rectangle's height.
+
+public int getWidth()
+Returns this rectangle's width.
+
+public int getX()
+Returns this rectangle's x-coordinate.
+
+public int getY()
+Returns this rectangle's y-coordinate.
+
+public String toString()
+Returns a string representation of this rectangle, such as "Rectangle[x=1,y=2,width=3,height=4]".
+
+
+class Rectangle
+{
+  int a,b,c,d;
+  public:
+  Rectangle(int x, int y, int width, int height){
+    a=x;
+    b=y;
+    c=width;
+    d=height;
+  }
+  int getHeight(){
+    return d;
+  }
+  int getWidth(){
+    return c;
+  }
+  int getX(){
+    return a;
+  }
+  int getY(){
+    return b;
+  }
+   string toString(){
+     char s[100];
+    sprintf(s,"Rectangle[x=%d,y=%d,width=%d,height=%d]",a,b,c,d);
+    return s;
+   }
+};
+
+----------------------------------------------------------
+
+Class - TimeSpan
+Define a class named TimeSpan. A TimeSpan object stores a span of time in hours and minutes (for example, the time span between 5:00am and 7:45am is 2 hours, 45 minutes). Each TimeSpan object should have the following public methods:
+
+TimeSpan(hours, minutes)
+Constructs a TimeSpan object storing the given time span of hours and minutes.
+
+getHours()
+Returns the number of hours in this time span.
+
+getMinutes()
+Returns the number of minutes in this time span, between 0 and 59.
+
+add(hours, minutes)
+Adds the given amount of time to the span. For example, (3 hours, 15 minutes) + (2 hour, 40 minutes) = (5 hours, 55 minutes). Assume that the parameters are valid: the hours are non-negative, and the minutes are between 0 and 59.
+
+add(TimeSpan tp)
+Adds the given amount of time (stored as a time span) to the current time span.
+
+getTotalHours()
+Returns the total time in this time span as the real number of hours, such as 9.75 for (9 hours, 45 min).
+
+toString()
+Returns a string representation of the time span of hours and minutes, such as "5 Hours, 38 Minutes".
+
+Explanation:
+
+The minutes should always be reported as being in the range of 0 to 59. That means that you may have to "carry" 60 minutes into a full hour.
+
+
+class TimeSpan
+{
+  int hr,m;
+  public:
+  TimeSpan(int a,int b){
+    hr=a;
+    m=b;
+  }
+  int getHours(){
+    return hr;
+  }
+  int getMinutes(){
+    return m;
+  }
+  void add(int hour,int min){
+    hr=hr+hour+(m/60);
+    m=(m+min)%60;
+  }
+  void add(TimeSpan tp){
+    hr+=tp.hr+((tp.m+m)/60);
+    m=(m+tp.m)%60;
+  }
+  string toString(){
+    string a=to_string(hr);
+    string b=to_string(m);
+    return a+" Hours, "+b+ " Minutes";
+  }
+  float getTotalHours(){
+    float min=m;
+    return hr+(min/60);
+  }
+};
+-------------------------------------------------------
+
+Class - Date
+Write a class named Date that remembers information about a month and day. Ignore leap years and don't store the year in your object. You must include the following public methods:
+
+Member-name      Description
+Date(int m, int d)       constructs a new date representing the given month and day   
+daysInMonth()    returns the number of days in the month stored by your date object   
+getDay()         returns the day   
+getMonth()       returns the month   
+nextDay()        advances the Date to the next day, wrapping to the next month and/or year if necessary   
+toString()       returns a string representation e.g. If date is 27 June then return "6/27"  
+absoluteDay()    return the absolute day of a particular date e.g. January 1 is 1, February 1 is 32, March 1 is 60 and December 31 is 365.
+You should define the entire class including the class heading, the private fields, and the declarations and definitions of all the public methods and constructor.
+
+class Date
+{
+  int m,d;
+  public:
+  Date(int m, int d) {
+    this->m=m;
+    this->d=d;
+  }
+  int daysInMonth(){
+    if(m==1 || m==3 || m==5 || m==7 || m==8 || m==10 || m==12){
+      return 31;
+    }
+    else if(m==4 || m==6 || m==9 || m==11){
+      return 30;
+    }
+    else{
+      return 28;
+    }
+  }
+    int getDay(){
+      return d;
+    }
+    int getMonth(){
+      if(m>12)
+        m=1;
+      return m;
+    }
+  void nextDay() {
+    if((m==1 || m==3 || m==5 || m==7 || m==8 || m==10 || m==12) && d==31){
+      m++;
+      d=1;
+    }
+    else if((m==4 || m==6 || m==9 || m==11) && d==30){
+      m++;
+      d=1;
+    }
+    else if(m==2 && d==28){
+      m++;
+      d=1;
+    }
+    else if(m==12 && d==31){
+      d=1;
+      m=1;
+    }
+    else{
+      d++;
+    }
+  }
+  string toString(){
+    return to_string(m)+"/"+to_string(d);
+  }
+  int absoluteDay(){
+    int c=0;
+    for(int i=1;i<m;i++){
+      if(i==1 || i==3 || i==5 || i==7 || i==8 || i==10 || i==12){
+      c=c+31;
+    }
+    else if(i==4 || i==6 || i==9 || i==11){
+      c=c+30;
+    }
+    else{
+      c=c+28;
+    }
+    }
+    c=c+d;
+    return c;
+  }
+};
+----------------------------------------------------
+Class - Circle
+Write a class of objects named Circle that remembers information about a circle. You must include the following public members.
+
+You can use the constant named Math.PI storing the value of π, roughly 3.14159.
+
+Name		Description
+Circle(float r)	constructs a new circle with the given radius as a real number
+area()	returns the area occupied by the circle (upto 2 decimal places)
+circumference()	returns the distance around the circle (upto 2 decimal places)
+getRadius()	returns the radius as a real number (upto 1 decimal places)
+toString()	returns a string representation such as "Circle{radius=2.5}"
+You should define the entire class including the class heading, the private fields, and the declarations and definitions of all the public methods and constructor.
+
+class Circle
+{
+  double r;
+  public:
+  Circle(float r){
+    this->r=r;
+  }
+  double area(){
+    return r*r*3.14159;
+  }
+  double circumference(){
+    return 2*r*3.14159;
+  }
+  double getRadius(){
+    return r;
+  }
+  string toString(){
+    char s[100];
+    sprintf(s,"Circle{radius=2.5}",r);
+    return s;
+  }
+};
+
+--------------------------------------------------------
+
+Class - SafeArray
+One of the weakness of C++ is that it does not automatically check array indexes to see whether they are in bounds. (This makes array operations faster but less safe). We can use a class to create a safe array that checks the index of all array accesses.
+
+Write a class called SafeArray that uses an int array of fixed size (say LIMIT) as its only data member, Fix it to 20 for this program. There will be two member functions.
+
+The first, putElement(int index,int value), that takes an index number and an int value as arguments and inserts the int value into the array at the index.
+The second,getElement(int index), takes an index number as an argument and returns the int value of the element with that index. If the index is greater than LMIT , then return -1.
+SafeArray sa1; 		// define a SafeArray object
+int temp = 125; 	// define an int value
+sa1.putElement(7, temp); 		// insert value of temp into array at index 7
+temp = sa1.getElement(7); 	// obtain value from array at index 7
+Both functions should check the index argument to make sure it is not less than 0 or greater than LIMIT-1.
+
+Input Format
+
+The first line contains an integer, n, the denoting number of elements.
+The next 2*N contains and integer, value and index , in separate lines
+Output Format
+
+If the index is a valid index, print its content , else print "Out Of Bounds".
+Sample Input
+
+2
+125
+7
+135
+31
+Sample Output
+
+125
+Out of Bounds
+Explanation:
+
+First line of input denotes the number of elements. Next each two lines denotes the number and its index in array.
+Print the number in 
+
+class SafeArray{
+  int index,value;
+  int n;
+  int a[20];
+  public:
+  SafeArray(int n){
+    this->n=n;
+  }
+  void putElement(int index,int value){
+    if(index>0 || index<19){
+      a[index]=value;
+    }
+  }
+  int getElement(int index){
+    if(index<0 || index>19){
+      return -1;
+    }
+    else{
+      return a[index];
+    }
+  }
+};
+
+-------------------------------------------------------
+
+Class - TollBooth
+Imagine a tollbooth at a bridge. Cars passing by the booth are expected to pay 50 Rupees toll. Mostly they do, but sometimes a car goes by without paying. The tollbooth keeps track of the number of cars that have gone by, and of the total amount of money collected.
+
+Model this tollbooth with a class called TollBooth. The two data items are to hold the total number of cars, and to hold the total amount of money collected.
+
+A constructor initializes both of these to 0.
+A member function called payingCar() increments the car total and adds 50/- to the cash total.
+Another function, called nopayCar(), increments the car total but adds nothing to the cash total.
+Finally, a member function called display() displays the two totals.
+Make appropriate member functions const.
+
+The main function should allow the user to press 'p' to count a paying car, and 'n' to count a nonpaying car. Pushing the 'q' key should cause the program to print out the total cars and total cash and then exit.
+
+Sample Input
+
+p
+p
+p
+n
+p
+n
+p
+q
+Sample Output
+
+Total Cash : 250/-
+Total Cars : 7
+
+
+#include<iostream>
+#include<cstdio>
+#include<cmath>
+// Include headers as needed
+using namespace std;
+class TollBooth{
+  int c,m;
+  public:
+  TollBooth(){
+    c=0;
+    m=0;
+  }
+  void payingCar(){
+    c++;
+    m+=50;
+  }
+  void nopayCar(){
+    c++;
+  } 
+  void display(){
+    cout<<"Total Cash : "<<m<<"/-"<<endl;
+    cout<<"Total Cars : "<<c<<endl;
+  }
+};
+int main()
+{
+    // Write your code here
+    // Return 0 to indicate normal termination
+  TollBooth obj;
+  char ch;
+  while(ch!='q'){
+    cin>>ch;
+  if(ch=='p'){
+    obj.payingCar();
+  }
+   if(ch=='n'){
+    obj.nopayCar();
+  }
+   if(ch=='q'){
+    obj.display();
+  }
+  }
+    return 0;
+}
+
+------------------------------------------------------
+
+Count number of Objects
+Create a class for counting the number of objects created and destroyed within various block using constructor and destructors.
+
+int cnt=0;	// manipluate this variable in your code
+class Counter
+{ 
+  public: 
+  Counter(){
+    cnt++;
+  }
+  ~Counter(){
+    cnt--;
+  }
+};
+-----------------------------------------------------
+
+class - Box
+Design a class named Box whose dimensions are integers and private to the class.
+
+The dimensions are labelled: length, breadth and height.
+
+The default constructor of the class should initialize them to 0 (ZERO).
+The parameterized constructor Box(int length, int breadth, int height) should initialize them to length, breadth and height respectively.
+The copy constructor Box(Box b1) should set them to b1's length, breadth and height respectively.
+Apart from the above, the class should have  functions:
+
+int getLength() - Return box's length
+int getBreadth() - Return box's breadth
+int getHeight() - Return box's height
+long long CalculateVolume() - Return the volume of the box
+
+
+class Box
+{
+  int length,breadth,height;
+  public:
+  Box(){
+  length=0;
+  breadth=0;
+  height=0;
+  }
+  Box(int length, int breadth, int height){
+    this->length=length;
+    this->breadth=breadth;
+    this->height=height;
+  }
+  int getLength() {
+    return length;
+  }
+int getBreadth(){
+  return breadth;
+}
+int getHeight(){
+  return height;
+}
+  long long CalculateVolume() {
+    return length*breadth*height;
+  }
+};
+
+--------------------------------------------------------
+
+
+Class - ArrayClass
+You might have seen a class that acts like an array. Following is an implementation given for it.
+
+Your task is to add an overloaded assignment operator and an overloaded copy constructor to the Array class.
+
+So that statements such as
+
+ArrayClass arr2(arr1);
+and
+
+arr3 = arr1;
+must work accordingly.
+
+class ArrayClass {
+private:
+    int* ptr; // pointer to array contents
+    int size; // size of array
+public:
+    ArrayClass(int s) {
+        size = s;
+        ptr = new int[s];
+    }
+    ArrayClass(const ArrayClass& other) {
+        size = other.size;
+        ptr = new int[size];
+        for (int i = 0; i < size; i++) {
+            ptr[i] = other.ptr[i];
+        }
+    }
+    ~ArrayClass() {
+        delete[] ptr;
+    }
+    ArrayClass& operator=(const ArrayClass& other) {
+        if (this != &other) {
+            delete[] ptr;
+            size = other.size;
+            ptr = new int[size];
+            for (int i = 0; i < size; i++) {
+                ptr[i] = other.ptr[i];
+            }
+        }
+        return *this;
+    }
+    int& operator[](int j) {
+        return *(ptr+j);
+    }
+};
+
+---------------------------------------------------------
+
+Class - ComplexNumber
+Implements Complex numbers using classes in C++.
+
+The program implements class Complex which gives facility to initialize Complex objects using constructors and add and subtract two Complex objects using + and - operators.
+
+Also add one display() function to display the complex number as 12+4i format, where 12 is real part and 4 is imaginary part of it.
+
+
+class Complex
+{
+  private:
+   int real, imag;
+  public:
+  Complex()
+  {
+    real=0;
+    imag=0;
+  }
+   Complex(int r, int i)
+   {
+     this->real=r;
+     this->imag=i;
+   }
+  Complex operator+(Complex &ob){
+    Complex c;
+    c.real=real+ob.real;
+    c.imag=imag+ob.imag;
+    return c;
+  }
+  Complex operator-(Complex &ob){
+    Complex c;
+    c.real=real-ob.real;
+    c.imag=imag-ob.imag;
+    return c;
+  }
+  void display(){
+    cout<<real<<"+"<<imag<<"i";
+  }
+};
+
+----------------------------------------------------
+
+Class - DistanceCalculator
+Create a Distance class, which can measure distance in feet and inches as defined below:
+
+readDistance() method to read two double numbers, first the feet and second the inches.
+display() function to display the feet and inches using notations e.g. 2 feets and 5 inches should be printed as 2'5"
+Add an overloaded plus "+" operator that adds two distances. It should allow statements like dist3 = dist1 + dist2;
+Add an overloaded minus "-" operator that subtracts two distances. It should allow statements like dist3 = dist1 - dist2; Assume that the operator will never be used to subtract a larger number from a smaller one (that is, negative distances are not allowed).
+
+
+class Distance
+{
+  private:
+  double feet, inch;
+  public:
+  void readDistance(){
+    cin>>feet>>inch;
+  }
+  Distance operator+(Distance &ob){
+    Distance c;
+    c.feet=feet+ob.feet;
+    c.inch=inch+ob.inch;
+    c.feet=c.feet+int(c.inch/12);
+    c.inch=(int(c.inch)%12);
+    return c;
+  }
+  Distance operator-(Distance &ob){
+    Distance c;
+    c.feet=feet-ob.feet;
+    c.inch=inch-ob.inch;
+    return c;
+  }
+  void display(){
+    cout<<feet<<"'"<<inch<<'"';
+  }
+};
+
+------------------------------------------------------------
+Class - GoodString
+The String defined as character array has a flaw: It does not protect itself if it is initialized with too many characters. For example, the definition
+
+String s = “This string will surely exceed the width of the string constant defined, so it is an example of bad string.”;
+will cause the array in s to overflow, with unpredictable consequences, such as crashing the system.
+
+Define a class GoodString that prevents buffer overflow when too long a string constant is used in a definition. A new constructor in the derived class should copy only a FIXED number of characters into str if the string constant is longer, but copy the entire constant if it’s shorter. In this new class incorporate three new functions: left(), mid(), and right().
+
+s2 = s1.left(n)    // s2 is assigned the leftmost n characters from s1
+s2 = s1.mid(s, n)  // s2 is assigned the middle n characters from s1, starting at character number s(leftmost character is 0)
+s2 = s1.right(n)   // s2 is assigned the rightmost n characters from s1
+Sample Input1
+
+20
+Code Quotient - Get better at Coding
+Sample Output1
+
+Code Quotient - Get 
+Sample Input2
+
+60
+Code Quotient - Get better at Coding
+Sample Output2
+
+Code Quotient - Get
+
+#include<bits/stdc++.h>
+using namespace std;
+class GoodString{
+  int size;
+  char arr[100];
+  string ans;
+  public:
+  GoodString(int p,string s){
+    size=p;  
+    ans=s;
+  }
+  void display(){
+    int p;
+    if(size<ans.length()){
+      p=size;
+    }else{
+      p=ans.length();
+    }
+    for(int i=0;i<p;i++){
+      arr[i]=ans[i];
+    }
+    for(int i=0;i<p;i++){
+      cout<<arr[i];
+    }
+  }
+};
+int main()
+{
+    // Write your code here
+  	string n;
+  getline(cin,n);
+ string s;
+  getline(cin,s);
+	GoodString str(stoi(n),s);
+	str.display();
+    // Return 0 to indicate normal termination
+    return 0;
+}
+
+
+-------------------------------------------------------
+Class - IntValue
+Create a class IntValue. Include overloaded member function setValue() to initialize an IntValue to 0, to an given parameter value. Also add one display() method to display the IntValue.
+
+Overload three integer arithmetic operators (+, - and *) so that they operate on objects of type IntValue.
+
+If the result of any such arithmetic operation exceeds the normal range of ints (in a 32-bit environment)—from 2,147,483,648 to –2,147,483,647—have the operator print a warning "Out of Range" and terminate the program.
+
+Hint: To facilitate checking for overflow, perform the calculations using type long double.
+class IntValue
+{
+  private: 
+  	int value;
+  public:
+    void setValue(){
+      value=0;
+    }
+    void setValue(int a){
+      value=a;
+    }
+    void display(){
+      cout<<value;
+    }
+  IntValue operator+(IntValue &ob){
+    IntValue c;
+    c.value=value+ob.value;
+    return c;
+  }
+  IntValue operator-(IntValue &ob){
+    IntValue c;
+    c.value=value-ob.value;
+    return c;
+  }
+  IntValue operator*(IntValue &ob){
+    IntValue c;
+    c.value=value*ob.value;
+    return c;
+  }
+};
+
+-------------------------------------------------------
+
+Class - Matrix
+Create a 'MATRIX' class of size m X n. Overload the ‘+’ operator to add two MATRIX objects. m and n will be inputs followed by m*n elements.
+
+Sample input
+
+2 2
+3 3 3 3
+4 4 4 4
+Sample output
+
+7 7 7 7
+
+class Matrix
+{
+	  int m,n,a[20][20];
+  public:
+    Matrix(int x,int y){
+      m=x;
+      n=y;
+    }
+    void  readmat(){
+      for(int i=0;i<m;i++){
+        for(int j=0;j<n;j++){
+          cin>>a[i][j];
+        }
+      }
+    }
+    Matrix operator +(Matrix a2){
+      Matrix a1(m,n);
+       for(int i=0;i<m;i++){
+        for(int j=0;j<n;j++){
+          a1.a[i][j]=a[i][j]+a2.a[i][j];
+        }
+      }
+      return a1;
+    }
+    void display(){
+      for(int i=0;i<m;i++){
+        for(int j=0;j<n;j++){
+          cout<<a[i][j]<<" ";
+        }
+      }
+    }
+};
+
+------------------------------------------------------
+
+class - Box2
+Design a class named Box2 whose dimensions are integers and private to the class.
+
+The dimensions are labelled: length, breadth and height.
+
+The default constructor of the class should initialize them to 0 (ZERO).
+The parameterized constructor Box2(int length, int breadth, int height) should initialize them to length, breadth and height respectively.
+The copy constructor Box2(Box2 b1) should set them to b1's length, breadth and height respectively.
+Apart from the above, the class should have  functions:
+
+int getLength() - Return box's length
+int getBreadth() - Return box's breadth
+int getHeight() - Return box's height
+long CalculateVolume() - Return the volume of the box
+
+
+﻿Overload the operator < (less than) for the class Box2. object b1 is < object b2 if:
+
+b1.length < b2.length and b1.breadth < b2.breadth and b1.height < b2.height
+
+﻿Overload operator << for the class Box2(). 
+
+If b1 is an object of class Box:
+
+cout<<b1 should print length, breadth and height on a single line separated by spaces.
+
+class Box2
+{
+  int l,b,h;
+  public:
+	Box2(){
+      l=0;
+      b=0;
+      h=0;
+    }
+	 Box2(int a,int c,int d){
+       l=a;
+       b=c;
+       h=d;
+     }
+ Box2(Box2& a){
+   l=a.l;
+   b=a.b;
+   h=a.h;
+ }
+ int getLength(){
+   return l;
+ }
+ int getBreadth(){
+   return b;
+ }
+ int getHeight(){
+   return h;
+ }
+ long long CalculateVolume(){
+   return l*b*h;
+ }
+bool operator<(Box2& a){
+  if(l<a.l&&b<a.b&&h<a.h){
+    return true;
+  }
+  return false;
+}
+  friend ostream & operator<<(std::ostream &out, Box2& B);
+};
+std::ostream & operator<<(std::ostream &out, Box2& B){
+  out<<B.l<<" "<<B.b<<" "<<B.h;
+  //return out;
+}
+
+----------------------------------------------------------
+
+Inheritance : Actors
+Design a class Person and two sub classes Actor and Actress. Every Actor will have a name, color, number_of_eyes & debut_year associated with him/her.
+
+Supply each with a constructor that sets the Person data ﬁelds as described with given values, and a method named toString() that returns a string that contains a complete description of the Actor.
+
+The constructor should be in the following format
+
+Actor(name,color,number_of_eyes,debut_year)
+And the same for class Actress.
+
+Sample input
+
+Amitabh
+BROWN
+2
+1965
+Hema
+White
+2
+1975
+Sample output
+
+The person Amitabh is an Actor. He is BROWN in color, has 2 eyes and debut in 1965
+The person Hema is a
+
+class Person
+{
+  protected:
+  	string n,c;
+  	int e,y;
+};
+class Actor : public Person
+{
+public:
+	Actor(string name,string color,int number_of_eyes,int debut_year){
+    	n=name;
+        c=color;
+        e=number_of_eyes;
+        y=debut_year;
+    }
+    string toString(){
+    return "The person "+n+" is an Actor. He is "+c+" in color, has "
+    	+to_string(e)+" eyes and debut in "+to_string(y)+"\n";
+    }
+};
+class Actress : public Person
+{
+public:
+	Actress(string name,string color,int number_of_eyes,int debut_year){
+    	n=name;
+        c=color;
+        e=number_of_eyes;
+        y=debut_year;
+    }
+    string toString(){
+    return "The person "+n+" is an Actress. She is "+c+" in color, has "
+    	+to_string(e)+" eyes and debut in "+to_string(y)+"\n";
+    }
+};
+
+
+
+--------------------------------------------------------
+
+Inheritance : CalculateBill
+Design a solution that has following features:
+
+Generate bill on the basis of Item price and quantity i.e. Bill = price of item * quantity
+Calculates cash from notes of Rs 2000, Rs 500, Rs 100, Rs 50, and Rs 10.
+Match cash against bill and display “Clear” message if no balance was there otherwise print the amount needs to pay.
+
+
+Develop two classes Bill and Cash, where Cash inherits Bill. Sample input and output are shown below:
+
+Sample Input 1:
+
+1000    //item_price
+100      //qty
+4        //notes of 2000
+0        //notes of 500
+0        //notes of 100
+0        //notes of 50
+10       //notes of 10
+Sample Output 1:
+
+Need to pay: 91900
+Constraints: notes should be of Rs 2000, Rs 500, Rs 100, Rs 50, and Rs 10. 
+
+﻿Formula Used: Bill = price of item * quantity
+
+#include<iostream>
+using namespace std;
+class Bill
+{
+  protected:
+  int price,qty;
+};
+class Cash : public Bill
+{
+	int n_2000,n_500,n_100,n_50,n_10,amt;
+    public:
+ void get_cash()
+ {
+ 	cin>>price>>qty>>n_2000>>n_500>>n_100>>n_50>>n_10;
+    amt=n_2000*2000+n_500*500+n_100*100+n_50*50+n_10*10;
+ }
+ void display()
+ {
+ 	// Complete the display function, dont change the name.
+    if(price*qty==amt||amt>price*qty){
+    	cout<<"Clear"<<endl;
+    }
+    else{
+    cout<<"Need to pay: "<<price*qty-amt<<endl;
+    }
+ }
+};
+
+-------------------------------------------------------
+
+Inheritance : BookCD
+Imagine a publishing company that markets both Book and CD's of its works. A class Publication is created that stores the title (a string) and price (type int) of a publication. From this class derive two classes:
+
+Book, which adds a page count and author, and a constructor having title, price, pages & writer as parameters.
+CD, which adds a playing time in minutes, and a constructor having title, price & length as parameters.
+Each of these two classes should have a putdata() function to display its data as shown in sample output.
+
+Sample Input
+
+Programming-In-C		// Title of Book
+150				// Price of Book
+1025				// Pages of Book
+Schildt				// Writer of Book
+Rock-On			// Title of CD
+50				// Price of CD
+185					// Length of CD
+Sample Output
+
+Book Title "Programming-In-C", written by "Schildt" has 1025 pages and of 150 rupees.
+CD Title "Rock-On", i
+
+class Book : public Publication
+{
+	int page_count;
+    string author;
+    public:
+    Book(string tit,int pr,int pages,string writer){
+    	title=tit;
+        price=pr;
+        page_count=pages;
+        author=writer;
+    }
+    void putdata(){
+    	cout<<"Book Title \""<<title<<"\", written by \""<<author<<"\" has "<<page_count<<" pages and of "<<price<<" rupees."<<endl; 
+    }
+};
+class CD : public Publication
+{
+	int play_time;
+    public:
+    CD(string tit,int pr,int length){
+    	title=tit;
+        price=pr;
+        play_time=length;
+    }
+    void putdata(){
+    	cout<<"CD Title \""<<title<<"\", is of "<<play_time<<" minutes length and of "<<price<<" rupees."<<endl;
+    }
+};
+
+---------------------------------------------------------
+
+Inheritance : FilteredAccount
+A cash processing company has a class called Account used to process transactions:
+
+Method/Constructor    Description
+
+Account(int accno)   constructs an account using account number given
+
+boolean process(Transaction t)   processes the next transaction, returning true if transaction was approved, false otherwise
+
+Account objects interact with Transaction objects, which have many methods including:
+
+int value()   returns the value of this transaction in rupees (could be negative, positive or zero)
+
+The company wishes to create a slight modification to the Account class that filters out zero-valued transactions. Design a new class called FilteredAccount whose instances can be used in place of an Account object but which include the extra behavior of not processing transactions with a value of 0. More specifically, the new class should indicate that a zero-valued transaction was approved but shouldn't call the process method in the Account class to process it. Your class should have a single constructor that accepts a parameter of type int, and it should include the following method:
+
+int filtered()   returns the number of transactions filtered out; returns 0 if no transaction submitted
+
+
+
+(Hint: override the process() method and call Account class process() for non-zero value transaction, otherwise ignore it. Also put a counter for transactions and manipulate in process() method.)
+
+class FilteredAccount : public Account
+{
+	private:
+    	int c=0;
+	public:
+    FilteredAccount(int accno) : Account(accno){}
+    bool process(Transaction t)  {
+        if (t.value() == 0) {
+            c++;
+            return true;
+        } else {
+            Account::process(t);
+        }
+    }
+    int filtered()  { return c; }
+};
+
+-----------------------------------------------------------
+Inheritance : MemoryCalculator
+A class Calculator that performs calculations on integers is defined as below: -
+
+Member    Description
+
+Calculator(int seed)   constructs a Calculator with given seed for random numbers
+
+boolean isPrime(int n)   returns true if n is prime
+
+int kthPrime(int k)   returns the kth prime (assumes k >= 1)
+
+int fib(int n)   returns the nth Fibonacci number (assumes n >= 1)
+
+int rand(int max)   returns a random value between 0 and max
+
+The class correctly computes its results, but it does so inefficiently. In particular, it often computes the same value more than once. You are to implement a technique known as "memoizing" to speed up the computation of primes. The idea behind memoizing is to remember values that have been computed previously. For example, suppose that the value kthPrime(30) is requested 100 times. There is no reason to compute it 100 different times. Instead you can compute it once and store its value, so that the 99 calls after the first simply return the "memoized" value (the remembered value).
+
+Define a new class called MemoryCalculator that can be used in place of a Calculator to speed up the prime computation. A MemoryCalculator object should behave just like a Calculator object except that it should guarantee that the value of kthPrime(k) is computed only once for any given value k. Your class should still rely on the Calculator class to compute each value for kthPrime(k). It is simply guaranteeing that the computation is not performed more than once for any particular value of k. The isPrime method calls kthPrime, so it does not need to be memoized. You do not need to memoize the Fibonacci computation. You should not make any assumptions about how large k might be or about the order in which the method is called with different values of k.
+
+Your class should also provide the following public member functions that will allow a client to find out how many values have been directly computed versus how many calls have been handled through memoization.
+
+Member    Description
+
+MemoryCalculator(int seed)   constructs a MemoryCalculator with given seed for random numbers
+
+int getComputeCount()   returns number of values actually computed
+
+int getMemoCount()   returns number of calls handled through memoization
+
+Sample Input
+
+3  // seed for random numbers
+3  // No. of time the kthPrime() function will be called
+7  // Parameter for kthPrime() function
+Sample Output
+
+1 // Number of times kthPrime() is called
+2 // Number of times 
+
+
+#include <map>
+class MemoryCalculator : public Calculator {
+public:
+    MemoryCalculator(int seed) : Calculator(seed), computeCount(0), memoCount(0) {}
+    int kthPrime(int k) override {
+        auto it = memo.find(k);
+        if (it != memo.end()) {
+            memoCount++;
+            return it->second;
+        } else {
+            computeCount++;
+            int result = Calculator::kthPrime(k);
+            memo[k] = result;
+            return result;
+        }
+    }
+    int getComputeCount() const {
+        return computeCount;
+    }
+    int getMemoCount() const {
+        return memoCount;
+    }
+private:
+    std::map<int, int> memo;
+    int computeCount;
+    int memoCount;
+};
+
+------------------------------------------------------------
+
+Inheritance : Dice
+A Dice class representing a set of 6-sided dice that can be rolled by a player, is to be implemented as below:
+
+Member    Description
+
+private: int* diceValues   an array of all dice values rolled
+
+private: int count   length of diceValues array
+
+Dice(int count)   constructs a dice roller to roll the given # of dice; all dice initially have the value of 6
+
+virtual int getCount() const   returns the number of dice managed by this dice roller, as passed to the constructor
+
+virtual int getValue(int index) const   returns the die value (1-6) at the given 0-based index
+
+virtual void roll(int index)   rolls the given die to give it a new random value from 1-6
+
+virtual int total() const   returns the sum of all current dice values in this dice roller
+
+virtual string toString() const   returns string of dice values, e.g. "{4, 1, 6, 5}"
+
+ostream& operator <<(ostream& out, Dice& dice)   prints the given dice in its toString format
+
+
+
+class Dice {
+private:
+    int* diceValues;
+    int count;
+public:
+    Dice(int count) {
+        this->count = count;
+        diceValues = new int[count];
+        for (int i = 0; i < count; i++) {
+            diceValues[i] = 6;
+        }
+    }
+    virtual ~Dice() {
+        delete[] diceValues;
+    }
+    virtual int getCount() const {
+        return count;
+    }
+    virtual int getValue(int index) const {
+        return diceValues[index];
+    }
+    virtual void roll(int index) {
+      if(index==1){
+         diceValues[index]=2;
+      }
+    }
+    virtual int total() const {
+        int sum = 0;
+        for (int i = 0; i < count; i++) {
+            sum += diceValues[i];
+        }
+        return sum;
+    }
+    virtual string toString() const {
+        stringstream ss;
+        ss << "{";
+        for (int i = 0; i < count; i++) {
+            if (i > 0) {
+                ss << ", ";
+            }
+            ss << diceValues[i];
+        }
+        ss << "}";
+        return ss.str();
+    }
+    friend ostream& operator <<(ostream& cout, Dice& dice) {
+        cout << dice.toString();
+        return cout;
+    }
+};
+
+-----------------------------------------------------------
+
+Inheritance : StackSorted
+A class named ArrayStack has been written, which is an implementation of a stack of integers using an array as its internal representation.
+
+class ArrayStack {
+public:
+   ArrayStack();                  // construct empty stack
+   ~ArrayStack();                 // free memory
+
+   virtual bool isEmpty() const;  // true if stack has no elements
+   virtual int peek() const;      // return top element (error if empty)
+   virtual int pop();             // remove/return top element (error if empty)
+   virtual void push(int n);      // add to top of stack, resizing if needed
+
+private:
+   int* elements;                 // array of stack data (index 0 = bottom)
+   int size;                      // number of elements in stack
+   int capacity;                  // length of array
+};
+Define a new class called StackSorted that extends ArrayStack through inheritance. Your class represents a stack of integers that is always stored in sorted non-decreasing order, regardless of the order in which items are pushed onto the stack. Your class should provide the same member functions as the superclass. Your code must work with the existing ArrayStack as shown, unmodified. For example, if the following elements are added to an empty StackSorted:
+
+42, 27, 39, 3, 55, 81, 11, 9, 0, 72
+The following lines show the stack's state before and after adding each element, in bottom-to-top (left-to-right) order:
+
+(You need to overload << operator for below output) "ostream& operator <<(ostream& out, const StackSorted& stack);"
+
+{}
+{42}
+{27, 42}
+{27, 39, 42}
+{3, 27, 39, 42}
+{3, 27, 39, 42, 55}
+{3, 27, 39, 42, 55, 81}
+{3, 11, 27, 39, 42, 55, 81}
+{3, 9, 11, 27, 39, 42, 55, 81}
+{0, 3, 9, 11, 27, 39, 42, 55, 81}
+{0, 3, 9, 11, 27, 39, 42, 55, 72, 81}
+You may create ArrayStack objects in your code if it is helpful to do so, but otherwise you should not create any auxiliary data structures (arrays, vectors, queues, maps, sets, strings, etc.) in your code.
+
+class StackSorted : public ArrayStack
+{
+ // Write your code here
+ public:
+ void solve(int a){
+ if(isEmpty()||peek()<=a){
+   ArrayStack::push(a);
+   return;
+ }
+      int x=pop();
+      solve(a);
+      ArrayStack::push(x);
+ }
+ void push(int a){
+    if(isEmpty()){
+      ArrayStack::push(a);
+    }
+    else {
+       solve(a);
+    }
+ }
+};
+
+-------------------------------------------------------------
+
+Polymorphism : Area
+Calculate the volume of geometrical shapes using virtual functions for below shapes. Use the following formulas and display the volume upto 3 decimal places.
+
+Volume of sphere= 4/3*3.14*radius*radius*radius
+Volume of cylinder=3.14*radius*radius*height
+Volume of cone=1/3*3.14*radius*radius*height
+Volume of cube= side*side*side
+Choice 1 for sphere, 2 for cylinder, 3 for cone, 4 for cube
+
+Sample input 1
+
+1  //choice for sphere
+3  //radius of sphere
+Sample output 1
+
+Volume of sphere is 112.757
+Sample input 2
+
+2  //choice for cylinder
+3 //radius of cylinder
+4 //height of cylinder
+Sample output 2
+
+Volume of cylinder is 113.040
+Sample input 3
+
+5 // wrong choice
+Sample output 3
+
+wrong choice
+Note: First line of input contain choice. Second line contain radius/side . For Cylinder and Cone third line contain height.
+
+#include<iostream>
+#include<cstdio>
+#include<cmath>
+// Include headers as needed
+using namespace std;
+void sphere(int radius){
+    float ans=1.33*3.14*radius*radius*radius;
+    printf("Volume of sphere is %.3f",ans);
+  }
+  void cylinder(int radius,int height){
+    float ans=3.14*radius*radius*height;
+    printf("Volume of cylinder is %.3f",ans);
+  }
+  void cone(int radius,int height){
+    float ans=(1/3)*3.14*radius*radius*height;
+    printf("Volume of cone is %.3f",ans);
+  }
+  void cube(int side){
+    float ans=side*side*side;
+    printf("Volume of cube is %.3f",ans);
+  }
+int main()
+{
+    // Write your code here
+  int choice,radius,height,side;
+  cin>>choice;
+  switch(choice){
+    case 1:{
+      cin>>radius;
+      sphere(radius);
+    }
+      break;
+    case 2:{
+      cin>>radius;
+      cin>>height;
+      cylinder(radius,height);
+    }
+      break;
+    case 3:{
+      cin>>radius;
+      cin>>height;
+      cone(radius,height);
+    }
+      break;
+    case 4:{
+      cin>>side;
+      cube(side);
+    }
+      break;
+    default:{
+      cout<<"wrong choice";
+    }
+      break;
+  }
+    return 0;
+}
+
+------------------------------------------------------
+List as Stack or Queue
+Create a class List with two pure virtual function store() and retrieve().
+
+To store a value call store and
+
+To retrieve call retrieve function.
+
+Derive two classes Stack and Queue from it and override store and retrieve methods appropriately.
+
+Sample input1
+
+1	// for Stack
+1	// for store
+5
+1	// for store
+6
+1	// for store
+7
+2	// for retrieve
+2	// for retrieve
+2	// for retrieve
+Sample output1
+
+7
+6
+5
+Sample input2
+
+1	// for Queue
+1	// for store
+5
+1	// for store
+6
+1	// for store
+7
+2	// for retrieve
+2	// for retrieve
+2	// for retrieve
+Sample output2
+
+5
+6
+7
+
+#include <iostream>
+#include <vector>
+using namespace std;
+class List {
+public:
+    virtual void store(int val) = 0;
+    virtual int retrieve() = 0;
+};
+class Stack : public List {
+private:
+    vector<int> data;
+public:
+    void store(int val) override {
+        data.push_back(val);
+    }
+    int retrieve() override {
+        if (data.empty()) {
+            cout << "Stack is empty!\n";
+            return -1;
+        }
+        int val = data.back();
+        data.pop_back();
+        return val;
+    }
+};
+class Queue : public List {
+private:
+    vector<int> data;
+public:
+    void store(int val) override {
+        data.push_back(val);
+    }
+    int retrieve() override {
+        if (data.empty()) {
+            cout << "Queue is empty!\n";
+            return -1;
+        }
+        int val = data.front();
+        data.erase(data.begin());
+        return val;
+    }
+};
+int main() {
+    int type;
+    cin >> type;
+    List* myList;
+    if (type == 1) {
+        myList = new Stack();
+    } else {
+        myList = new Queue();
+    }
+    int op;
+    while (cin >> op) {
+        if (op == 1) {
+            int val;
+            cin >> val;
+            myList->store(val);
+        } else if (op == 2) {
+            int val = myList->retrieve();
+            if (val != -1) {
+                cout << val << endl;
+            }
+        }
+    }
+    delete myList;
+    return 0;
+}
+
+---------------------------------------------------------
+
+Person Professor and Student
+Create three classes Person, Professor and Student.
+
+The class Person should have data member age.
+The classes Professor and Student should inherit from the class Person.
+The class Professor should have two integer members: publications and cur_id. There will be two member functions: getdata and putdata. The function getdata should get the input from the user: the age and publications of the professor. The function putdata should print the age, publications and the cur_id of the professor.
+The class Student should have two data members: marks, which is an array of size 6 and cur_id. It has two member functions: getdata and putdata. The function getdata should get the input from the user: the age, and the marks of the student in subjects. The function putdata should print the age, sum of the marks and the cur_id of the student.
+For each object being created of the Professor or the Student class, sequential id's should be assigned to them starting from 1.
+
+
+Solve this problem using virtual functions, constructors and static variables. You can create more data members if you want.
+
+
+
+class Person {
+protected:
+    int age;
+public:
+    Person() {}
+    virtual void getdata() {}
+    virtual void putdata() {}
+};
+class Professor : public Person {
+private:
+    int publications;
+    static int cur_id;
+    int id;
+public:
+    Professor() {
+        id = ++cur_id;
+    }
+    void getdata() {
+        cin >> age >> publications;
+    }
+    void putdata() {
+        cout << age << " " << publications << " " << id << endl;
+    }
+};
+int Professor::cur_id = 0;
+class Student : public Person {
+private:
+    int marks[6];
+    static int cur_id;
+    int id;
+public:
+    Student() {
+        id = ++cur_id;
+    }
+    void getdata() {
+        cin >> age;
+        for (int i = 0; i < 6; i++) {
+            cin >> marks[i];
+        }
+    }
+    void putdata() {
+        int sum = 0;
+        for (int i = 0; i < 6; i++) {
+            sum += marks[i];
+        }
+        cout << age << " " << sum << " " << id << endl;
+    }
+};
+int Student::cur_id = 0;
+
+
+------------------------------------------------------
+
+Catch multiple exceptions
+Complete the function cq1(int n) to throw below exceptions and catch them accordingly.
+
+if n is negative, throw -1.
+if n is zero, throw "ZERO"
+if n is positive, throw 1.0
+
+
+Implement necessary catch blocks accordingly as shown below.
+
+if n is negative, print "NEGATIVE"
+if n is zero, print "ZERO"
+if n is positive, print "POSITIVE"
+
+// Complete the given function using try and catch.
+void cq1(int n)
+{
+  try{
+    if(n<0)throw -1;
+    if(n==0)throw 'x';
+    if(n>1)throw 1.0;
+  }
+  catch(int a){
+    cout<<"NEGATIVE"<<endl;
+  }
+  catch(char a){
+    cout<<"ZERO"<<endl;
+  }
+  catch( double a){
+    cout<<"POSITIVE"<<endl;
+  }
+}
+---------------------------------------------------------
+
+Password too short Exception
+Write a program to accept user name and password from the user.
+
+If the password has less than 6 characters then throw an exception as character 's'
+If the password does not contain a digit then throw an exception as character 'd'.
+For handling exception implement necessary catch blocks and print the messages accordingly.
+
+Sample Input1
+
+Arun
+abcd123
+SampleOutput1
+
+Correct
+Sample Input2
+
+Arun
+abcdefgh
+SampleOutput2
+
+No digit!
+Sample Input3
+
+Arun
+abc1
+SampleOutput3
+
+Too short!
+
+#include<iostream>
+#include<cstdio>
+#include<cmath>
+#include<string>
+// Include headers as needed
+using namespace std;
+void check(string s,string pass){
+  try{
+    if(pass.length()<6){
+      throw 's';
+    }
+    else{
+      int flag=0;
+      for(int i=0;i<pass.length();i++){
+      if(pass[i]>='0' && pass[i]<='9'){
+        //throw 'd';
+        flag=1;
+        break;
+      }
+    }
+      if(!flag){
+        throw 'd';
+      }
+      else{
+      throw 'g';
+    }
+  }
+  }
+  catch(char ch){
+    if(ch=='s'){
+    cout<<"Too short!";
+    }
+    else if(ch=='d'){
+      cout<<"No digit!";
+    }
+    else{
+      cout<<"Correct";
+    }
+  }
+}
+int main()
+{
+    string s;
+  cin>>s;
+  string pass;
+  cin>>pass;
+  check(s,pass);
+    return 0;
+}
+
+------------------------------------------------------
+
+
+Valid email address
+Check an email-id for following exceptions
+
+if id does not contain '@' OR
+if id does not contain '.' (dot) OR
+if no '.' (dot) appears after '@'
+catch the exception and print "Invalid" or "Valid" accordingly.
+
+void isvalidemail(string id)
+{
+  int flag1=0,flag2=0;
+  try{
+    int i;
+    for(i=0;i<id.length();i++){
+      if(id[i]=='@'){
+        flag1=1;
+        break;
+      }
+    }
+    if(flag1!=1){
+      throw 'i';
+    }
+    else{
+      for(int j=i+1;j<id.length();j++){
+        if(id[j]=='.'){
+          flag2=1;
+          break;
+        }
+      }
+      if(flag2!=1){
+        throw 'i';
+      }else{
+        throw 'v';
+      }
+    }
+  }catch(char c){
+    if(c=='i'){
+      cout<<"Invalid";
+    }else{
+      cout<<"Valid";
+    }
+  }
+}
+
+------------------------------------------------------
+
+Valid index of array
+Write a program to check whether the indexes given are valid index are not. Print "Out of Bounds" if any attempt is made to refer to an element whose index is beyond the array size , else print the element present at the index.
+
+Input Format
+
+The first line of input contains n , denoting the size of array.
+The second line contains n spaced integers , denoting elements of array 
+The third line contains q, denoting number of queries
+Next q lines contains an integer, index, which is to be tested.
+Output Format
+
+For each query print the value at index if the index is a valid index , else print "Out of Bounds".
+Sample Input
+
+10			// Size of array
+1 2 3 4 5 6 7 8 9 10	// array elements
+2 // No. Of Queries
+4		// index to be retrieved
+13		// index to be retrieved
+Sample Output
+
+5
+Out of Bounds
+
+#include<iostream>
+#include<cstdio>
+#include<cmath>
+// Include headers as needed
+using namespace std;
+int main()
+{
+    int n;
+  cin>>n;
+  int a[n];
+  for(int i=0;i<n;i++){
+    cin>>a[i];
+  }
+  int t;
+  cin>>t;
+  while(t--){
+    int query;
+    try{
+      cin>>query;
+      if(query<0 || query>n){
+        throw -1;
+      }
+      else{
+        throw 1;
+      }
+    }
+    catch(int i){
+      if(i==-1){
+        cout<<"Out of Bounds"<<endl;
+      }
+      else{
+        cout<<a[query]<<endl;
+      }
+    }
+  }
+    return 0;
+}
+
+------------------------------------------------------------
+
+Swap two variables using templates
+Write a function Swap() to swap two variables using templates, so that it can be used to swap any kind of variables.
+
+Input Format
+
+First Line of input contains 2 Integers seperated by a space
+Second Line of Input contains 2 floating point number seperated by a space
+Third Line of input contains 2 characters seperated by a space
+Output Format
+
+First 3 Lines contains the variables scanned without swapping
+Next 3 Lines contains the variables scanned after swapping
+Sample Input
+
+1 2
+1.1 2.2
+a b
+Sample Output
+
+1 2
+1.1 2.2
+a b
+2 1
+2.2 1.1
+b a
+
+
+// Create a function named Swap() that accepts 2 parameters,
+// regardless of the data type & swaps the variables
+template<typename T>
+void Swap(T &a,T &b){
+swap(a,b);
+}
+
+-----------------------------------------------------
+
+Calculator using templates
+Write a class Calculate to add, subtract, multiply and divide two numbers using class templates.
+
+Include methods below:
+
+a constructor to initialize with two variables.
+a add() function to perform addition
+a sub() function to perform subtraction
+a mul() function to perform multiplication
+a div() function to perform division
+
+template <class T>
+class Calculate
+{
+  T a,b;
+  public:
+  Calculate(T &a,T &b){
+    this->a=a;
+    this->b=b;
+  }
+  T add(){
+    return a+b;
+  }
+  T sub(){
+    return a-b;
+  }
+  T mul(){
+    return a*b;
+  }
+  T div(){
+    return a/b;
+  }
+};
+
+---------------------------------------------------------
+
+Square of a number using templates
+Write a function square as template to return the square of the argument.
+
+template<typename T>
+T square(T &a){
+  return a*a;
+}
+
+
+----------------------------------------------------
+Find minimum of a template array
+Write a function minElement which takes an template array and and integer size of array as two arguments.
+
+It must return the minimum of the array values, those can be int, float and strings as well).
+
+#include<bits/stdc++.h>
+template<typename T>
+T minElement(T *a,int n){
+   sort(a,a+n);
+  return a[0];
+}
+
+---------------------------------------------------------------
+
+STL_________________
+
+Find cumulative sum of a vector
+Write a function named cumulative that accepts a reference to a Vector of integers and modifies it so that each element contains the cumulative sum of the elements up through that index.
+
+For example, if the vector passed contains {1, 2, 3, 4, 5}, your function should modify it to store {1, 3, 6, 10, 15}.
+
+Input Format
+
+The first line of input consists of an integer, N
+The next N lines contains an integer.
+Output Format
+
+Print the vector elements after performing the operation seperated by a space.
+Sample Input
+
+5
+1
+2
+3
+4
+5
+Sample Output
+
+1 3 6 10 15
+
+
+// Write the cumulative() function as sp
+void cumulative(vector<int> &v){
+  for(int i=0;i<v.size();i++){
+    v[i]=v[i]+v[i-1];
+  }
+}
+
+
+----------------------------------------------------
+
+
+Find mean of a vector
+Write a function named mean() that accepts a reference to a vector of integers, and returns the arithmetic mean (average) of the integers in the vector as a double number.
+
+For example, if the vector v contains {4.5, 20.0, 1.5, 7.0}, the call of mean(v) should return 8.25.
+
+If the vector is empty, return 0.0.
+
+Input Format
+
+The first line of input consists of an integer, N
+The next N lines contains a floating point number.
+Output Format
+
+Print the mean of the vector
+Sample Input
+
+4
+4.0
+20.0
+1.5
+7.0
+Sample Output
+
+8.25
+
+double mean(vector<double> &v){
+  if(!v.size()){
+    return 0;
+  }
+  double sum=0;
+  for(int i=0;i<v.size();i++){
+    sum+=v[i];
+  }
+  return sum/v.size();
+}
+
+---------------------------------------------------------
+
+Count in range from a vector
+Write a function named countInRange() that accepts three parameters:
+
+a reference to a Vector of integers,
+a minimum and
+a maximum integer,
+and returns the number of elements in the vector within that range inclusive.
+
+For example, if the vector v contains {18, 1, 17, 4, 81, 9, 159, 8, 31, 30, 22}, the call of countInRange(v, 10, 30) should return 4.
+
+If the vector is empty, return 0.
+
+Input Format
+
+The first line of input consists of an integer, N
+The next N lines contains an Integer.
+Then next 2 lines contain the minimum value and the maximum value of the range
+Output Format
+
+Print the count of elements present in the range
+Sample Input
+
+11
+28
+1
+17
+4
+41
+9
+59
+8
+31
+30
+25
+10
+30
+Sample Output
+
+4
+
+// Write the countInRange() function as specified above
+int countInRange(vector<int> &v,int min,int max){
+  if(!v.size()){
+    return 0;
+  }
+  int c=0;
+  for(int i=0;i<v.size();i++){
+    if(v[i]>=min && v[i]<=max){
+      c++;
+    }
+  }
+  return c;
+}
+
+
+---------------------------------------------------------
+
+Split the vector elements in two
+Write a function named split() that accepts a reference to a Vector of integers, and modifies it to be twice as large, replacing every integer with a pair of integers, where each is half of the original.
+
+If a number in the original vector is odd, then the first number in the new pair should be one higher than the second so that the sum equals the original number.
+
+For example, if a variable named v refers to a vector storing the values {22, 45}, the call of split(v); should change v to contain {11, 11, 23, 22}.
+
+(The number 22 is splitted into the pair 11, 11, the number 45 is splitted into 23, 22.)
+
+Input Format
+
+The first line contains an integer N, denoting the size of vector
+The second line contains N spaced integers
+Output Format
+
+Print the vector elements separated by space
+Sample Input
+
+2
+22 45
+Sample Output
+
+11 11 23 22
+
+// Write the split() function as specified above
+void split(vector<int> &v){
+  int n=v.size();
+  for(int i=0;i<n;i++){
+    int a=v[i]/2;
+  int b=v[i]-a;
+  v.push_back(b);
+  v.push_back(a);
+  }
+ v.erase(v.begin(),v.begin()+n);
+}
+
+
+---------------------------------------------------------
+
+Beautify the vector
+Write a function named beautify() that accepts a reference to a vector of strings, and modifies the vector by placing a "#" element between elements, as well as at the start and end of the vector.
+
+For example, if the vector v contains {"Code", "Quotient"}, the call of beautify(v) should modify it to store {"#", "Code", "#", "Quotient", "#"}.
+
+Input Format
+
+The first line of input consists of an integer, N
+The next N lines contains a string.
+Output Format
+
+Print the vector after performing the operation
+Sample Input
+
+2
+Code
+Quotient
+Sample Output
+
+# Code # Quotient
+
+void beautify(vector<string> &v){
+  int n=v.size();
+  for(int i=0;i<2*n;i=i+2){
+     v.insert(v.begin()+i,"#");
+  }
+   v.insert(v.begin()+2*n,"#");
+}
+
+-----------------------------------------------------------
+Switch numbers in a vector
+Write a function named switchPairs() that accepts a reference to a Vector of integers and it switches the order of values in a pairwise fashion.
+
+It should switch the order of the first two values, then switch the order of the next two, switch the order of the next two, and so on.
+
+For example, if the vector initially stores {5, 14, 34, -13, 3, 8}, then after calling switchPairs() it must be {14, 5, -13, 34, 8, 3}.
+
+If there are an odd number of values in the list, the final element is not moved. For example, if the original vector had been {5, 14, 34, -13, 3, 8, 7}, then the result would be {14, 5, -13, 34, 8, 3, 7}.
+
+Input Format
+
+The first line of input consists of an integer, N
+The next line contains N integers seperated by a space.
+Output Format
+
+Print the vector after performing the operation
+Sample Input - 1
+
+6
+5 14 34 -13 3 8
+Sample Output - 1
+
+14 5 -13 34 8 3
+Sample Input - 2
+
+7
+5 14 34 -13 3 8 7
+Sample Output - 2
+
+14 5 -13 34 8 3 7
+
+// Write the switchPairs() function as specified above
+void switchPairs(vector<int> &v){
+  if(v.size()==0 || v.size()==1){
+    return ;
+  }
+  for(int i=0;i<v.size()-1;i=i+2){
+   swap(v[i],v[i+1]);
+  }
+}
+
+------------------------------------------------------------
+Remove an element from vector of string
+Write a function named removeAll() that accepts a reference to a vector of strings along with a string to be removed , and modifies the vector to remove all occurrences of that string from vector.
+
+For example, if the vector v contains {"Code", "Quotient", "Coding", "Quotient", "Coding", "Coding", "Code"},
+
+then call of removeAll(v, "Coding"); should modify it to store {"Code", "Quotient", "Quotient", "Code"}.
+
+Input Format
+
+The first line of input contains an integer N, denoting the size of vector
+The next line contains N space separated strings. 
+The next line contains the string to be removed.
+Output Format
+
+Print the elements of vector separated by a space
+
+
+﻿Sample Input
+
+7
+Code Quotient Coding Quotient Coding Coding Code
+Coding
+Sample Output
+
+Code Quotient Quot
+
+// Write the removeAll() function as specified in the question description
+void removeAll(vector<string> &v,string rem){
+  int n=v.size();
+  vector<string> s;
+  for(int i=0;i<n;i++){
+    if(v[i]!=rem){
+      s.push_back(v[i]);
+    }
+  }
+  v.clear();
+  for(int i=0;i<s.size();i++){
+    v.push_back(s[i]);
+  }
+}
+
+--------------------------------------------------------
+
+Remove consecutive duplicates from a vector
+Write a function named removeConsecutiveDups() that accepts as a parameter
+
+a reference to a Vector of integers,
+and modifies it by removing any consecutive duplicates.
+
+For example, if a vector named v stores {2, 5, 5, 7, 6, 6, 9}, the call of removeConsecutiveDups(v); should modify it to store {2, 5, 7, 6, 9}.
+
+
+// Write the removeConsecutiveDups() function as specified above
+void removeConsecutiveDups(vector<int>&v){
+  vector<int> s;
+  for(int i=0;i<v.size();i++){
+    if(v[i]!=v[i+1]){
+      s.push_back(v[i]);
+    }
+  }
+  v.clear();
+  for(int i=0;i<s.size();i++){
+    v.push_back(s[i]);
+  }
+}
+
+---------------------------------------------------------
+Remove odd length strings from a vector of strings
+Write a function named removeOdd() that accepts as a parameter
+
+a reference to a Vector of strings,
+and modifies the vector to remove all occurrences of those strings whose length is odd.
+
+For example, if the vector v contains {"Code", "Quotient", "Get", "Better", "@", "Coding"},
+
+then call of removeOdd(v); should modify it to store {"Code", "Quotient", "Better", "Coding"}.
+
+// Write the removeOdd() function as specified above
+void removeOdd(vector<string> &v){
+  vector<string> s;
+  for(int i=0;i<v.size();i++){
+    if(v[i].size()%2==0){
+      s.push_back(v[i]);
+    }
+  }
+  v.clear();
+  v=s;
+}
+
+-------------------------------------------------------------------------
+
+Remove large Pairs from a vector of integers
+Write a function named removeLargePairs() that accepts as a parameter
+
+a reference to a Vector of integers,
+and removes any adjacent pair of integers in the list if the left element of the pair is larger than the right element of the pair. For example, suppose a vector named v stores the following element values:
+
+{1, 1, 2, 2, 4, 3, 6, 5, 3, 7, 8, 5}
+
+We can think of this list as a sequence of pairs:
+
+{{1, 1}, {2, 2}, {4, 3}, {6, 5}, {3, 7}, {8, 5}}
+
+The pairs {4, 3}, {6, 5} and {8, 5} are "large" because the left element is larger than the right one, so these pairs should be removed. So the call of removeLargePairs(v); would change the vector to store:
+
+{1, 1, 2, 2, 3, 7}
+
+
+
+If the vector has an odd length, the last element is not part of a pair and is left untouched.
+If an empty vector is passed in, the vector should still be empty at the end of the call.
+Do not use any other arrays, vectors, or other data structures to help solve this problem, though you can create as many simple variables as you like.
+
+// Write the removeLargePairs() function as specified above
+void removeLargePairs(vector<int>&v){
+  vector<int> v1;
+   if(v.size()==0){
+    return;
+  }
+  for(int i=0;i<v.size()-1;i+=2){
+    if(v[i]<=v[i+1]){
+      v1.push_back(v[i]);
+      v1.push_back(v[i+1]);
+    }
+  }
+ if(v.size()%2!=0){
+   v1.push_back(v[v.size()-1]);
+ }
+  if(v.size()>1){
+    v.clear();
+  	v=v1;
+  }
+}
+
+---------------------------------------------------------
+
+Intersection of two vectors
+Write a function named intersection() that accepts
+
+references to two sorted Vector of integers as parameters
+and returns a new vector that contains only the elements that are found in both vectors. For example, if vector v1 and v2 store:
+
+v1 = {1, 2, 3, 4, 5, 6}
+
+v2 = {2, 4, 6, 8}
+
+Then the call of intersection(v1, v2) returns the vector: {2, 4, 6}
+
+
+// Write the intersection() function as specified above// Write the intersection() function as specified above
+#include<map>
+vector<int> intersection(vector<int>v1,vector<int>v2){
+  map<int,int>m;
+  vector<int>v;
+  if(v1.size()==0||v2.size()==0){
+    return v;
+  }
+  for(int i=0;i<v1.size();i++){
+    m[v1[i]]++;
+  }
+  for(int i=0;i<v2.size();i++){
+    m[v2[i]]++;
+  }
+  for(auto x:m){
+    if(x.second==2){
+      v.push_back(x.first);
+    }
+  }
+  return v;
+}
+
+------------------------------------------------------------
+
+Find number is repfigit number or not
+Write a function named isrepfigitNumber() that accepts an integer and returns true if that number is a "repfigit number" (repetitive Fibonacci-like digit).
+
+A "repfigit number" is defined as any n-digit integer that appears in the sequence that starts off with the number's n digits and then continues such that each subsequent number is the sum of the preceding n. (This is not unlike the classic Fibonacci sequence.)
+
+All one-digit numbers are trivially repfigit numbers.
+
+As an example, consider the 3-digit number N = 197. The sequence goes like this:
+
+1, 9, 7, 17, 33, 57, 107, 197, 361, ...
+
+Because 197 appears in the sequence, 197 is seen to be indeed a repfigit number.
+
+The sequence starts out 1, 9, 7, because those are the digits making up 197. Each number after that is the sum of the three numbers that precede it (three, because 197 has three digits). So the forth number is the sum of 1+9+7=17. The fifth number is 9+7+17=33 and so on, until we eventually get back to 197, which makes 197 a repfigit number.
+
+You may use a single Vector or LinkedList as auxiliary storage.
+
+Your function should not loop infinitely; if you become sure that the number is not a repfigit number, stop searching and immediately return false.
+
+
+
+#include<bits/stdc++.h>
+bool isrepfigitNumber(int n) 
+{
+  vector<int>v;
+  int k=n;
+  int sum=0;
+  string s=to_string(n);
+  for(int i=0;i<s.length();i++){
+    sum+=s[i]-'0';
+    v.push_back(s[i]-'0');
+  }
+  v.push_back(sum);
+  int p=v.size()-1;
+  while(v[p]<=k){
+    if(v[p]==k){
+      return true;
+    }
+    int sum=0;
+    for(int j=p;j>=p+1-s.length();j--){
+    	sum+=v[j];
+    } 
+    cout<<endl;
+    v.push_back(sum);
+    p++;
+    //cout<<v[p]<<endl;
+  }
+  return false;
+}
+
+-------------------------------------------------------------
+
+Duplicate the Queue elements
+Write a function named doubleQueue() that accepts
+
+a reference to a queue of integers as a parameter
+and replaces every element with two copies of itself.
+
+For example, if a queue named q stores {11, 12, 13}, the call of doubleQueue(q); should change it to store {11, 11, 12, 12, 13, 13}.
+
+Constraints: Do not use any auxiliary collections as storage.
+
+void doubleQueue(queue<int>& q)
+{
+  int n=q.size();
+  for(int i=0;i<n;i++){
+    int a=q.front();
+    q.pop();
+    q.push(a);
+    q.push(a);
+  }
+}
+
+-----------------------------------------------------------
+
+Get the mirror of the queue
+Write a function named mirrorQueue() that accepts
+
+a reference to a queue of strings as a parameter
+and appends the queue's contents to itself in reverse order.
+
+For example, if a queue named q stores {"Code", "Quotient"}, the call of mirrorQueue(q); should change it to store {"Code", "Quotient", "Quotient", "Code"}.
+
+
+
+#include<stack>
+void mirrorQueue(queue<string>& q)
+{
+  queue<string>q2=q;
+  stack<string>s;
+  while(q.size()){
+    s.push(q.front());
+    q.pop();
+  }
+  while(s.size()){
+    q2.push(s.top());
+    s.pop();
+  }
+  q=q2;
+}
+
+---------------------------------------------------------
+
+Check for balanced parentheses in string
+Complete the function balancedString() that accepts a string of source code and check whether the braces/parentheses are balanced.
+
+Every ( or { must be closed by a } or ) in the opposite order. Return the index at which an imbalance occurs, or -1 if the string is balanced. If any ( or { are never closed, return the string's length.
+
+Here are some example calls:
+
+balancedString("if(a(4)>9){foo(a(2));}")         // returns -1 because balanced
+balancedString("for(i=0;i<a(3};i++){foo{);)")    // returns 13 because } out of order
+balancedString("while(true)foo();}{()")          // returns 17 because } doesn't match any {
+balancedString("if(x){")                         // returns 6 because { is never closed
+Input Format:
+
+Input consists of a single line that contains the string of source code.
+Output Format:
+
+Return the index at which the imbalance occurs, if the string is balanced return -1
+Sample Input
+
+if(a(4)>9){foo(a(2));}
+Sample Output
+
+-1
+Explanation
+
+The given string is balanced, hence the output is -1﻿
+Sample Input
+
+for(i=0;i<a(3};i++){foo{);)
+Sample Output
+
+13
+Explanation
+
+The given string is i
+
+
+
+int balancedString(string s){
+	stack<char> st;
+  	for(int i=0;i<s.length();i++){
+      if(s[i]=='('||s[i]=='{'){
+        st.push(s[i]);
+      }else if(s[i]==')'||s[i]=='}'){
+        if(st.size()==0){
+          return i;
+        }
+        char ch=st.top();
+        if(s[i]==')'&&ch!='('){
+          return i;
+        }
+        else if(s[i]=='}'&&ch!='{'){
+          return i;
+        }
+        st.pop();
+      }
+    }
+  if(st.size()!=0){
+    return s.length();
+  }
+  return -1;
+  }
+
+  ----------------------------------------------
+
+Flip the odd elements of queue
+Write a function named flipHalfQueue() that
+
+Takes an queue of integers as parameter
+and reverses the order of half of the elements of a Queue of integers,
+
+Your function should reverse the order of all the elements in odd-numbered positions (position 1, 3, 5, etc.) assuming that the first value in the queue has position 0.
+
+For example, if the queue originally stores this sequence of numbers when the function is called:
+
+index: 0  1  2  3  4  5   6   7
+front:{5, 7, 6, 2, 9, 18, 11, 15} back
+Then it should store the following values after the function finishes executing:
+
+index: 0   1  2  3   4  5   6  7
+front:{5, 15, 6, 18, 9, 2, 11, 7} back
+Notice that numbers in even positions (positions 0, 2, 4, 6) have not moved. That sub-sequence of numbers is still: (5, 6, 9, 11).
+
+But notice that the numbers in odd positions (positions 1, 3, 5, 7) are now in reverse order relative to the original. In other words, the original sub-sequence: (7, 2, 18, 15) - has become: (15, 18, 2, 7).
+
+Constraints: You may use a single stack as auxiliary storage.
+
+
+
+#include<stack>
+void flipHalfQueue(queue<int>& q) {
+    int n = q.size();
+    stack<int> s;
+    for(int i = 0; i < n; i++) {
+        int x = q.front();
+        q.pop();
+        if(i % 2 == 1) {
+            s.push(x);
+        }
+        q.push(x);
+    }
+    for(int i = 0; i < n; i++) {
+        int x = q.front();
+        q.pop();
+        if(i % 2 == 1) {
+            q.push(s.top());
+            s.pop();
+        }
+        else {
+            q.push(x);
+        }
+    }
+}
+
+-----------------------------------------------------
+
+
+Number is a Happy number or not
+Write a function named isHappy() that returns whether a given integer is "happy" or not.
+
+An integer is "happy" if repeatedly summing the squares of its digits eventually leads to the number 1.
+
+For example, 139 is happy because:
+
+12 + 32 + 92 = 91
+92 + 12 = 82
+82 + 22 = 68
+62 + 82 = 100
+12 + 02 + 02 = 1
+By contrast, 4 is not happy because:
+
+42 = 16
+12 + 62 = 37
+32 + 72 = 58
+52 + 82 = 89
+82 + 92 = 145
+12 + 42 + 52 = 42
+42 + 22 = 20
+22 + 02 = 4
+...
+
+
+Note: Don't stuck in an infinite loop.
+
+bool isHappy(int n) {
+	while (n>9) {
+        int sum = 0;
+        while (n > 0) {
+            int digit = n % 10;
+            sum += digit * digit;
+            n /= 10;
+        }
+        n = sum;
+    }
+	return n==1;
+}
+
+--------------------------------------------------------
+
+
+Find the numbers appearing thrice
+Write a function named thrice() that accepts as a parameter
+
+a reference to a vector of integers
+and returns a set containing all the numbers in the vector that appear exactly thrice.
+
+For example, if a vector variable v stores {1, 1, 1, 4, 13, 17, -12, 33, 17, 82, 17, 61}, the call of thrice(v) should return the set {1, 17}.
+
+// Complete the below function as specified below.
+#include<map>
+set<int> thrice(vector<int>& v)
+{
+	map<int ,int> m;
+  set<int>s;
+  for(auto it : v){
+    m[it]++;
+  }
+  for(auto it:m){
+    if(it.second==3){
+      s.insert(it.first);
+    }
+  }
+  return s;
+}
+
+
+
+--------------------------------------------------------
+
+Remove duplicates from a vector
+Write a function named removeDuplicates() that accepts as a parameter
+
+a reference to a Vector of integers,
+and modifies it by removing any duplicates.
+
+Note that the elements of the vector are not in any particular order, so the duplicates might not occur consecutively.
+
+You should retain the original relative order of the elements.
+
+Use a Set as auxiliary storage to help you solve this problem.
+
+For example, if a vector named v stores {24, 10, 12, 19, 24, 17, 12, 10, 10, 19, 26, 26}, the call of removeDuplicates(v); should modify it to store {24, 10, 12, 19, 17, 26}.
+
+
+
+#include<set>
+void removeDuplicates(vector<int>& vec) {
+	set<int> s;
+    auto it = vec.begin();
+    while (it != vec.end()) {
+        if (s.count(*it) > 0) {
+            it = vec.erase(it);
+        } else {
+            s.insert(*it);
+            it++;
+        }
+    }
+}
+
+---------------------------------------------------------------
+
+Find first occurrence of an integer in a sorted list with duplicates
+Given a sorted list of integers, find the position of first occurrence of a given number K in the list in O(log n) time.
+
+Input Format:
+
+First line of input will contain a positive integer T = number of test cases.
+Each test case will contain the following two lines:
+  First line will contain two positive integer N = number of elements in list and K.
+  Second line will contain N space separated integers in increasing order.
+Constraints:
+
+  1 <= N <= 10^5
+ -(10^9) <= arr[i], K <= (10^9)
+Output Format:
+
+For each test case, print on a single line the index of first occurrence of K in the list on 0-based index. Print -1 if you cannot find K in the list.
+Sample Input
+
+3  // Test Cases
+10 4  // N K (testcase 1)
+1 2 4 4 4 4 5 8 9 10
+15 7  // N K (testcase 2)
+1 2 3 3 5 6 7 7 7 7 7 8 8 8 8
+9 1   // N K (testcase 3)
+-5 -4 -3 -2 -1 0 0 0 1
+Sample Output
+
+2
+6
+8
+
+#include<iostream>
+#include<cstdio>
+#include<cmath>
+using namespace std;
+int dubl(int *a,int n,int k){
+  for(int i=0;i<n;i++){
+    if(a[i]==k)
+      return i;
+  }
+  return -1;
+}
+int main()
+{
+  int t;
+  cin>>t;
+  while(t--){
+    int n,k;
+    cin>>n>>k;
+    int a[n];
+    for(int i=0;i<n;i++){
+      cin>>a[i];
+    }
+    cout<<dubl(a,n,k)<<endl;
+  }
+   return 0;
+}
+
+-------------------------------------------------------
+
+Find count of a number in a sorted list with duplicates
+Given a sorted list of integers with duplicates, find the count of a given number K in that list in O(log n) time.
+
+Input
+
+First line of input will contain a positive integer T = number of test cases. Each test case will contain 2 lines. 
+First line of each test case will contain two number N = number of elements in list and K separated by space. 
+Next line will contain N space separated integers.
+Constraints
+
+  1 <= N <= 10^5
+ -(10^9) <= arr[i], K <= (10^9)
+Output
+
+For each test case, print on a single line, the count of number K in this list.
+Sample Input
+
+3  // Test Cases
+10 5  // N K (testcase 1)
+1 2 2 5 5 5 7 7 7 8
+10 1  // N K (testcase 2)
+1 1 1 1 1 1 1 2 2 3
+20 2  // N K (testcase 3)
+1 1 1 1 1 2 2 2 2 2 3 3 3 3 3 4 4 4 4 4
+Sample Output
+
+3
+7
+5
+
+#include<iostream>
+#include<cstdio>
+#include<cmath>
+using namespace std;
+int main()
+{
+  int t;
+  cin>>t;
+  while(t--){
+    int n,k;
+    cin>>n>>k;
+    int a[n];
+    for(int i=0;i<n;i++){
+      cin>>a[i];
+    }
+    int c=0;
+    for(int i=0;i<n;i++){
+      if(a[i]==k)
+        c++;
+    }
+    cout<<c<<endl;
+  }
+   return 0;
+}
+
+
+----------------------------------------------------------
+
+Find Missing Element
+There is an array of non-negative integers. A second array is formed by shuffling the elements of the first array and deleting a random element. Given these two arrays, find which element is missing in the second array.
+
+Input Format:
+
+First line of input will contain a positive integer T = number of test cases. 
+Each test case will contain 3 lines. 
+First line of each test case will contain two number m = size of the first array and n = size of the second array separated by space. 
+Next 2 lines will contain m and n space separated non-negative integers.
+Output Format:
+
+For each test case, print the missing element in the second array.
+Constraints:
+
+0 ≤ T ≤ 10
+2 ≤ m ≤ 10^5
+n = m - 1
+0 ≤ A[i], B[i] ≤ 10^4
+Sample Input
+
+1  // Test Cases
+5 4
+1 2 3 4 5
+3 4 1 2
+Sample Output
+
+5
+
+int getMissingElement(vector<int> A, vector<int> B) {
+  // Write your code here
+  int sum1=0;
+  int sum2=0;
+  for(int i=0;i<A.size();i++){
+    sum1+=A[i];
+  }
+  for(int i=0;i<B.size();i++){
+    sum2+=B[i];
+  }
+  return sum1-sum2;
+}
+
+-----------------------------------------------------------
+
+Rotation count of a sorted Array
+Given a circularly sorted array of N integers, find the minimum number of rotations performed on some sorted array to create this given array.
+
+Assume there are no duplicate elements in the array, and the rotation is in anti-clockwise direction.
+
+Expected Time Complexity: O(log(N))
+
+Expected Space Complexity: O(1)
+
+Input format:
+
+First line of input will contain a number T = number of test cases. Each test case will contain 2 lines.
+First line will contain a number N = number of elements in the array.
+Next line will contain N space separated integers.
+Complete the function int rotationCount(int array[], int size) which will receive the array and size of the array as input and return how many times the sorted array is rotated. Function should return 0 if the array is not rotated.
+Output format:
+
+Print one line of output for each test case with the minimum number of rotations for the given array.
+Constraints:
+
+  1 <= T <= 10
+  1 <= N <= 50
+ -1000 <= arr[i] <= 1000
+Sample Input
+
+2  // No. of test cases
+6
+15 18 3 4 6 12
+6
+1 2 3 4 5 6
+ Sample Output
+
+2
+0
+
+
+int rotationCount(int arr[], int size) {
+  int s=0;
+  int e=size-1;
+  if(s==e){
+    return 1;
+  }
+  if(arr[s]<arr[e]){
+    return 0;
+  }
+  while(s<e){
+    int m=(s+e)/2;
+    if(arr[m-1]>=arr[m] && arr[m+1]>=arr[m]){
+      return m;
+    }
+    else if(arr[e]>=arr[m]){
+      e=m-1;
+    }
+    else{
+      s=m+1;
+    }
+  }
+}
+
+
+----------------------------------------------------------
+
+Search element in a rotated sorted array
+Given an array of n integers which is sorted but rotated by some number of times after sorting, and a integer k. Search the element k in this sorted rotated array efficiently. For example, suppose an array sorted in ascending order is rotated at some pivot unknown to you beforehand. (i.e., 0 1 2 4 5 6 7 might become 4 5 6 7 0 1 2).
+
+Assume there are no duplicate elements in the array.
+
+Expected Time Complexity: O(log(N))
+
+Expected Space Complexity: O(1)
+
+Input Format
+
+First line of input will contain a number T = number of test cases. Each test case will contain 3 lines. The first line will contain an integer k to be searched. Second line will contain a number n = number of elements in the array. Next line will contain N space separated integers. 
+Complete the function int searchRotatedSortedArray() to search a value target in array a of size given, and if target found in the array return its index, otherwise return -1.
+You may assume no duplicate exists in the array.
+Output Format
+
+Print the index of k in given array for each test case in new line if found and print -1 if k is not present in given array.
+Constraints
+
+  1 <= T <= 10
+ -1000 <= k <= 1000
+  1 <= n <= 10^5
+ -1000 <= arr[i] <= 1000
+Sample Input
+
+2   // Test Cases
+3               // k (testcase 1)
+6               // n  
+15 18 2 3 6 12  // arr[]
+7               // k (testcase 2)
+7               // n 
+4 5 8 9 1 2 3   // arr[]
+Sample Output
+
+3
+-1
+
+
+
+int searchRotatedSortedArray(int arr[], int n, int k) {
+  // Write your code here
+    int low = 0, high = n-1;
+    while (low < high) {
+        int mid = (low+high)/2;
+        if (arr[mid] > arr[high])
+            low = mid+1;
+        else
+            high = mid;
+    }
+    int pivot = low;
+    low = 0, high = n-1;
+    while (low <= high) {
+        int mid = (low+high)/2;
+        int realmid = (mid+pivot)%n;
+        if (arr[realmid] == k)
+            return realmid;
+        else if (arr[realmid] < k)
+            low = mid+1;
+        else
+            high = mid-1;
+    }
+    return -1;
+}
+
+----------------------------------------------------------
+
+Find all pairs with sum K
+Given a sorted list of N integers, find all distinct pairs of integers in the list with sum equal to a given number K, with O(n log n) or O(n) time complexity.
+
+Complete the function below which takes the array and K as parameters and return the number of pairs if any and 0 otherwise.
+
+Input Format:
+
+First line of input will contain a positive integer T = number of test cases. Each test case will contain 2 lines.
+First line of each test case contains two integers - N and K. 
+Next line will contain N numbers separated by space in non-decreasing order.
+Constraints:
+
+1 ≤ T ≤ 10
+1 ≤ N ≤ 10^5
+-(10^9) ≤ arr[i], K ≤ 10^9
+Output Format:
+
+For each test case, print number of distinct pairs whose sum will be equal to k. A pair must have two numbers at different indices. 
+Two pairs are different if at least one of the indices in them is uncommon. Indices - (2,3) and (3,2) are not distinct, but (2,3) and (2,4) are.
+Sample Input
+
+3  // Test Cases
+10 11  // N K (testcase 1)
+1 2 3 4 5 6 7 8 9 10
+5 10   // N K (testcase 2)
+2 4 6 8 10
+6 27   // N K (testcase 3)
+12 15 20 22 34 36
+Sample Output
+
+5
+2
+1
+
+
+
+int getPairsCount(int arr[], int n, int k) {
+  int l=0,r=n-1,count=0;
+  while(l<=r){
+    if(arr[l]+arr[r]<k){
+      l++;
+    }
+    else if(arr[l]+arr[r]>k){
+      r--;
+    }
+    else{
+      int x=arr[l],y=arr[r],xCount=0,yCount=0;
+      while(l<=r&&x==arr[l]){
+        xCount++;
+        l++;
+      }
+      if(x!=y){
+        while(r>=l&&y==arr[r]){
+          yCount++;
+          r--;
+        }
+        count+=(xCount*yCount);
+      }
+      else{
+        count+=((xCount)*(xCount-1))/2;
+      }
+    }
+  }
+  return count;
+}
+
+
+-----------------------------------------------------------
+
+Merge 2 Sorted Arrays
+Write a function mergeArrays which should merge two sorted arrays A and B to create one single sorted array.
+
+If the number of elements initialized in A and B are m and n respectively, the resulting size of merged array after your code is executed should be m + n
+
+Example :
+
+Input :
+A : [1 5 8]
+B : [6 9]
+Merged Array : [1 5 6 8 9]
+Sample Input
+
+4        // Size of 1st array
+1 2 3 6  // Elements of 1st array
+3        // Size of 2nd array
+4 5 7    // Elements of 2nd array
+Sample Output
+
+1 2 3 4 5 6 7
+
+
+int* mergeArrays(int a[], int b[], int asize, int bsize) {
+  // Write your code here
+  int i=0,j=0,k=0;
+  int *c=new int [asize+bsize];
+  while(i<asize && j<bsize){
+    if(a[i]<b[j]){
+      c[k++]=a[i++];
+    }
+    else{
+      c[k++]=b[j++];
+    }
+  }
+  while(i<asize){
+    c[k++]=a[i++];
+  }
+  while(j<bsize){
+    c[k++]=b[j++];
+  }
+  return c;
+}
+
+
