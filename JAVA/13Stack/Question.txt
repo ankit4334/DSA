@@ -1,0 +1,1683 @@
+-----------------------------------------------------------------------------------------------------------------------------------------
+232. Implement Queue using Stacks
+Solved
+Easy
+Topics
+Companies
+Implement a first in first out (FIFO) queue using only two stacks. The implemented queue should support all the functions of a normal queue (push, peek, pop, and empty).
+
+Implement the MyQueue class:
+
+void push(int x) Pushes element x to the back of the queue.
+int pop() Removes the element from the front of the queue and returns it.
+int peek() Returns the element at the front of the queue.
+boolean empty() Returns true if the queue is empty, false otherwise.
+Notes:
+
+You must use only standard operations of a stack, which means only push to top, peek/pop from top, size, and is empty operations are valid.
+Depending on your language, the stack may not be supported natively. You may simulate a stack using a list or deque (double-ended queue) as long as you use only a stack's standard operations.
+ 
+
+Example 1:
+
+Input
+["MyQueue", "push", "push", "peek", "pop", "empty"]
+[[], [1], [2], [], [], []]
+Output
+[null, null, null, 1, 1, false]
+
+Explanation
+MyQueue myQueue = new MyQueue();
+myQueue.push(1); // queue is: [1]
+myQueue.push(2); // queue is: [1, 2] (leftmost is front of the queue)
+myQueue.peek(); // return 1
+myQueue.pop(); // return 1, queue is [2]
+myQueue.empty(); // return false
+
+
+class MyQueue {
+    int size;
+    int arr[];
+    int rear;
+
+    public MyQueue() {
+        size=1001;
+        arr=new int[size];
+        rear=-1;
+    }
+    
+    public void push(int x) {
+        if(rear+1>=size){
+            return;
+        }
+        arr[++rear]=x;
+    }
+    
+    public int pop() {
+        if(empty()){
+            return -1;
+        }
+        int top=arr[0];
+        for(int i=0;i<rear;i++){
+            arr[i]=arr[i+1];
+        }
+        rear--;
+        return top;
+    }
+    
+    public int peek() {
+        if(empty()){
+            return -1;
+        }
+        return arr[0];
+    }
+    
+    public boolean empty() {
+        return rear==-1;
+    }
+}
+-----------------------------------------------------------------------------------------------------------------------------------------
+225. Implement Stack using Queues
+Solved
+Easy
+Topics
+Companies
+Implement a last-in-first-out (LIFO) stack using only two queues. The implemented stack should support all the functions of a normal stack (push, top, pop, and empty).
+
+Implement the MyStack class:
+
+void push(int x) Pushes element x to the top of the stack.
+int pop() Removes the element on the top of the stack and returns it.
+int top() Returns the element on the top of the stack.
+boolean empty() Returns true if the stack is empty, false otherwise.
+Notes:
+
+You must use only standard operations of a queue, which means that only push to back, peek/pop from front, size and is empty operations are valid.
+Depending on your language, the queue may not be supported natively. You may simulate a queue using a list or deque (double-ended queue) as long as you use only a queue's standard operations.
+ 
+
+Example 1:
+
+Input
+["MyStack", "push", "push", "top", "pop", "empty"]
+[[], [1], [2], [], [], []]
+Output
+[null, null, null, 2, 2, false]
+
+class MyStack {
+    int arr[];
+    int top;
+    int size;
+
+    public MyStack() {
+        this.size=1000001;
+        arr=new  int[size];
+        this.top=-1;
+        
+    }
+    
+    public void push(int x) {
+        arr[++top]=x;
+        
+    }
+    
+    public int pop() {
+
+        return arr[top--];
+        
+    }
+    
+    public int top() {
+        return arr[top];
+    }
+    
+    public boolean empty() {
+
+        return top==-1;
+        
+    }
+}
+-----------------------------------------------------------------------------------------------------------------------------------------
+155. Min Stack
+Solved
+Medium
+Topics
+Companies
+Hint
+Design a stack that supports push, pop, top, and retrieving the minimum element in constant time.
+
+Implement the MinStack class:
+
+MinStack() initializes the stack object.
+void push(int val) pushes the element val onto the stack.
+void pop() removes the element on the top of the stack.
+int top() gets the top element of the stack.
+int getMin() retrieves the minimum element in the stack.
+You must implement a solution with O(1) time complexity for each function.
+
+ 
+
+Example 1:
+
+Input
+["MinStack","push","push","push","getMin","pop","top","getMin"]
+[[],[-2],[0],[-3],[],[],[],[]]
+
+Output
+[null,null,null,null,-3,null,0,-2]
+
+Explanation
+MinStack minStack = new MinStack();
+minStack.push(-2);
+minStack.push(0);
+minStack.push(-3);
+minStack.getMin(); // return -3
+minStack.pop();
+minStack.top();    // return 0
+minStack.getMin(); // return -2
+
+
+class MinStack {
+    int size;
+    int arr[];
+    int[] minStack;
+    int top;
+    public MinStack() {
+        size=1001;
+        arr=new int[size];
+        minStack = new int[size];
+        top=-1;
+    }
+    
+    public void push(int val) {
+        if(top+1>=size){
+            return;
+        }
+        
+        arr[++top] = val;
+        if (top == 0) {
+            minStack[top] = val; 
+        } else {
+            minStack[top] = Math.min(minStack[top - 1], val); 
+        }
+    }
+    
+    public void pop() {
+        if(top==-1){
+            return;
+        }
+        top--;
+    }
+    
+    public int top() {
+         if (top == -1) {
+            return -1;
+        }
+        return arr[top];
+    }
+    
+    public int getMin() {
+        if (top == -1) {
+            return -1; 
+        }
+        return minStack[top];
+    }
+}
+-----------------------------------------------------------------------------------------------------------------------------------------
+Immediate Smaller Element
+Difficulty: BasicAccuracy: 36.26%Submissions: 171K+Points: 1
+Given an integer array arr of size n. For each element in the array, check whether the right adjacent element (on the next immediate position) of the array is smaller. If next element is smaller, update the current index to that element. If not, then  -1.
+
+Note : You need to make changes in the array itself.
+
+Examples:
+
+Input:
+n = 5, arr[] = {4, 2, 1, 5, 3}
+Output:
+2 1 -1 3 -1
+Explanation: Array elements are 4, 2, 1, 5, 3. Next to 4 is 2 which is smaller, so we print 2. Next of 2 is 1 which is smaller,so we print 1. Next of 1 is 5 which is greater, so we print -1. Next of 5 is 3 which is smaller, so we print 3.  Note that for last element, output is always  going to be -1 because there is no element on right.
+Input:
+n = 6, arr[] = {5, 6, 2, 3, 1, 7}
+Output:
+-1 2 -1 1 -1 -1
+Explanation: Next to 5 is 6 which is greater, so we print -1. Next of 6 is 2 which is smaller, so we print 2. Next of 2 is 3 which is greater, so we print -1. Next of 3 is 1 which is smaller, so we print 1. Next of 1 is 7 which is greater, so we print -1. Note that for last element, output is always going to be -1 because there is no element on right.
+Expected Time Complexity: O(n)
+Expected Auxiliary Space: O(1)
+
+Constraints:
+1 ≤ n ≤ 107
+1 ≤ arr[i] ≤ 105
+
+//User function template for C++
+class Solution{
+public:	
+	void immediateSmaller(vector<int>&arr, int n) {
+	    for(int i=0;i<n-1;i++){
+	        if(arr[i]>arr[i+1]){
+	            arr[i]=arr[i+1];
+	        }
+	        else{
+	            arr[i]=-1;
+	        }
+	    }
+	    arr[n-1]=-1;
+	}
+
+};
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------
+Histogram Max Rectangular Area
+Difficulty: HardAccuracy: 32.12%Submissions: 170K+Points: 8
+Find the largest rectangular area possible in a given histogram where the largest rectangle can be made of a number of contiguous bars. For simplicity, assume that all bars have the same width and the width is 1 unit, there will be N bars height of each bar will be given by the array arr.
+
+Example 1:
+
+Input:
+N = 7
+arr[] = {6,2,5,4,5,1,6}
+Output: 12
+Explanation: In this example the largest area would be 12 of height 4 and width 3. We can achieve this 
+area by choosing 3rd, 4th and 5th bars.
+
+
+Example 2:
+
+Input:
+N = 8
+arr[] = {7 2 8 9 1 3 6 5}
+Output: 16
+Explanation: Maximum size of the histogram 
+will be 8  and there will be 2 consecutive 
+histogram. And hence the area of the 
+histogram will be 8x2 = 16.
+Your Task:
+The task is to complete the function getMaxArea() which takes the array arr[] and its size N as inputs and finds the largest rectangular area possible and returns the answer.
+
+Expected Time Complxity : O(N)
+Expected Auxilliary Space : O(N)
+
+Constraints:
+1 ≤ N ≤ 106
+0 ≤ arr[i] ≤ 1012
+
+
+
+
+
+
+class Solution
+{
+    //Function to find largest rectangular area possible in a given histogram.
+    public static long getMaxArea(long arr[], long n) 
+    {
+        int len=(int)n;
+        long maxArea=0;
+        long nsr[]=new long[len];
+        long nsl[]=new long[len];
+
+
+        //Nest Smaller Right
+        Stack<Integer> s=new Stack<>();
+
+        for(int i=len-1;i>=0;i--){
+            while(!s.isEmpty() && arr[s.peek()] >= arr[i]) {
+                s.pop();
+            }
+            if(s.isEmpty()){
+                nsr[i]=n;
+            }
+            else{
+                nsr[i]=s.peek();
+            }
+            s.push(i);
+        }
+        //Nest Smaller left
+
+        s=new Stack<>();
+
+        for(int i=0;i<n;i++){
+            while(!s.isEmpty() && arr[s.peek()] >= arr[i]) {
+                s.pop();
+            }
+            if(s.isEmpty()){
+                nsl[i]=-1;
+            }
+            else{
+                nsl[i]=s.peek();
+            }
+            s.push(i);
+        }
+
+        //Current area : width=j-i-1=nsr[i]-nsl[i]-1
+        for(int i=0;i<n;i++){
+            long height=arr[i];
+            long widht=nsr[i]-nsl[i]-1;
+            long currArea=height*widht;
+            maxArea=Math.max(currArea,maxArea);
+        }
+        return maxArea;
+    }
+        
+}
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------
+Implement two stacks in an array
+Difficulty: EasyAccuracy: 56.49%Submissions: 156K+Points: 2
+Your task is to implement  2 stacks in one array efficiently. You need to implement 4 methods.
+
+twoStacks : Initialize the data structures and variables to be used to implement  2 stacks in one array.
+push1 : pushes element into first stack.
+push2 : pushes element into second stack.
+pop1 : pops element from first stack and returns the popped element. If first stack is empty, it should return -1.
+pop2 : pops element from second stack and returns the popped element. If second stack is empty, it should return -1.
+
+Example 1:
+
+Input:
+push1(2)
+push1(3)
+push2(4)
+pop1()
+pop2()
+pop2()
+Output:
+3 4 -1
+Explanation:
+push1(2) the stack1 will be {2}
+push1(3) the stack1 will be {2,3}
+push2(4) the stack2 will be {4}
+pop1()   the poped element will be 3 from stack1 and stack1 will be {2}
+pop2()   the poped element will be 4 from stack2 and now stack2 is empty
+pop2()   the stack2 is now empty hence returned -1.
+Example 2:
+
+Input:
+push1(1)
+push2(2)
+pop1()
+push1(3)
+pop1()
+pop1()
+Output:
+1 3 -1
+Explanation:
+push1(1) the stack1 will be {1}
+push2(2) the stack2 will be {2}
+pop1()   the poped element will be 1 from stack1 and stack1 will be empty
+push1(3) the stack1 will be {3}
+pop1()   the poped element will be 3 from stack1 and stack1 will be empty
+pop1()   the stack1 is now empty hence returned -1.
+Your Task:
+You don't need to read input or print anything. You are required to complete the 4 methods push1, push2 which takes one argument an integer 'x' to be pushed into stack one and two and pop1, pop2 which returns the integer poped out from stack one and two. If no integer is present in the stack return -1.
+
+Expected Time Complexity: O(1) for all the four methods.
+Expected Auxiliary Space: O(1) for all the four methods.
+
+Constraints:
+1 <= Number of queries <= 104
+1 <= Number of elements in the stack <= 100
+The sum of count of elements in both the stacks < size of the given array
+
+
+
+
+
+class twoStacks
+{
+    int arr[];
+    int size;
+    int top1,top2;
+    twoStacks()
+    {   size=100;
+        arr=new int[size];
+        top1=-1;
+        top2=size;
+    }
+    //Function to push an integer into the stack1.
+    void push1(int x)
+    {
+        top1++;
+        arr[top1]=x;
+     
+    }
+    //Function to push an integer into the stack2.
+    void push2(int x)
+    {
+        top2--;
+        arr[top2]=x;
+       
+    }
+    //Function to remove an element from top of the stack1.
+    int pop1()
+    {
+        if(top1==-1){
+            return -1;
+        }
+        
+        return arr[top1--];
+        
+    }
+    //Function to remove an element from top of the stack2.
+    int pop2()
+    {
+        if(top2==size){
+            return -1;
+        }
+        
+        return arr[top2++];
+    }
+}
+-----------------------------------------------------------------------------------------------------------------------------------------
+Reverse First K elements of Queue
+Difficulty: EasyAccuracy: 81.28%Submissions: 127K+Points: 2
+Given an integer K and a queue of integers, we need to reverse the order of the first K elements of the queue, leaving the other elements in the same relative order.
+
+Only following standard operations are allowed on queue.
+
+enqueue(x) : Add an item x to rear of queue
+dequeue() : Remove an item from front of queue
+size() : Returns number of elements in queue.
+front() : Finds front item.
+Note: The above operations represent the general processings. In-built functions of the respective languages can be used to solve the problem.
+
+Example 1:
+
+Input:
+5 3
+1 2 3 4 5
+Output: 
+3 2 1 4 5
+Explanation: 
+After reversing the given
+input from the 3rd position the resultant
+output will be 3 2 1 4 5.
+Example 2:
+
+Input:
+4 4
+4 3 2 1
+Output: 
+1 2 3 4
+Explanation: 
+After reversing the given
+input from the 4th position the resultant
+output will be 1 2 3 4.
+Your Task:
+Complete the provided function modifyQueue() that takes queue and K as parameters and returns a modified queue. The printing is done automatically by the driver code.
+
+Expected Time Complexity : O(N)
+Expected Auxiliary Space : O(K)
+
+Constraints:
+1 <= K <= N <= 105
+
+
+
+
+
+
+// User function Template for Java
+
+class GfG {
+    // Function to reverse first k elements of a queue.
+    public Queue<Integer> modifyQueue(Queue<Integer> q, int k) {
+        Stack<Integer> s=new Stack<>();
+        int n=q.size()-k;
+        int i=0;
+        while(i<k){
+            s.push(q.remove());
+            i++;
+        }
+        while(!s.isEmpty()){
+            q.add(s.pop());
+        }
+        
+        while(n>0){
+            q.add(q.remove());
+            n--;
+        }
+        
+        return q;
+    }
+}
+-----------------------------------------------------------------------------------------------------------------------------------------
+Queue Reversal
+Difficulty: EasyAccuracy: 77.98%Submissions: 123K+Points: 2
+Given a Queue Q containing N elements. The task is to reverse the Queue. Your task is to complete the function rev(), that reverses the N elements of the queue.
+
+Example 1:
+
+Input:
+6
+4 3 1 10 2 6
+Output: 
+6 2 10 1 3 4
+Explanation: 
+After reversing the given elements of the queue , the resultant queue will be 6 2 10 1 3 4.
+Example 2:
+
+Input:
+4
+4 3 2 1 
+Output: 
+1 2 3 4
+Explanation: 
+After reversing the given elements of the queue , the resultant queue will be 1 2 3 4.
+Your Task: You need to complete the function rev that takes a queue as parameter and returns the reversed queue. The printing is done automatically by the driver code.
+
+Expected Time Complexity : O(n)
+Expected Auxilliary Space : O(n)
+
+Constraints:
+1 ≤ N ≤ 105
+1 ≤ elements of Queue ≤ 105
+
+
+
+class GfG{
+    //Function to reverse the queue.
+    public Queue<Integer> rev(Queue<Integer> q){
+        
+        //Note:-using recursion code is not working
+        // if(q.isEmpty()){
+        //     return q;
+        // }
+        
+        // int a=q.remove();
+        // rev(q);
+        // q.add(a);
+        // return q;
+        
+       
+        
+        
+        
+        //using stack
+        Stack<Integer> s=new Stack<>();
+        while(!q.isEmpty()){
+            s.push(q.remove());
+        }
+        
+        while(!s.isEmpty()){
+            q.add(s.pop());
+        }
+        
+        return q;
+        
+    
+        
+        
+    }
+}
+-----------------------------------------------------------------------------------------------------------------------------------------
+Sort a stack
+Difficulty: MediumAccuracy: 69.19%Submissions: 118K+Points: 4
+Given a stack, the task is to sort it such that the top of the stack has the greatest element.
+
+Example 1:
+
+Input:
+Stack: 3 2 1
+Output: 3 2 1
+Example 2:
+
+Input:
+Stack: 11 2 32 3 41
+Output: 41 32 11 3 2
+Your Task: 
+You don't have to read input or print anything. Your task is to complete the function sort() which sorts the elements present in the given stack. (The sorted stack is printed by the driver's code by popping the elements of the stack.)
+
+Expected Time Complexity: O(N*N)
+Expected Auxilliary Space: O(N) recursive.
+
+Constraints:
+1<=N<=100
+
+
+
+class GfG{
+    
+    public void buttom(Stack<Integer> s,int d)
+	{
+	    
+	   if(s.isEmpty() || s.peek()<d){
+	       s.push(d);
+	       return;
+	   }
+	   else{
+	       int top=s.pop();
+	       buttom(s,d);
+	       s.push(top);
+	   }
+		
+	}
+    
+    
+	public Stack<Integer> sort(Stack<Integer> s)
+	{
+	    
+	   if(s.isEmpty()){
+	       return s;
+	   }
+	   
+	   int top=s.pop();
+	   sort(s);
+	   buttom(s,top);
+	   
+	   return s;
+		
+	}
+}
+
+-----------------------------------------------------------------------------------------------------------------------------------------
+Special Stack
+Difficulty: EasyAccuracy: 59.15%Submissions: 84K+Points: 2
+Design a data-structure SpecialStack that supports all the stack operations like push(), pop(), isEmpty(), isFull() and an additional operation getMin() which should return the minimum element from the SpecialStack. Your task is to complete all the functions, using a stack data structure.
+
+Note: The output of the code will be the value returned by getMin() function.
+
+Examples:
+
+Input: stack: 18 19 29 15 16
+Output: 15
+Explanation: The minimum element of the stack is 15.
+Input: stack: 34 335 1814 86
+Output: 34
+Explanation: The minimum element of the stack is 34.
+Expected Time Complexity: O(n)
+Expected Auxiliary Space: O(1)
+
+Constraints:
+1 ≤ stack.size() ≤ 104
+
+Seen this question in a real interview before ?
+Yes
+No
+Company Tags
+PaytmVMWareFlipkartAmazonMicrosoftFactSetMakeMyTripWalmartGoldman SachsIntuitAdobeSAP LabsLinkedin
+
+
+
+
+
+class GfG{
+    
+	public void push(int a,Stack<Integer> s)
+	{
+	    s.add(a);
+	}
+	
+	
+	public int pop(Stack<Integer> s)
+    {
+        if(s.isEmpty()){
+            return -1;
+        } 
+        
+        int top=s.get(s.size()-1);
+        s.remove(s.size()-1);
+        return top;
+	}
+	
+	
+	public int min(Stack<Integer> s)
+    {
+        int min=Integer.MAX_VALUE;
+              for(int i=0;i<s.size();i++){
+               min=Math.min(min,s.get(i));
+           }
+        return min;
+	}
+	
+	
+	
+	public boolean isFull(Stack<Integer>s, int n)
+    {
+        return s.size()==n;
+	}
+	
+	
+	
+	public boolean isEmpty(Stack<Integer>s)
+    {
+        return s.size()==0;
+	}
+	
+	
+}
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------
+Count the Reversals
+Difficulty: MediumAccuracy: 51.88%Submissions: 66K+Points: 4
+Given a string S consisting of only opening and closing curly brackets '{' and '}', find out the minimum number of reversals required to convert the string into a balanced expression.
+A reversal means changing '{' to '}' or vice-versa.
+
+Example 1:
+
+Input:
+S = "}{{}}{{{"
+Output: 3
+Explanation: One way to balance is:
+"{{{}}{}}". There is no balanced sequence
+that can be formed in lesser reversals.
+Example 2:
+
+Input: 
+S = "{{}{{{}{{}}{{"
+Output: -1
+Explanation: There's no way we can balance
+this sequence of braces.
+Your Task:
+You don't need to read input or print anything. Your task is to complete the function countRev() which takes the string S as the input parameter and returns the minimum number of reversals required to balance the bracket sequence. If balancing is not possible, return -1. 
+
+Expected Time Complexity: O(|S|).
+Expected Auxiliary Space: O(1).
+
+Constraints:
+1 ≤ |S| ≤ 105
+
+ 
+
+Seen this question in a real interview before ?
+Yes
+No
+Company Tags
+Amazon
+
+
+
+
+
+
+
+class Sol
+{
+    int countRev (String s)
+    {
+        
+        if(s.length()%2!=0){
+            return -1;
+        }
+        
+        int res=0;
+        int open=0;
+        int close=0;
+        
+        for(int i=0;i<s.length();i++){
+            char ch=s.charAt(i);
+            if(ch=='{'){
+                open++;
+            }
+            else{
+               if(open==0){
+                   res++;
+                   open++;
+               }
+               else{
+                   open--;
+               }
+            }
+        }
+         res=(open+close)/2+res;
+        return res;
+    }
+}
+-----------------------------------------------------------------------------------------------------------------------------------------
+Help Classmates
+Difficulty: MediumAccuracy: 69.73%Submissions: 33K+Points: 4
+Professor X wants his students to help each other in the chemistry lab. He suggests that every student should help out a classmate who scored less marks than him in chemistry and whose roll number appears after him. But the students are lazy and they don't want to search too far. They each pick the first roll number after them that fits the criteria. Find the marks of the classmate that each student picks.
+Note: one student may be selected by multiple classmates.
+
+Example 1:
+
+Input: N = 5, arr[] = {3, 8, 5, 2, 25}
+Output: 2 5 2 -1 -1
+Explanation: 
+1. Roll number 1 has 3 marks. The first person 
+who has less marks than him is roll number 4, 
+who has 2 marks.
+2. Roll number 2 has 8 marks, he helps student 
+with 5 marks.
+3. Roll number 3 has 5 marks, he helps student 
+with 2 marks.
+4. Roll number 4 and 5 can not pick anyone as 
+no student with higher roll number has lesser 
+marks than them. This is denoted by -1.
+Output shows the marks of the weaker student that 
+each roll number helps in order. ie- 2,5,2,-1,-1
+
+Example 2:
+
+Input: N = 4, a[] = {1, 2, 3, 4}
+Output: -1 -1 -1 -1 
+Explanation: As the marks ars in increasing order. 
+None of the students can find a classmate who has 
+a higher roll number and less marks than them.
+Your Task:  
+You don't need to read input or print anything. Complete the function help_classmate() which takes the array arr[] and size of array N as input parameters and returns a list of numbers. If a student is unable to find anyone then output is -1.
+
+Expected Time Complexity: O(N)
+Expected Auxiliary Space: O(N)
+
+Constraints:
+1 ≤ N ≤ 5*105
+
+
+
+
+
+
+
+
+class Solution {
+	public static int[] help_classmate(int arr[], int n) 
+	{ 
+	    Stack<Integer> s=new Stack<>();
+        int nestGreater[]=new int[arr.length];
+       
+        for(int i=n-1;i>=0;i--){ 
+
+            
+            while(!s.isEmpty() && arr[s.peek()] >= arr[i]){
+               s.pop();
+            }
+
+           
+            if(s.isEmpty()){
+                nestGreater[i]=-1;
+            }
+            else{
+                nestGreater[i]=arr[s.peek()];
+            }
+
+            
+            s.push(i);
+        }
+        
+        return nestGreater;
+	} 
+}
+-----------------------------------------------------------------------------------------------------------------------------------------
+Stack designer
+Difficulty: BasicAccuracy: 72.42%Submissions: 28K+Points: 1
+You are given an array arr of size N. You need to push the elements of the array into a stack and then print them while popping.
+
+Example 1:
+
+Input:
+n = 5
+arr = {1 2 3 4 5}
+Output:
+5 4 3 2 1
+Example 2: 
+
+Input: 
+n = 7
+arr = {1 6 43 1 2 0 5}
+Output: 
+5 0 2 1 43 6 1
+ 
+
+Your Task:
+Since this is a function problem, you don't need to take any input. Just complete the provided functions _push() and _pop().
+
+Constraints:
+1 <= Ai <= 107
+
+
+
+
+
+//User function Template for C++
+
+/* _push function to insert elements of array to
+   stack
+*/
+stack<int>_push(int arr[],int n)
+{
+    
+    stack<int> s;
+    for(int i=0;i<n;i++){
+        s.push(arr[i]);
+    }
+    
+    return s;
+   
+}
+
+/* _pop function to print elements of the stack
+   remove as well
+*/
+void _pop(stack<int> s)
+{
+    while(!s.empty()){
+        cout<<s.top()<<" ";
+        s.pop();
+    }
+}
+-----------------------------------------------------------------------------------------------------------------------------------------
+Pairwise Consecutive Elements
+Difficulty: BasicAccuracy: 44.73%Submissions: 18K+Points: 1
+Given a stack of integers of size N, your task is to complete the function pairWiseConsecutive(), that checks whether numbers in the stack are pairwise consecutive or not. The pairs can be increasing or decreasing, and if the stack has an odd number of elements, the element at the top is left out of a pair. The function should retain the original stack content.
+
+Only following standard operations are allowed on stack.
+
+push(X): Enter a element X on top of stack.
+pop(): Removes top element of the stack.
+empty(): To check if stack is empty.
+Input Format:
+The first line of input contains T denoting the number of testcases. T testcases follow. Each testcase contains two lines of input. The first line contains n denoting the number of elements to be inserted into the stack. The second line contains the elements to be inserted into the stack.
+
+Output Format:
+For each testcase, in a new line, print "Yes"(without quote) if the elements of the stack is pairwise consecutive, else print "No".
+
+Your Task:
+This is a function problem. You only need to complete the function pairWiseConsecutive that takes a stack as an argument and returns true if the stack is found to be pairwise consecutive, else it returns false. The printing is done by the driver code.
+
+Constraints:
+1 < =T <= 100
+1 < =N <= 103
+
+Example:
+Input:
+2
+6
+1 2 3 4 5 6
+5
+1 5 3 9 7
+Output:
+Yes
+No
+
+Explanation:
+Testcase1: The number of elements are even and they are pairwise consecutive so we print Yes.
+Testcase2: The number of elements are odd so we  remove the top element and check for pairwise consecutive. It is not so we print No.
+
+
+
+
+
+
+bool pairWiseConsecutive(stack<int> s)
+{
+   int n=s.size();
+   
+   if(n%2!=0){
+       s.pop();
+       
+   }
+   
+   while(!s.empty()){
+       int a=s.top();
+       s.pop();
+       int b=s.top();
+       s.pop();
+       
+       if(abs(a-b)!=1){
+           return 0;
+       }
+   }
+   
+   return 1;
+   
+   
+}
+
+-----------------------------------------------------------------------------------------------------------------------------------------
+Interleave the First Half of the Queue with Second Half
+Difficulty: MediumAccuracy: 76.13%Submissions: 8K+Points: 4
+You are given a queue Q of N integers of even length, rearrange the elements by interleaving the first half of the queue with the second half of the queue.
+
+ 
+
+Example 1:
+
+Input:
+N = 4
+Q = {2,4,3,1}
+Output:
+{2,3,4,1}
+Explanation:
+After the mentioned rearrangement of the first half
+and second half, our final queue will be {2,3,4,1}.
+ 
+
+Example 2:
+
+Input:
+N = 2
+Q = {3,5}
+Output:
+{3,5}
+Explanation:
+After the mentioned rearrangement of the first half
+and second half, our final queue will be {3,5}.
+ 
+
+Your Task:
+
+You don't need to read input or print anything. Your task is to complete the function rearrangeQueue() which takes a queue Q as input and returns the modified queue after the rearrangement.
+
+ 
+
+Expected Time Complexity: O(N)
+Expected Auxiliary Space: O(N)
+
+ 
+
+Constraints:
+2 <= N <= 105
+N is even
+1 <= Elements of Queue <= 103
+Sum of N over all test cases doesn't exceeds 106
+
+
+
+
+
+
+class Solution {
+    public static ArrayList<Integer> rearrangeQueue(int N, Queue<Integer> q) {
+        
+        ArrayList<Integer> ans=new ArrayList<>();
+        
+       Queue<Integer> firstHalf=new LinkedList<>();
+       //int size=q.size();
+
+       for(int i=0;i<N/2;i++){
+        firstHalf.add(q.remove());
+       }
+
+       while(!firstHalf.isEmpty()){
+        q.add(firstHalf.remove());
+        q.add(q.remove());
+       }
+       
+       
+       while(!q.isEmpty()){
+            ans.add(q.remove());
+        }
+       
+       return ans;
+    }
+}
+-----------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------------------- 
+-----------------------------------------------------------------------------------------------------------------------------------------
+Infix to Postfix
+Difficulty: MediumAccuracy: 52.94%Submissions: 86K+Points: 4
+Given an infix expression in the form of string str. Convert this infix expression to postfix expression.
+
+Infix expression: The expression of the form a op b. When an operator is in-between every pair of operands.
+Postfix expression: The expression of the form a b op. When an operator is followed for every pair of operands.
+Note: The order of precedence is: ^ greater than * equals to / greater than + equals to -. Ignore the right associativity of ^.
+Example 1:
+
+Input: str = "a+b*(c^d-e)^(f+g*h)-i"
+Output: abcd^e-fgh*+^*+i-
+Explanation:
+After converting the infix expression 
+into postfix expression, the resultant 
+expression will be abcd^e-fgh*+^*+i-
+Example 2:
+
+Input: str = "A*(B+C)/D"
+Output: ABC+*D/
+Explanation:
+After converting the infix expression 
+into postfix expression, the resultant 
+expression will be ABC+*D/
+ 
+Your Task:
+This is a function problem. You only need to complete the function infixToPostfix() that takes a string(Infix Expression) as a parameter and returns a string(postfix expression). The printing is done automatically by the driver code.
+
+Expected Time Complexity: O(|str|).
+Expected Auxiliary Space: O(|str|).
+
+Constraints:
+1 ≤ |str| ≤ 105
+
+
+
+class Solution {
+    // Function to convert an infix expression to a postfix expression.
+    public static String infixToPostfix(String exp) {
+        
+        StringBuilder sb=new StringBuilder();
+        Stack<Character> s=new Stack<>();
+        
+        for(int i=0;i<exp.length();i++){
+            char c=exp.charAt(i);
+            if(c>='a' && c<='z' || (c>= '0' && c <= '9')){
+                sb.append(c);
+            }
+            else if(c=='('){
+                s.push(c);
+            }
+            else if(c==')'){
+                while(!s.isEmpty() && s.peek()!='('){
+                    sb.append(s.pop());
+                }
+                if(!s.isEmpty()){
+                    s.pop();
+                }
+            }
+            else{
+                while(!s.isEmpty() && pre(s.peek()) >= pre(c)){
+                    sb.append(s.pop());
+                }
+                s.push(c);
+            }
+        }
+        
+        while(!s.isEmpty()){
+            sb.append(s.pop());
+        }
+        
+        
+        return sb.toString();
+    }
+    
+    public static int pre(char c){
+        if(c=='^'){
+            return 3;
+        }
+        else if(c=='*' || c=='/'){
+            return 2;
+        }
+        else if(c=='+' || c=='-'){
+            return 1;
+        }
+        return -1;
+    }
+}
+
+-----------------------------------------------------------------------------------------------------------------------------------------
+Evaluation of Postfix Expression
+Difficulty: EasyAccuracy: 63.04%Submissions: 84K+Points: 2
+Given string S representing a postfix expression, the task is to evaluate the expression and find the final value. Operators will only include the basic arithmetic operators like *, /, + and -.
+
+ 
+
+Example 1:
+
+Input: S = "231*+9-"
+Output: -4
+Explanation:
+After solving the given expression, 
+we have -4 as result.
+Example 2:
+
+Input: S = "123+*8-"
+Output: -3
+Explanation:
+After solving the given postfix 
+expression, we have -3 as result.
+
+Your Task:
+You do not need to read input or print anything. Complete the function evaluatePostfixExpression() that takes the string S denoting the expression as input parameter and returns the evaluated value.
+
+
+Expected Time Complexity: O(|S|)
+Expected Auixilliary Space: O(|S|)
+
+
+Constraints:
+1 ≤ |S| ≤ 105
+
+0 ≤ |Si|≤ 9 (And given operators)
+
+
+
+
+
+
+
+class Solution
+{
+    //Function to evaluate a postfix expression.
+    public static int evaluatePostFix(String S)
+    {
+        Stack<Integer>s=new Stack<>();
+        for(int i=0;i<S.length();i++){
+            char ch=S.charAt(i);
+            if(ch>='0' && ch<='9'){
+                s.push(Integer.parseInt(String.valueOf(ch)));
+            }
+            else{
+                if(ch=='*'){
+                    int b=s.pop();
+                    int a=s.pop();
+                    s.push(a*b);
+                }
+                else if(ch=='+'){
+                    int b=s.pop();
+                    int a=s.pop();
+                    s.push(a+b);
+                }
+                else if(ch=='/'){
+                    int b=s.pop();
+                    int a=s.pop();
+                    s.push(a/b);
+                }
+                else if(ch=='-'){
+                    int b=s.pop();
+                    int a=s.pop();
+                    s.push(a-b);
+                }
+            }
+        }
+        return s.pop();
+    }
+}
+
+
+
+
+
+//leet code solution of this question
+// import java.util.*;
+// class Solution {
+//     public int evalRPN(String[] tokens) {
+//         Stack<Integer> st=new Stack<Integer>();
+//         int a=0,b=0;
+//         for(String s: tokens){
+            
+//             if(s.equals("+")){
+//                 a=st.pop();
+//                 b=st.pop();
+//                 st.push(a+b);
+//             }
+//             else if(s.equals("-")){
+//                 a=st.pop();
+//                 b=st.pop();
+//                 st.push(b-a);
+//             }
+//             else if(s.equals("*")){
+//                 a=st.pop();
+//                 b=st.pop();
+//                 st.push(a*b);
+//             }
+//             else if(s.equals("/")){
+//                 a=st.pop();
+//                 b=st.pop();
+//                 st.push(b/a);
+//             }
+//             else {
+//                 st.push(Integer.parseInt(s));
+//             }
+            
+//         }
+//         return st.pop();
+//     }
+// }
+
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------
+Prefix to Infix Conversion
+Difficulty: MediumAccuracy: 71.27%Submissions: 13K+Points: 4
+You are given a string S of size N that represents the prefix form of a valid mathematical expression. Convert it to its infix form.
+
+Example 1:
+
+Input: 
+*-A/BC-/AKL
+Output: 
+((A-(B/C))*((A/K)-L))
+Explanation: 
+The above output is its valid infix form.
+Your Task:
+
+Complete the function string preToInfix(string pre_exp), which takes a prefix string as input and return its infix form.
+
+ 
+
+Expected Time Complexity: O(N).
+
+Expected Auxiliary Space: O(N).
+
+
+
+
+
+
+// User function Template for Java
+
+class Solution {
+    static String preToInfix(String pre_exp) {
+        
+        Stack<String> s=new Stack<>();
+        for(int i=pre_exp.length()-1;i>=0;i--){
+            char c=pre_exp.charAt(i);
+            if(Character.isLetterOrDigit(c)){
+                s.push((Character.toString(c)));
+            }
+            else{
+                String a=s.pop();
+                String b=s.pop();
+                s.push("("+a+c+b+")");
+            }
+        }
+        return s.peek();
+    }
+}
+-----------------------------------------------------------------------------------------------------------------------------------------
+Prefix to Postfix Conversion
+Difficulty: MediumAccuracy: 79.42%Submissions: 11K+Points: 4
+You are given a string that represents the prefix form of a valid mathematical expression. Convert it to its postfix form.
+
+Example:
+
+Input: 
+*-A/BC-/AKL
+Output: 
+ABC/-AK/L-*
+Explanation: 
+The above output is its valid postfix form.
+Your Task:
+
+Complete the function preToPost(string pre_exp), which takes a prefix string as input and returns its postfix form.
+
+
+
+
+
+
+
+// User function Template for Java
+
+class Solution {
+    static String preToPost(String pre_exp) {
+        Stack<String> s=new Stack<>();
+        
+        for(int i=pre_exp.length()-1;i>=0;i--){
+            
+            char c=pre_exp.charAt(i);
+            
+            if(Character.isLetterOrDigit(c)){
+                s.push(Character.toString(c));
+            }
+            
+            else{
+                String a=s.pop();
+                String b=s.pop();
+                s.push(a+b+c);
+            }
+        }
+        return s.peek();
+    }
+}
+-----------------------------------------------------------------------------------------------------------------------------------------
+Postfix to Prefix Conversion
+Difficulty: MediumAccuracy: 80.58%Submissions: 10K+Points: 4
+You are given a string that represents the postfix form of a valid mathematical expression. Convert it to its prefix form.
+
+Example 1:
+
+Input: 
+ABC/-AK/L-*
+Output: 
+*-A/BC-/AKL
+Explanation: 
+The above output is its valid prefix form.
+
+Example 2:
+
+Input: 
+ab+
+Output: 
++ab
+Explanation: 
+The above output is its valid prefix form.
+
+
+
+// User function Template for Java
+
+class Solution {
+    static String postToPre(String post_exp) {
+        Stack<String> s=new Stack<>();
+        for(int i=0;i<post_exp.length();i++){
+            
+            char c=post_exp.charAt(i);
+            
+            if(Character.isLetterOrDigit(c)){
+                s.push(Character.toString(c));
+            }
+            else{
+                String a=s.pop();
+                String b=s.pop();
+                s.push(c+b+a);
+            }
+        }
+        
+        return s.peek();
+    }
+}
+-----------------------------------------------------------------------------------------------------------------------------------------
+Postfix to Infix Conversion
+Difficulty: MediumAccuracy: 49.41%Submissions: 22K+Points: 4
+You are given a string that represents the postfix form of a valid mathematical expression. Convert it to its infix form.
+
+Example:
+
+Input:
+ab*c+ 
+Output: 
+((a*b)+c)
+Explanation: 
+The above output is its valid infix form.
+
+
+
+// User function Template for Java
+
+class Solution {
+    static String postToInfix(String exp) {
+        Stack<String> s=new Stack<>();
+        for(int i=0;i<exp.length();i++){
+            
+            char c=exp.charAt(i);
+            
+            if(Character.isLetterOrDigit(c)){
+                s.push(Character.toString(c));
+            }
+            else{
+                String a=s.pop();
+                String b=s.pop();
+                s.push("("+b+c+a+")");
+            }
+        }
+        
+        return s.peek();
+    }
+}
+-----------------------------------------------------------------------------------------------------------------------------------------
+496. Next Greater Element I
+Solved
+Easy
+Topics
+Companies
+The next greater element of some element x in an array is the first greater element that is to the right of x in the same array.
+
+You are given two distinct 0-indexed integer arrays nums1 and nums2, where nums1 is a subset of nums2.
+
+For each 0 <= i < nums1.length, find the index j such that nums1[i] == nums2[j] and determine the next greater element of nums2[j] in nums2. If there is no next greater element, then the answer for this query is -1.
+
+Return an array ans of length nums1.length such that ans[i] is the next greater element as described above.
+
+ 
+
+Example 1:
+
+Input: nums1 = [4,1,2], nums2 = [1,3,4,2]
+Output: [-1,3,-1]
+Explanation: The next greater element for each value of nums1 is as follows:
+- 4 is underlined in nums2 = [1,3,4,2]. There is no next greater element, so the answer is -1.
+- 1 is underlined in nums2 = [1,3,4,2]. The next greater element is 3.
+- 2 is underlined in nums2 = [1,3,4,2]. There is no next greater element, so the answer is -1.
+Example 2:
+
+Input: nums1 = [2,4], nums2 = [1,2,3,4]
+Output: [3,-1]
+Explanation: The next greater element for each value of nums1 is as follows:
+- 2 is underlined in nums2 = [1,2,3,4]. The next greater element is 3.
+- 4 is underlined in nums2 = [1,2,3,4]. There is no next greater element, so the answer is -1.
+
+
+class Solution {
+    public int[] nextGreaterElement(int[] nums1, int[] nums2) {
+        HashMap<Integer,Integer> hm=new HashMap<>();
+        Stack<Integer> s=new Stack<>();
+        for(int i=nums2.length-1;i>=0;i--){
+            int ele=nums2[i];
+            while(!s.isEmpty() && s.peek() <= ele){
+                s.pop();
+            }
+            int res=(s.isEmpty()) ? -1 : s.peek();
+            hm.put(ele,res);
+            s.push(ele);
+        }
+
+        int ans[]=new int[nums1.length];
+        for(int i=0;i<nums1.length;i++){
+            ans[i]=hm.get(nums1[i]);
+        }
+
+        return ans;
+
+    }
+}
+
+-----------------------------------------------------------------------------------------------------------------------------------------
+503. Next Greater Element II
+Solved
+Medium
+Topics
+Companies
+Given a circular integer array nums (i.e., the next element of nums[nums.length - 1] is nums[0]), return the next greater number for every element in nums.
+
+The next greater number of a number x is the first greater number to its traversing-order next in the array, which means you could search circularly to find its next greater number. If it doesn't exist, return -1 for this number.
+
+ 
+
+Example 1:
+
+Input: nums = [1,2,1]
+Output: [2,-1,2]
+Explanation: The first 1's next greater number is 2; 
+The number 2 can't find next greater number. 
+The second 1's next greater number needs to search circularly, which is also 2.
+Example 2:
+
+Input: nums = [1,2,3,4,3]
+Output: [2,3,4,-1,4]
+ 
+
+
+
+class Solution {
+    public int[] nextGreaterElements(int[] nums) {
+        int n=nums.length;
+        int  ans[]=new  int[n];
+        Stack<Integer> s=new Stack<>();
+
+        for(int i=2*n-1;i>=0;i--){
+            while(!s.isEmpty() && nums[i%n] >= s.peek()){
+                s.pop();
+            }
+
+            if(i<n){
+                 if(s.isEmpty()){
+                ans[i]=-1;
+            }
+            
+            else{
+                ans[i]=s.peek();
+            }
+            }
+
+            s.push(nums[i%n]);
+        }
+        return ans;
+    }
+}
+-----------------------------------------------------------------------------------------------------------------------------------------
+Nearest Smaller Element
+
+
+
+public class Solution {
+    public ArrayList<Integer> prevSmaller(ArrayList<Integer> A) {
+        ArrayList<Integer> ans=new ArrayList<>();
+        Stack<Integer>  s=new Stack<>();
+        
+        for(int i=0;i<A.size();i++){
+            while(!s.isEmpty() && A.get(s.peek()) >= A.get(i)){
+                s.pop();
+            }
+            
+            if(s.isEmpty()){
+                ans.add(-1);
+            }
+            else{
+                ans.add(A.get(s.peek()));
+            }
+            s.push(i);
+        }
+        return ans;
+    }
+}
+
+-----------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------
